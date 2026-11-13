@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>文学能力岛</title>
+  <meta name="description" content="九十天古典文学与历史学习：诗经、唐诗、宋词、元曲、魏晋、五代、十六国诸燕、明清、公案。每天 15–40 分钟，五步学习，间隔复习，讲清度评估。">
+  <meta name="theme-color" content="#9c2b1f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top"><div class="in"><a class="brand" href="#/today">🏝️ 文学能力岛</a><nav id="nav" aria-label="主导航"></nav></div></header>
+  <main id="view" role="main"></main>
+  <nav id="bottom" aria-label="主导航"></nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p style="padding:24px">需要启用 JavaScript 才能使用本程序。</p></noscript>
+
+  <!-- 纯函数模块 -->
+  <script src="js/lit.js"></script>
+  <script src="js/plan.js"></script>
+  <script src="js/srs.js"></script>
+  <script src="js/store.js"></script>
+  <!-- 课程数据 -->
+  <script src="data/meta.js"></script>
+  <script src="data/texts.js"></script>
+  <script src="data/days1.js"></script>
+  <script src="data/days2.js"></script>
+  <script src="data/days3.js"></script>
+  <script src="data/guide.js"></script>
+  <!-- 本机书籍路径（不入库，可缺省；由 tools/make_local_books.py 生成） -->
+  <script src="data/books-local.js"></script>
+  <!-- 界面 -->
+  <script src="js/app.js"></script>
+</body>
+</html>

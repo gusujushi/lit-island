@@ -1,0 +1,16 @@
+{
+  "name": "lit-island",
+  "version": "0.2.0",
+  "private": true,
+  "description": "文学能力岛：九十天古典文学与历史学习程序（五步学习、间隔复习、讲清度评估；纯静态 PWA）",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate": "node tools/validate.js --check-sources",
+    "e2e": "node tests/e2e/flow.js",
+    "extract": ".venv/bin/python tools/extract_texts.py",
+    "plan": "node tools/export_plan.js",
+    "ledgers": "python3 tools/make_ledgers.py",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": { "node": ">=18" }
+}
