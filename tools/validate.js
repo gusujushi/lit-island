@@ -13,7 +13,7 @@ const E = m => errs.push(m), W = m => warns.push(m);
 const total = LIT.total();
 
 // PDF 页数上限（按 2026-11-12 本机文件 pdfinfo）
-const PAGES = { sjzx: 820, tsjs: 1221, scjz: 393, hjpz: 254, ssjs: 986, yrzj: 569, hlm: 1031, dbcs: 4081 };
+const PAGES = { sjzx: 820, tsjs: 1221, scjz: 393, hjpz: 254, ssjs: 986, yrzj: 569, hlm: 1031, dbcs: 4081, sglc: 766, dmzz: 362, cyk: 378, dtjs: 108, tyjz: 485, ntjd: 174, tsc17: 436, lzhp1: 538, lzhp2: 443 };
 
 if (total !== 90) E(`total 应为 90，实际 ${total}`);
 const learnNums = Object.keys(LIT.learn).map(Number).sort((a, b) => a - b);

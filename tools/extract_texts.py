@@ -33,7 +33,7 @@ def unwrap(raw):
     """古登堡本按固定宽度硬换行：以全角空格起头的行才是新段落，其余行接回上一行。"""
     out = []
     for l in raw.split("\n"):
-        if not out or not l.strip() or not out[-1].strip() or l.startswith("　") or re.match(r"^(第.{1,5}[回齣出]|【|〔)", l):
+        if not out or not l.strip() or not out[-1].strip() or l.startswith("　") or re.match(r"^第.{1,5}[回齣出]", l):
             out.append(l)
         else:
             out[-1] = out[-1].rstrip() + l.strip()
@@ -335,6 +335,11 @@ def extract(s):
     if s.get("punct"):
         text = full_punct(text)
         src["norm"] = "半角标点改全角"
+    for pat, rep, why in s.get("sub", []):
+        text2 = re.sub(pat, rep, text)
+        if text2 != text:
+            src.setdefault("fix", []).append(f"按 {pat} 替换为「{rep}」（{why}）")
+        text = text2
     for a, b, why in s.get("fix", []):
         if a not in text:
             raise Miss(f"修正项「{a}」不在原文中")

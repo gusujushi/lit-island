@@ -18,10 +18,12 @@ def main():
     folder = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/Documents/书籍/文学")
     meta = open(os.path.join(ROOT, "data", "meta.js"), encoding="utf-8").read()
     keys = re.findall(r"(\w+): \{ name: '[^']*', by: '[^']*', match: '([^']*)'", meta)
-    pdfs = [f for f in os.listdir(folder) if f.lower().endswith(".pdf")]
+    pdfs = []
+    for dp, _, fs in os.walk(folder):  # 含 古籍下载3 等子文件夹
+        pdfs += [os.path.relpath(os.path.join(dp, f), folder) for f in fs if f.lower().endswith(".pdf")]
     files, missing = {}, []
     for key, match in keys:
-        hit = [f for f in pdfs if match in f]
+        hit = [f for f in pdfs if match in os.path.basename(f)]
         if len(hit) == 1:
             files[key] = hit[0]
         else:

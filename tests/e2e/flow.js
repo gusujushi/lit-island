@@ -124,6 +124,12 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
     await page.evaluate(n => { window.__lit.S.state.days[n].step = 2; window.__lit.render(); }, n);
     ok((await page.textContent('.stepbody')).includes('延伸阅读（本机全本）'), `第 ${n} 天有本机全本入口`);
   }
+  // v0.3：第三批材料——三源对勘页码、地图、王国维与鲁迅原文选读
+  for (const [n, step, kw] of [[27, 2, '十六国春秋辑补'], [28, 2, '中国历史地图集'], [47, 1, '眼界始大'], [57, 1, '三种之境界'], [73, 1, '足称讽刺之书'], [13, 2, '坞壁及桃花源']]) {
+    await page.goto(base + `index.html#/day/${n}`);
+    await page.evaluate(([n, step]) => { const r = window.__lit.S.state.days[n] = window.__lit.S.state.days[n] || { notes: {}, quiz: {}, read: {} }; r.mode = 'deep'; r.step = step; window.__lit.render(); }, [n, step]);
+    ok((await page.textContent('.stepbody')).includes(kw), `第 ${n} 天（深读）含「${kw}」`);
+  }
   // 深读档展开选读
   await page.goto(base + 'index.html#/day/29');
   await page.evaluate(() => { const r = window.__lit.S.state.days[29]; r.mode = 'deep'; r.step = 1; window.__lit.render(); });
