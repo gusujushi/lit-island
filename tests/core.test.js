@@ -125,3 +125,91 @@ test('原文：人名保护与来源字段', () => {
     assert.ok(!/[{}\[\]|=]{2}/.test(t.simp), `${id} 残留 wiki 标记`);
   });
 });
+
+test('每课经典：72 条，完成当天生成经典用法卡，笔记导出含造句', () => {
+  assert.equal(Object.keys(LIT.classics).length, 72);
+  const S = Store.create(memStorage());
+  const r = Store.dayRec(S.state, 2); r.notes.retell = '在水一方，可望不可即的追寻。'; r.notes.classic = '那个目标一直在水一方。'; r.rating = 1;
+  Store.completeDay(S.state, 2, '2026-11-20', LIT);
+  assert.ok(S.state.cards.d2k);
+  const c = Store.cardContent(S.state, 'd2k', LIT);
+  assert.equal(c.kind, 'classic'); assert.match(c.front, /在水一方/);
+  assert.match(Store.markdown(S.state, LIT, '2026-11-20'), /用经典造句/);
+});
+
+test('注本图包：解析不压缩的 zip', () => {
+  const Pages = require('../js/pages.js');
+  const { execFileSync } = require('child_process');
+  const os = require('os'), fs = require('fs'), path = require('path');
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'litzip-'));
+  const zp = path.join(tmp, 't.zip');
+  execFileSync('python3', ['-I', '-c', `import zipfile,json\nz=zipfile.ZipFile(${JSON.stringify(zp)},'w',zipfile.ZIP_STORED)\nz.writestr('manifest.json',json.dumps({'app':'lit-island','refs':{'sglc:398':['sglc_0398.jpg']}}))\nz.writestr('sglc_0398.jpg',b'JPEGDATA')\nz.close()`]);
+  const buf = fs.readFileSync(zp);
+  const ab = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
+  const files = Pages.unzip(ab);
+  assert.deepEqual(files.map(f => f.name), ['manifest.json', 'sglc_0398.jpg']);
+  assert.equal(files.every(f => f.method === 0), true);
+  assert.equal(Buffer.from(files[1].data).toString(), 'JPEGDATA');
+  assert.equal(JSON.parse(Buffer.from(files[0].data).toString()).refs['sglc:398'][0], 'sglc_0398.jpg');
+  assert.throws(() => Pages.unzip(new ArrayBuffer(10)));
+});
+
+test('语音输入文字整理：繁转简（保护字不动）、去幻觉套话、空格变逗号、补句号', () => {
+  const ZH = require('../js/zh.js');
+  assert.equal(ZH.t2s('關關雎鳩'), '关关雎鸠');
+  assert.equal(ZH.t2s('慕容儁', ZH.PROTECT), '慕容儁');
+  assert.equal(ZH.cleanDictation('我認為這是 起興的手法 字幕由Amara.org社区提供'), '我认为这是，起兴的手法。');
+  assert.equal(ZH.cleanDictation('請不吝點贊 訂閱 轉發 打賞支持明鏡與點點欄目'), '');
+  assert.equal(ZH.cleanDictation('你好,世界?'), '你好，世界？');
+  assert.equal(ZH.cleanDictation('我认为，这是求爱诗。谢谢观看'), '我认为，这是求爱诗。');
+  assert.equal(ZH.cleanDictation(''), '');
+  assert.deepEqual(ZH.insertAt('前文', 2, '新内容。'), { value: '前文，新内容。', start: 3, end: 7 });
+  assert.equal(ZH.insertAt('前文。后文', 3, '插入。').value, '前文。插入。后文');
+  assert.equal(ZH.insertAt('', null, '甲。').value, '甲。');
+  // DeepSeek 校对结果的可信度：改错字可以，答非所问、整段改写不行
+  assert.equal(ZH.polishOk('我认为冠军首先是一首球艾诗', '我认为《关雎》首先是一首求爱诗。'), true);
+  assert.equal(ZH.polishOk('我认为冠军首先是一首球艾诗', '好的，下面是校对后的文本：我认为关雎首先是一首求爱诗，这首诗描写了君子对淑女的思慕和追求，体现了先秦礼乐文化的特点'), false);
+  assert.equal(ZH.polishOk('一首求爱诗', ''), false);
+});
+
+test('录音处理：重采样到 16 kHz、有没有说话、长录音切段', () => {
+  const A = require('../js/audio.js');
+  const sr = 48000, n = sr * 2, x = new Float32Array(n);
+  for (let i = 0; i < n; i++) x[i] = 0.3 * Math.sin(2 * Math.PI * 220 * i / sr);
+  const y = A.resample(x, sr, 16000);
+  assert.equal(y.length, 32000);
+  const up = A.resample(new Float32Array(8000), 8000, 16000);
+  assert.equal(up.length, 16000);
+  assert.equal(A.stats(y).quiet, false);
+  assert.equal(A.stats(new Float32Array(16000)).quiet, true);
+  // 70 秒：每 10 秒里有 1 秒静音 → 切成 ≤ 28 秒的段，切点落在静音里
+  const L = 16000 * 70, z = new Float32Array(L);
+  for (let i = 0; i < L; i++) { const t = i / 16000; z[i] = (t % 10) > 9 ? 0 : 0.3 * Math.sin(2 * Math.PI * 200 * t); }
+  const parts = A.split(z, 28, 15);
+  assert.ok(parts.length >= 3);
+  assert.equal(parts.reduce((s, p) => s + p.length, 0), L);
+  parts.forEach(p => assert.ok(p.length <= 28 * 16000));
+  parts.slice(0, -1).forEach(p => assert.ok(Math.abs(p[p.length - 1]) < 1e-6, '切点在静音处'));
+  assert.equal(A.split(new Float32Array(16000 * 5)).length, 1);
+});
+
+test('AI 提示词：校对带本课背景、点评带量规且跳过空题、不发送多余内容', () => {
+  const AI = require('../js/ai.js');
+  const P = AI.prompts;
+  const d = LIT.learn[1];
+  const m = P.polishMessages('我认为冠军是求爱诗', { day: 1, title: d.title, question: d.judge, texts: [{ t: '关雎', a: '诗经', text: LIT.texts.sj_guanju.simp }], words: ['雎鸠'] });
+  assert.equal(m.length, 1);
+  assert.match(m[0].content, /关关雎鸠/);
+  assert.match(m[0].content, /【语音转写，请校对】\n我认为冠军是求爱诗$/);
+  assert.match(P.POLISH, /不要改写/);
+  const r = P.reviewMessages({ day: 1, title: d.title, ask: d.ask, keys: d.keys, items: [[d.retell, '雎鸠和鸣起兴，求之不得。'], [d.judge, ''], [d.link, '  ']], rubric: LIT.meta.rubric });
+  assert.match(r[0].content, /L3/);
+  assert.match(r[0].content, /雎鸠和鸣起兴/);
+  assert.equal((r[0].content.match(/【题目】/g) || []).length, 1, '空题不发');
+  assert.match(P.SYSTEM, /不要编造引文/);
+  const e = P.explainMessages({ day: 1, title: d.title, t: '长文', a: '', text: '字'.repeat(5000) });
+  assert.ok(e[0].content.length < 2200, '原文截断');
+  assert.equal(AI.validBase('http://example.com'), false);
+  assert.equal(AI.validBase('https://api.deepseek.com'), true);
+  assert.equal(AI.validBase('http://127.0.0.1:8080'), true);
+});

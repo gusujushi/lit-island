@@ -3,3 +3,5 @@ __pycache__/
 data/books-local.js
 .DS_Store
 node_modules/
+*.zip
+_tmp_*

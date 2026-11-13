@@ -48,6 +48,14 @@ for (const n of learnNums) {
     if (!b[2]) E(`${at} 书目第 ${i + 1} 条缺说明`);
   });
   if (d.more !== undefined && (typeof d.more !== 'string' || d.more.length < 8)) E(`${at} more 字段应为说明文字`);
+  const kc = LIT.classics[n];
+  if (!kc) E(`${at} 缺少"今日经典"`);
+  else {
+    if (!['句', '词', '典故', '句式'].includes(kc.k)) E(`${at} 经典类型 ${kc.k} 不在 句/词/典故/句式 内`);
+    ['item', 'src', 'why'].forEach(f => { if (!kc[f]) E(`${at} 经典缺 ${f}`); });
+    ['old', 'now', 'use'].forEach(f => { if (!Array.isArray(kc[f]) || !kc[f].length || kc[f].some(x => !Array.isArray(x) || x.length !== 2 || !x[0] || !x[1])) E(`${at} 经典 ${f} 格式错误`); });
+    if (kc.use && kc.use.length < 2) W(`${at} 经典例句少于 2 条`);
+  }
   if (d.mod === 'yan' || d.mod === 'yanw') { if (!d.yan) E(`${at} 燕国课缺少《燕云悲歌》对照（yan 字段）`); }
   ['bg', 'ask', 'retell', 'judge', 'link', 'out'].forEach(k => { if (typeof d[k] === 'string' && d[k].length < 12) W(`${at} ${k} 过短`); });
 }
@@ -85,6 +93,7 @@ learnNums.forEach(n => { const m = LIT.learn[n].mod; count[m] = (count[m] || 0) 
 
 warns.forEach(w => console.log('⚠', w));
 errs.forEach(e => console.log('✗', e));
+Object.keys(LIT.classics).forEach(k => { if (!LIT.learn[k]) E(`经典第 ${k} 天不是学习日`); });
 console.log(`学习日 ${learnNums.length}，复习日 ${total - learnNums.length}，原文 ${Object.keys(LIT.texts).length} 段，卡片 ${learnNums.reduce((s, n) => s + LIT.learn[n].cards.length, 0)} 张，小测 ${learnNums.reduce((s, n) => s + LIT.learn[n].quiz.length, 0)} 题`);
 console.log('模块天数：' + Object.entries(count).map(([k, v]) => `${LIT.meta.modules[k].name} ${v}`).join('，'));
 console.log(errs.length ? `校验失败：${errs.length} 个错误` : '校验通过');

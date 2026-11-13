@@ -56,13 +56,177 @@
 
   /* ---------- 组件 ---------- */
   const chip = d => { const m = modOf(d); return `<span class="chip" style="--c:${m.color}">${m.emoji} ${esc(m.name)}</span>`; };
-  const area = (bind, val, ph, rows) => `<textarea data-bind="${bind}" rows="${rows || 4}" placeholder="${esc(ph || '')}">${esc(val || '')}</textarea><div class="count" data-count="${bind}">${len(val)} 字</div>`;
+  const area = (bind, val, ph, rows) => `<div class="ta"><textarea data-bind="${bind}" rows="${rows || 4}" placeholder="${esc(ph || '')}">${esc(val || '')}</textarea><button class="mic${voice.bind === bind ? (voice.phase === 'rec' ? ' on' : ' busy') : ''}" data-act="mic" data-target="${bind}" title="语音输入" aria-label="语音输入">🎤</button></div><div class="count"><span class="vstat" data-vstat="${bind}">${voice.bind === bind ? esc(voice.msg || '') : ''}</span><span data-count="${bind}">${len(val)} 字</span></div>`;
+
+  /* ---------- 语音输入：录音 → 本机 Whisper 识别（模型与意大利语能力岛共用，音频不出设备）→ DeepSeek 校对（可选，只发文字） ---------- */
+  const MAX_REC = 120;                                   // 一次最多录 2 分钟（自动停止）
+  const voice = { bind: null, phase: null, rec: null, timer: null, at: null, msg: '', last: null };
+  const vTarget = bind => document.querySelector(`textarea[data-bind="${bind}"]`);
+  function vStatus(bind, html) {
+    if (voice.bind === bind) voice.msg = html.replace(/<[^>]+>/g, '');
+    const el = document.querySelector(`[data-vstat="${bind}"]`); if (el) el.innerHTML = html;
+  }
+  function vButtons() {
+    document.querySelectorAll('.mic').forEach(b => {
+      const mine = b.dataset.target === voice.bind;
+      b.classList.toggle('on', mine && voice.phase === 'rec');
+      b.classList.toggle('busy', mine && (voice.phase === 'asr' || voice.phase === 'ai' || voice.phase === 'dl'));
+    });
+  }
+  function vReset() { clearInterval(voice.timer); voice.bind = null; voice.phase = null; voice.rec = null; voice.msg = ''; vButtons(); }
+
+  /** 这个输入框在答哪道题、属于哪一课 —— 给 DeepSeek 校对时判断书名、人名、引文用 */
+  function voiceCtx(bind) {
+    const [kind, a, path] = bind.split(':');
+    const textsOf = ids => (ids || []).slice(0, 2).filter(id => LIT.texts[id]).map(id => ({ t: LIT.texts[id].t, a: LIT.texts[id].a, text: LIT.texts[id].simp }));
+    if (kind === 'ask') { const t = LIT.texts[a]; return t ? { title: t.t, texts: textsOf([a]), question: '对这篇原文的提问' } : {}; }
+    let n = +a, q = '';
+    if (kind === 'rev') {
+      const m = /^(recall|revise)\.(\d+)$/.exec(path || '');
+      if (!m) { const d = LIT.day(n); return { title: '复习日', question: '复习（本轮各课：' + ((d && d.covers) || []).map(k => LIT.learn[k].title).join('、') + '）', texts: [], words: [] }; }
+      n = +m[2]; q = m[1] === 'recall' ? LIT.learn[n].retell : LIT.learn[n].judge;
+    }
+    const d = LIT.learn[n]; if (!d) return {};
+    const k = LIT.classics[n];
+    const Q = { 'notes.ask': d.ask, 'notes.retell': d.retell, 'notes.judge': d.judge, 'notes.link': d.link, 'notes.out': d.out, 'notes.classic': k ? '用「' + k.item + '」造一个句子' : '' };
+    return { day: n, title: d.title, question: q || Q[path] || '', texts: textsOf(d.texts), words: (d.notes || []).map(x => x[0]).slice(0, 15).concat(k ? [k.item] : []) };
+  }
+
+  /** 把文字插进输入框（输入框不在屏幕上时直接写进进度） */
+  function vInsert(bind, text) {
+    const ta = vTarget(bind);
+    const [kind, n, path] = bind.split(':');
+    let cur = ta ? ta.value : '';
+    if (!ta && (kind === 'day' || kind === 'rev')) { const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n); cur = path.split('.').reduce((o, k) => (o ? o[k] : ''), rec) || ''; }
+    const r = ZH.insertAt(cur, voice.at, text);
+    if (ta) {
+      ta.value = r.value; ta.dispatchEvent(new Event('input', { bubbles: true }));
+      try { ta.setSelectionRange(r.end, r.end); } catch (e) { /* 不可选中 */ }
+    } else if (kind === 'day' || kind === 'rev') {
+      const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n); setPath(rec, path, r.value);
+    }
+    S.save();
+  }
+
+  async function micTap(bind) {
+    if (voice.phase === 'rec' && voice.bind === bind) { voiceFinish(); return; }
+    if (voice.phase) { toast(voice.phase === 'rec' ? '另一个输入框正在录音，先点那里的 🎤 结束' : '上一段还在处理，请稍等'); return; }
+    const sup = ASR.supported();
+    if (!sup.ok) { toast(sup.text + ' 也可以用手机键盘自带的听写键。'); return; }
+    if (!(await ASR.cached())) {
+      if (!confirm(`第一次用语音输入，需要下载本机语音识别模型（约 ${ASR.TOTAL_MB} MB，和意大利语能力岛共用一份）。下载后断网也能用，录音不会上传。建议连 Wi-Fi。现在下载？`)) return;
+      voice.bind = bind; voice.phase = 'dl'; vButtons();
+      try {
+        await ASR.download((p) => vStatus(bind, `正在下载语音模型 ${Math.round(p * 100)}%…`));
+        if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+        vReset(); vStatus(bind, '语音模型已下载。再点 🎤 开始说话。');
+      } catch (e) { vReset(); vStatus(bind, ''); alert('下载没有完成：' + e.message); }
+      return;
+    }
+    const ta = vTarget(bind);
+    voice.at = ta && document.activeElement === ta && typeof ta.selectionStart === 'number' ? ta.selectionStart : null;
+    const rec = Audio16.Recorder(MAX_REC);
+    rec.onAuto = () => { if (voice.rec === rec) voiceFinish(); };
+    try { await rec.start(); } catch (e) {
+      const m = e && e.name === 'NotAllowedError' ? '没有麦克风权限：请在浏览器设置里允许本网站使用麦克风' : e && e.name === 'NotFoundError' ? '找不到麦克风' : '无法录音：' + (e && e.message || e);
+      toast(m); return;
+    }
+    voice.bind = bind; voice.phase = 'rec'; voice.rec = rec; vButtons();
+    const tick = () => vStatus(bind, `● 正在录音 ${Math.floor(rec.secs)} 秒……说完再点一次 🎤（最长 ${MAX_REC / 60} 分钟）`);
+    tick(); voice.timer = setInterval(tick, 500);
+    ASR.load().catch(() => {});                          // 边说边把模型加载进内存
+  }
+
+  async function voiceFinish() {
+    const bind = voice.bind, rec = voice.rec;
+    if (!rec) return;
+    clearInterval(voice.timer);
+    voice.phase = 'asr'; vButtons(); vStatus(bind, '识别中……');
+    let note = '';
+    try {
+      const pcm = await rec.stop();
+      if (Audio16.stats(pcm).quiet) throw new Error('没有听到声音：靠近麦克风再说一次');
+      await ASR.load(p => vStatus(bind, `正在加载语音模型 ${Math.round(p * 100)}%…`));
+      const raw = await ASR.transcribeLong(pcm, (i, n) => vStatus(bind, n > 1 ? `识别中 ${i}/${n}……` : '识别中……'));
+      const text = ZH.cleanDictation(raw);
+      if (!text) throw new Error('没有识别出文字，再说一次试试');
+      let out = text, fixed = false;
+      if (AI.ready() && AI.settings().polish !== false) {
+        voice.phase = 'ai'; vButtons(); vStatus(bind, 'DeepSeek 校对中……');
+        try {
+          const r = await AI.polish(text, voiceCtx(bind));
+          if (r.changed) { out = r.text; fixed = true; } else if (r.rejected) note = 'AI 校对结果和原话出入太大，已保留原识别';
+        } catch (e) { note = 'AI 校对没成功（' + e.message + '），已保留原识别'; }
+      }
+      vInsert(bind, out);
+      voice.last = fixed ? { bind, raw: text, text: out } : null;
+      vReset();
+      vStatus(bind, fixed ? `已用 DeepSeek 校对 <button class="mini" data-act="vundo" data-target="${bind}">撤销校对</button>` : esc(note || '已转成文字，可以直接改'));
+    } catch (e) {
+      vReset(); vStatus(bind, ''); toast(e.message || String(e));
+    }
+  }
+
+  function voiceCancel() { if (voice.phase === 'rec' && voice.rec) { const b = voice.bind; voice.rec.cancel(); vReset(); vStatus(b, ''); toast('已取消录音'); } }
+
+  /* ---------- AI 老师（DeepSeek，可选）：讲解原文、回答提问、点评思辨与输出 ---------- */
+  const aiView = {};                                     // key → {loading, text, error, cached}
+  const aiFmt = t => esc(t).replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+  function aiInner(key) {
+    const v = aiView[key];
+    if (!v) return '';
+    if (v.loading) return '<p class="muted">🤖 AI 老师正在写……（通常 5–30 秒）</p>';
+    if (v.error) return `<p class="warn">AI 没有回答：${esc(v.error)}</p>`;
+    if (!v.text) return '';
+    return `<div class="aitext">${aiFmt(v.text)}</div><p class="hint">🤖 DeepSeek 生成${v.cached ? '（之前的结果）' : ''}，仅供参考；史实与引文请对照原文和注本核对。${v.redo ? ` <button class="mini" data-act="${v.redo}" ${v.redoAttr || ''} data-force="1">重新生成</button>` : ''}</p>`;
+  }
+  const aiBox = key => `<div class="aibox" data-ai="${esc(key)}">${aiInner(key)}</div>`;
+  function aiPaint(key) { const el = document.querySelector(`[data-ai="${key}"]`); if (el) el.innerHTML = aiInner(key); }
+  async function aiRun(key, fn, redo, redoAttr) {
+    if (!AI.ready()) { toast('先在「我的 → AI 老师」填写 DeepSeek API Key（可选功能）'); return; }
+    if (aiView[key] && aiView[key].loading) return;
+    aiView[key] = { loading: true, redo, redoAttr };
+    aiPaint(key);
+    try { const r = await fn(); Object.assign(aiView[key], { loading: false, text: r.text, cached: !!r.cached }); }
+    catch (e) { Object.assign(aiView[key], { loading: false, error: e.message || String(e) }); }
+    aiPaint(key);
+  }
+  const textCtx = (id, n) => { const t = LIT.texts[id], d = LIT.learn[n]; return { id, day: n, title: d ? d.title : '', t: t.t, a: t.a, text: t.simp }; };
+  function reviewCtx(n, kind) {
+    const d = LIT.learn[n], nt = Store.dayRec(st(), n).notes || {}, k = LIT.classics[n];
+    const items = kind === 'think' ? [[d.retell, nt.retell], [d.judge, nt.judge], [d.link, nt.link]]
+      : [[d.out, nt.out]].concat(k ? [['用今日经典「' + k.item + '」造一个句子', nt.classic]] : []);
+    return { day: n, title: d.title, ask: d.ask, keys: d.keys, items, rubric: LIT.meta.rubric };
+  }
+  const voiceHint = () => `<p class="hint">🎤 点输入框右下角的麦克风说话，再点一次结束：本机识别成文字（录音不上传）${AI.ready() && AI.settings().polish !== false ? '，再由 DeepSeek 按本课内容校对错字' : ''}。也可以用手机键盘自带的听写键。</p>`;
+  const aiHint = () => (AI.ready() ? '' : '<p class="hint">🤖 想请 AI 老师讲解、点评：在「我的 → AI 老师」填上自己的 DeepSeek API Key（可选）。</p>');
+
+  /* ---------- 注本页图（手机上看注本） ---------- */
+  let PG = null;
+  if (window.Pages) Pages.getManifest().then(m => { if (m) { PG = m; render(); } }).catch(() => {});
+  function openViewer(key, title) {
+    const names = (PG && PG.refs[key]) || [];
+    if (!names.length) return;
+    const v = document.createElement('div');
+    v.className = 'viewer'; v.id = 'viewer';
+    v.innerHTML = `<div class="vbar"><b>${esc(title)}</b><span><button class="mini" data-act="vzoom">放大</button> <button class="mini" data-act="vclose">关闭</button></span></div><div class="vbody">${names.map(n => `<figure><img alt="${esc(n)}" data-name="${esc(n)}"><figcaption>${esc(n.replace(/^(\w+)_0*(\d+)\.\w+$/, '第 $2 页'))}</figcaption></figure>`).join('')}</div>`;
+    document.body.appendChild(v);
+    document.body.classList.add('noscroll');
+    v.querySelectorAll('img').forEach(img => Pages.get(img.dataset.name).then(b => { if (b) img.src = URL.createObjectURL(b); }));
+  }
+  function closeViewer() {
+    const v = $('#viewer'); if (!v) return;
+    v.querySelectorAll('img').forEach(img => { if (img.src.startsWith('blob:')) URL.revokeObjectURL(img.src); });
+    v.remove(); document.body.classList.remove('noscroll');
+  }
 
   function bookRef(ref) {
     const b = LIT.bookRef(ref);
     const approx = /约/.test(b.how || '') || /约/.test(b.what || '');
     const link = b.path ? ` <a class="mini" href="file://${encodeURI(b.path)}#page=${b.page}" target="_blank" rel="noopener">打开</a> <button class="mini" data-act="copy" data-text="${esc(b.path)}">复制路径</button>` : '';
-    return `<li>📖 <b>《${esc(b.name)}》</b> PDF 第 <b>${b.page}</b> 页${approx ? '（约）' : ''} — ${esc(b.what)}${link}</li>`;
+    const key = `${b.key}:${b.page}`;
+    const pics = PG && PG.refs[key] ? ` <button class="mini pic" data-act="pages" data-key="${key}" data-title="《${esc(b.name)}》第 ${b.page} 页起">📷 看 ${PG.refs[key].length} 页</button>` : '';
+    return `<li>📖 <b>《${esc(b.name)}》</b> PDF 第 <b>${b.page}</b> 页${approx ? '（约）' : ''} — ${esc(b.what)}${pics}${link}</li>`;
   }
 
   function nav(active) {
@@ -188,6 +352,8 @@
       <div class="poem">${esc(textOf(id))}</div>
       <div class="src">来源：${esc(src.file)}${src.loc ? ' · ' + esc(src.loc) : ''}${src.line ? ' · 第 ' + src.line + ' 行' : ''}</div>
       <label class="check"><input type="checkbox" data-act="read" data-n="${rec.n}" data-id="${id}" ${rec.read && rec.read[id] ? 'checked' : ''}> 我已出声诵读一遍</label>
+      ${AI.ready() ? `<div class="ai"><button class="mini" data-act="aiexplain" data-id="${id}" data-n="${rec.n}">🤖 请 AI 讲解这篇</button>${aiBox('x:' + id)}
+        <div class="askrow">${area(`ask:${id}`, (aiView['q:' + id] || {}).q || '', '对这篇有什么疑问？打字或点 🎤 说', 2)}<button class="btn small" data-act="aiask" data-id="${id}" data-n="${rec.n}">问 AI</button></div>${aiBox('q:' + id)}</div>` : ''}
     </section>`;
   }
 
@@ -196,7 +362,7 @@
     const main = (d.texts || []).map(id => textCard(id, rec, false)).join('');
     const opt = (d.opt || []).length ? (mode === 'deep' ? d.opt.map(id => textCard(id, rec, true)).join('') : `<details class="card"><summary>选读 ${d.opt.length} 篇（深读档会自动展开）</summary>${d.opt.map(id => textCard(id, rec, true)).join('')}</details>`) : '';
     delete rec.n;
-    return main + opt;
+    return main + opt + aiHint();
   }
 
   function stepClose(d, rec, mode) {
@@ -209,27 +375,40 @@
       }).join('');
       return `<div class="q"><p>${qi + 1}. ${esc(q[0])}</p><div class="opts">${opts}</div>${chosen !== undefined ? `<p class="why ${chosen === 0 ? 'ok' : 'warn'}">${chosen === 0 ? '✓ 对' : '✗ 不对'}：${esc(q[2])}</p>` : ''}</div>`;
     }).join('');
-    const books = (d.book || []).length ? `<section class="card ${mode === 'deep' ? 'hl' : ''}"><h3>本机注本${mode === 'deep' ? '（深读档：今天读这几页）' : '（深读时读）'}</h3><ul class="plain">${d.book.map(bookRef).join('')}</ul>${LIT.local ? '' : '<p class="hint">在电脑上运行 tools/make_local_books.py 后，这里会出现"打开"按钮。</p>'}</section>` : '';
+    const books = (d.book || []).length ? `<section class="card ${mode === 'deep' ? 'hl' : ''}"><h3>本机注本${mode === 'deep' ? '（深读档：今天读这几页）' : '（深读时读）'}</h3><ul class="plain">${d.book.map(bookRef).join('')}</ul>${PG ? '' : '<p class="hint">📱 想在手机上看这些页：电脑上生成"注本图包"传到手机后，在「我的 → 注本页图」导入一次即可。</p>'}${LIT.local ? '' : '<p class="hint">💻 在电脑上运行 tools/make_local_books.py 后，这里会出现"打开"按钮。</p>'}</section>` : '';
+    const k = LIT.classics[d.d];
+    const li = rows => rows.map(([w, t]) => `<li><b>${esc(w)}</b>：${esc(t)}</li>`).join('');
+    const classic = k ? `<section class="card classic"><h3>📌 今日经典 · ${esc(k.k)}</h3><p class="citem">${esc(k.item)}</p><p class="muted">出处：${esc(k.src)}</p>
+      <h4>为什么经典</h4><p class="prose">${esc(k.why)}</p>
+      <h4>古人怎么用</h4><ul class="dots">${li(k.old)}</ul>
+      <h4>近现代怎么用</h4><ul class="dots">${li(k.now)}</ul>
+      <h4>你可以这样用</h4><ul class="dots">${k.use.map(([sc, ex]) => `<li><span class="tag">${esc(sc)}</span>${esc(ex)}</li>`).join('')}</ul>
+      ${k.tip ? `<p class="hint">⚠️ ${esc(k.tip)}</p>` : ''}</section>` : '';
     const more = d.more ? `<section class="card"><h3>延伸阅读（本机全本）</h3><p class="prose">📂 ${esc(d.more)}</p><p class="hint">在电脑上打开「书籍/文学」文件夹即可找到；读完可以回到"对照"题写一句。</p></section>` : '';
     return `<section class="card"><h3>字词</h3><table class="gloss">${notes}</table></section>
-      <section class="card"><h3>精读要点</h3><ol class="keys">${(d.keys || []).map(k => `<li>${esc(k)}</li>`).join('')}</ol></section>
-      ${books}${more}
+      <section class="card"><h3>精读要点</h3><ol class="keys">${(d.keys || []).map(x => `<li>${esc(x)}</li>`).join('')}</ol></section>
+      ${classic}${books}${more}
       ${mode === 'light' ? '' : `<section class="card"><h3>小测</h3>${quiz}</section>`}`;
   }
 
   function stepThink(d, rec, mode) {
     const nt = rec.notes;
     const four = '<details class="hint"><summary>判断四问</summary>证据：哪一句支持你？ 反证：哪一句不支持？ 条件：什么情况下成立／失效？ 代价：照此去做，代价由谁承担？</details>';
-    return `<section class="card"><h3>复述 <span class="muted">（合上原文再写）</span></h3><p class="prose">${esc(d.retell)}</p>${area(`day:${d.d}:notes.retell`, nt.retell, '用自己的话，不抄原句', 4)}</section>
+    return `${voiceHint()}<section class="card"><h3>复述 <span class="muted">（合上原文再写）</span></h3><p class="prose">${esc(d.retell)}</p>${area(`day:${d.d}:notes.retell`, nt.retell, '用自己的话，不抄原句', 4)}</section>
       ${mode === 'light' ? '<p class="hint">轻量档只需复述。判断与对照可以留到复习日。</p>' : `
       <section class="card"><h3>判断</h3><p class="prose">${esc(d.judge)}</p>${four}${area(`day:${d.d}:notes.judge`, nt.judge, '观点＋证据＋条件', 5)}<p class="hint">写满 10 字，这条判断会变成一张"判断卡"，过几天回来问你还同不同意。</p></section>
-      <section class="card"><h3>对照</h3><p class="prose">${esc(d.link)}</p>${area(`day:${d.d}:notes.link`, nt.link, '跨时代、跨文本、或联系你的处境', 3)}</section>`}`;
+      <section class="card"><h3>对照</h3><p class="prose">${esc(d.link)}</p>${area(`day:${d.d}:notes.link`, nt.link, '跨时代、跨文本、或联系你的处境', 3)}</section>`}
+      ${AI.ready() ? `<section class="card ai"><button class="btn ghost" data-act="aireview" data-n="${d.d}" data-kind="think">🤖 请 AI 老师点评我的复述与判断</button>${aiBox('r:' + d.d + ':think')}</section>` : aiHint()}`;
   }
 
   function stepOut(d, rec, mode) {
     const R = LIT.meta.rubric;
     const done = rec.done ? `<section class="card done"><h3>✅ 第 ${d.d} 天已完成（${rec.done}）</h3><p>本日卡片已进入复习盒。</p><div class="row"><a class="btn" href="#/today">回到今日</a>${d.d < LIT.total() ? `<a class="btn ghost" href="#/day/${d.d + 1}">下一天 →</a>` : ''}</div></section>` : '';
-    return `<section class="card"><h3>输出${mode === 'light' ? '（轻量档可选）' : ''}</h3><p class="prose">${esc(d.out)}</p>${area(`day:${d.d}:notes.out`, rec.notes.out, mode === 'deep' ? '深读档：写满 200 字' : '50–200 字，有一句是你自己的判断', 6)}</section>
+    const k = LIT.classics[d.d];
+    const kuse = k && mode !== 'light' ? `<section class="card"><h3>用今日经典造一句 <span class="muted">（可选）</span></h3><p class="prose">「${esc(k.item)}」——写一个和你的工作或生活有关的句子。</p>${area(`day:${d.d}:notes.classic`, rec.notes.classic, '例：' + k.use[0][1], 2)}</section>` : '';
+    return `${voiceHint()}<section class="card"><h3>输出${mode === 'light' ? '（轻量档可选）' : ''}</h3><p class="prose">${esc(d.out)}</p>${area(`day:${d.d}:notes.out`, rec.notes.out, mode === 'deep' ? '深读档：写满 200 字' : '50–200 字，有一句是你自己的判断', 6)}</section>
+      ${kuse}
+      ${AI.ready() ? `<section class="card ai"><button class="btn ghost" data-act="aireview" data-n="${d.d}" data-kind="out">🤖 请 AI 老师点评我的输出</button>${aiBox('r:' + d.d + ':out')}</section>` : ''}
       <section class="card"><h3>自评：今天这一课，我能讲清到哪一级？</h3><div class="rubric">${R.map(r => `<label class="${rec.rating === r.lv ? 'on' : ''}"><input type="radio" name="rating" data-act="rate" data-n="${d.d}" value="${r.lv}" ${rec.rating === r.lv ? 'checked' : ''}><b>L${r.lv} ${esc(r.name)}</b><span>${esc(r.desc)}</span></label>`).join('')}</div></section>
       ${done || `<button class="btn big" data-act="finish" data-n="${d.d}">完成第 ${d.d} 天</button><p class="hint">完成条件：复述至少 10 字 ＋ 选一个自评等级。</p>`}`;
   }
@@ -348,7 +527,33 @@
       <section class="card"><h3>数据</h3><p class="hint">进度只存在这台设备的浏览器里。换设备或清理浏览器前，先导出备份。</p>
         <div class="row wrap"><button class="btn" data-act="exportjson">导出备份（JSON）</button><button class="btn ghost" data-act="importjson">导入备份</button><button class="btn ghost" data-act="exportmd">导出笔记（Markdown）</button><button class="btn danger" data-act="reset">清空全部进度</button></div>
         <input type="file" id="import-file" accept=".json,application/json" hidden>
-        <p class="hint">${LIT.local ? '✅ 已连接本机书籍文件夹：注本页码旁会出现"打开"按钮（电脑本地打开时可用）。' : '本机书籍文件夹未连接：在电脑上运行 <code>python3 tools/make_local_books.py</code> 后刷新。'}</p></section>`;
+        <p class="hint">${LIT.local ? '✅ 已连接本机书籍文件夹：注本页码旁会出现"打开"按钮（电脑本地打开时可用）。' : '本机书籍文件夹未连接：在电脑上运行 <code>python3 tools/make_local_books.py</code> 后刷新。'}</p></section>
+      <section class="card"><h3>📷 注本页图（在手机上看注本）</h3>
+        <p>${PG ? `✅ 已导入 ${PG.count} 张页图，约 ${Math.round(PG.bytes / 1048576)} MB，覆盖 ${Object.keys(PG.refs).length} 条注本页码（${esc(PG.imported || '')} 导入，图包 ${esc(PG.version || '')}）。` : '尚未导入。'}</p>
+        <ol class="dots"><li>在电脑上运行 <code>python3 tools/make_page_images.py</code>，生成"注本图包"zip。</li><li>用隔空投送（AirDrop）发到 iPhone，存进「文件」；或放进 Google Drive。</li><li>在这里点「导入注本图包」，选中那个 zip——只需一次，之后每课的注本旁会出现"📷 看图"。</li></ol>
+        <p class="hint">手机浏览器不能自己去翻「文件」，所以第一次要你手动选一下；导入后图片存在本机程序里，断网也能看。注本有版权，图包只供你自己学习，不要外传。</p>
+        <div class="row wrap"><button class="btn" data-act="importpages">导入注本图包</button>${PG ? '<button class="btn ghost" data-act="clearpages">删除已导入的页图</button>' : ''}</div>
+        <input type="file" id="pages-file" accept=".zip,application/zip,application/x-zip-compressed" hidden></section>
+      <section class="card" id="asr-card"><h3>🎤 语音输入（本机识别）</h3>
+        <p>每个输入框右下角都有 🎤：点一下开始说，再点一下结束，说的话会转成文字插进去。</p>
+        <ul class="dots"><li>识别用的是本机的 Whisper 语音模型（和意大利语能力岛同一套、同一份文件），在你的手机或电脑上运行，<b>录音不上传</b>，也不保存。</li>
+        <li>第一次使用要下载模型，约 ${ASR.TOTAL_MB} MB；下载后断网也能用。在同一个浏览器里，意大利语能力岛下载过就不用再下（iPhone 添加到主屏幕的两个应用各自存储，可能要各下一次）。</li>
+        <li>这个小模型对古文、人名、书名常写错同音字：填了下面的 DeepSeek Key，识别完会自动按本课内容校对一遍（只发文字）。</li>
+        <li>需要通过网址打开（https）；直接双击打开的本地文件用不了，可以改用手机键盘自带的听写键。</li></ul>
+        <p id="asr-status" class="muted">正在检查……</p>
+        <div class="bar" id="asr-bar" hidden><i style="width:0"></i></div>
+        <div class="row wrap" id="asr-btns"></div></section>
+      <section class="card" id="ai-card"><h3>🤖 AI 老师（DeepSeek，可选）</h3>
+        <p>填上你自己的 DeepSeek API Key 之后：语音输入会自动校对错字；原文旁可以「请 AI 讲解」和提问；思辨、输出可以请 AI 按讲清度（L0–L3）点评。</p>
+        <div class="form">
+          <label>API Key <input type="password" autocomplete="off" spellcheck="false" data-ai-set="apiKey" value="${esc(AI.settings().apiKey)}" placeholder="sk-……（在 platform.deepseek.com 申请）"></label>
+          <label>接口地址 <input type="url" spellcheck="false" data-ai-set="base" value="${esc(AI.settings().base)}" placeholder="${AI.DEFAULT_BASE}（留空即可）"></label>
+          <label>模型 <input type="text" spellcheck="false" data-ai-set="model" value="${esc(AI.settings().model)}" placeholder="留空自动选择（优先 flash）"></label>
+          <label class="check"><input type="checkbox" data-ai-set="polish" ${AI.settings().polish !== false ? 'checked' : ''}> 语音识别后自动用 DeepSeek 校对错字</label>
+        </div>
+        <div class="row wrap"><button class="btn ghost" data-act="aitest">测试连接</button>${AI.ready() ? '<button class="btn danger" data-act="aiclear">清除 Key</button>' : ''}</div>
+        <p id="ai-test" class="muted"></p>
+        <p class="hint">Key 只存在这台设备的浏览器里，导出备份不含 Key；请求由浏览器直接发给 DeepSeek。发出去的只有文字（题目、要点、原文摘录、你写或说的话），没有录音。费用按 DeepSeek 账户计；同一内容的讲解和点评会记在本机，不重复花钱。</p></section>`;
   }
 
   /* ---------- 视图：方法 ---------- */
@@ -379,6 +584,17 @@
     $('#nav').innerHTML = nav(active);
     $('#bottom').innerHTML = nav(active);
     document.body.dataset.route = r.name;
+    if (r.name === 'me') asrCard();
+  }
+
+  /** 「我的 → 语音输入」：模型下载状态与按钮 */
+  async function asrCard() {
+    const stEl = $('#asr-status'), btns = $('#asr-btns'); if (!stEl) return;
+    const x = await ASR.status();
+    if (!$('#asr-status')) return;
+    if (!x.supported) { stEl.textContent = '⚠️ ' + x.reason; btns.innerHTML = ''; return; }
+    stEl.textContent = x.cached ? `✅ 语音模型已在本机（约 ${x.sizeMB} MB），断网也能用。` : `尚未下载（约 ${x.sizeMB} MB）。`;
+    btns.innerHTML = x.cached ? '<button class="btn danger" data-act="asrclear">删除语音模型</button>' : '<button class="btn" data-act="asrdl">下载语音模型</button>';
   }
 
   /* ---------- 写入绑定 ---------- */
@@ -390,7 +606,10 @@
   }
   document.addEventListener('input', e => {
     const el = e.target;
-    if (el.dataset.bind) {
+    if (el.dataset.bind && el.dataset.bind.startsWith('ask:')) {
+      const k = 'q:' + el.dataset.bind.slice(4); aiView[k] = aiView[k] || {}; aiView[k].q = el.value;
+      const c = document.querySelector(`[data-count="${el.dataset.bind}"]`); if (c) c.textContent = len(el.value) + ' 字';
+    } else if (el.dataset.bind) {
       const [kind, n, path] = el.dataset.bind.split(':');
       const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n);
       setPath(rec, path, el.value);
@@ -400,12 +619,25 @@
   });
   document.addEventListener('change', e => {
     const el = e.target;
-    if (el.dataset.set) {
+    if (el.dataset.aiSet) {
+      const k = el.dataset.aiSet, v = el.type === 'checkbox' ? el.checked : el.value.trim();
+      if (k === 'base' && v && !AI.validBase(v.replace(/\/+$/, ''))) { toast('接口地址必须以 https:// 开头'); el.value = AI.settings().base; return; }
+      AI.save({ [k]: v }); toast(k === 'apiKey' ? (v ? '已保存 Key（只存在本机）' : '已清空 Key') : '已保存');
+      if (k === 'apiKey') render();
+    } else if (el.dataset.set) {
       const k = el.dataset.set; const s = st().settings;
       s[k] = (k === 'tts' || k === 'font') ? +el.value : el.value;
       if (k === 'start') st().rebase = null;
       S.save(); render();
     } else if (el.id === 'note-mod') { noteMod = el.value; render(); }
+    else if (el.id === 'pages-file' && el.files[0]) {
+      const f = el.files[0];
+      toast('正在读取图包……');
+      f.arrayBuffer().then(buf => Pages.importZip(buf, (i, n) => toast(`正在导入 ${i}/${n} 张`)))
+        .then(m => { PG = m; if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); toast(`已导入 ${m.count} 张页图`); render(); })
+        .catch(err => alert('导入失败：' + err.message));
+      el.value = '';
+    }
     else if (el.id === 'import-file' && el.files[0]) {
       const fr = new FileReader();
       fr.onload = () => { try { S.importJSON(fr.result); toast('已导入备份'); render(); } catch (err) { alert('导入失败：' + err.message); } };
@@ -467,6 +699,47 @@
     exportmd() { download(`文学能力岛笔记_${today()}.md`, Store.markdown(st(), LIT, today()), 'text/markdown;charset=utf-8'); },
     exportjson() { download(`文学能力岛备份_${today()}.json`, S.exportJSON(), 'application/json'); },
     importjson() { $('#import-file').click(); },
+    mic(el) { micTap(el.dataset.target); },
+    vundo(el) {
+      const L = voice.last, b = el.dataset.target; if (!L || L.bind !== b) return;
+      const ta = vTarget(b); if (!ta) return;
+      const i = ta.value.lastIndexOf(L.text); if (i < 0) { toast('文字已经改过，无法撤销'); return; }
+      ta.value = ta.value.slice(0, i) + L.raw + ta.value.slice(i + L.text.length); ta.dispatchEvent(new Event('input', { bubbles: true }));
+      voice.last = null; vStatus(b, '已恢复为原始识别'); S.save();
+    },
+    async asrdl() {
+      const bar = $('#asr-bar'), stEl = $('#asr-status'); if (bar) bar.hidden = false;
+      try {
+        await ASR.download((p) => { if (bar) bar.firstElementChild.style.width = Math.round(p * 100) + '%'; if (stEl) stEl.textContent = '正在下载…' + Math.round(p * 100) + '%'; });
+        if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+        toast('语音模型已下载');
+      } catch (e) { alert('下载没有完成：' + e.message); }
+      if (bar) bar.hidden = true; asrCard();
+    },
+    async asrclear() { if (confirm('删除本机语音模型？（意大利语能力岛也用同一份，会一起删除；以后用语音输入需要重新下载）')) { await ASR.clear(); toast('已删除'); asrCard(); } },
+    async aitest() {
+      const o = $('#ai-test'); if (o) o.textContent = '正在连接……';
+      try { const r = await AI.test(); if (o) o.textContent = '✅ 连接成功，使用模型：' + (r.using || '（默认）'); }
+      catch (e) { if (o) o.textContent = '❌ ' + e.message; }
+    },
+    aiclear() { if (confirm('清除本机保存的 DeepSeek API Key？')) { AI.save({ apiKey: '' }); toast('已清除'); render(); } },
+    aiexplain(el) { const id = el.dataset.id, n = +el.dataset.n; aiRun('x:' + id, () => AI.explain(textCtx(id, n), !!el.dataset.force), 'aiexplain', `data-id="${id}" data-n="${n}"`); },
+    aiask(el) {
+      const id = el.dataset.id, n = +el.dataset.n, ta = vTarget('ask:' + id), q = ta ? ta.value.trim() : '';
+      if (q.length < 2) { toast('先写下（或说出）你的问题'); return; }
+      aiRun('q:' + id, () => AI.ask(q, textCtx(id, n)));
+      (aiView['q:' + id] = aiView['q:' + id] || {}).q = q;
+    },
+    aireview(el) {
+      const n = +el.dataset.n, kind = el.dataset.kind, ctx = reviewCtx(n, kind);
+      if (!ctx.items.some(x => len(x[1]) >= 5)) { toast('先写（或说）几句再请 AI 点评'); return; }
+      aiRun('r:' + n + ':' + kind, () => AI.review(ctx, kind, !!el.dataset.force), 'aireview', `data-n="${n}" data-kind="${kind}"`);
+    },
+    pages(el) { openViewer(el.dataset.key, el.dataset.title); },
+    vclose() { closeViewer(); },
+    vzoom(el) { const v = $('#viewer'); if (!v) return; const z = v.classList.toggle('zoom'); el.textContent = z ? '适应宽度' : '放大'; },
+    importpages() { if (!window.Pages) { alert('这个浏览器不支持本地图片存储'); return; } $('#pages-file').click(); },
+    clearpages() { if (confirm('删除已导入的全部注本页图？（不影响学习进度）')) Pages.clear().then(() => { PG = null; toast('已删除'); render(); }); },
     reset() { if (confirm('清空全部进度、笔记和卡片？此操作不可撤销（建议先导出备份）。')) { S.reset(); toast('已清空'); location.hash = '#/today'; render(); } },
   };
   document.addEventListener('click', e => {
@@ -477,11 +750,12 @@
     if (el.tagName === 'BUTTON' || el.tagName === 'A') e.preventDefault();
     fn(el);
   });
-  window.addEventListener('hashchange', () => { cardFlip = false; render(); window.scrollTo(0, 0); });
+  window.addEventListener('hashchange', () => { cardFlip = false; voiceCancel(); render(); window.scrollTo(0, 0); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) S.save(); });
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 
   render();
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(() => {});
-  window.__lit = { S, render, actions };
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeViewer(); });
+  window.__lit = { S, render, actions, voice, aiView, get PG() { return PG; } };
 })();

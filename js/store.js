@@ -55,6 +55,7 @@
     if (first) state.log[today] = (state.log[today] || 0) + (MODE_MIN[r.mode || state.settings.mode] || 25);
     LIT.cardsOf(n).forEach(c => { if (!state.cards[c.id]) state.cards[c.id] = SRS.newCard(today); });
     if (r.notes && r.notes.judge && r.notes.judge.trim().length >= 10 && !state.cards[`d${n}j`]) state.cards[`d${n}j`] = SRS.newCard(today);
+    if (LIT.classics && LIT.classics[n] && !state.cards[`d${n}k`]) state.cards[`d${n}k`] = SRS.newCard(today);
     return r;
   }
 
@@ -69,6 +70,12 @@
   function cardContent(state, id, LIT) {
     let m = /^d(\d+)c(\d+)$/.exec(id);
     if (m) { const d = LIT.learn[+m[1]]; const c = d && d.cards && d.cards[+m[2]]; return c ? { kind: 'card', d: +m[1], front: c[0], back: c[1] } : null; }
+    m = /^d(\d+)k$/.exec(id);
+    if (m) {
+      const k = LIT.classics && LIT.classics[+m[1]];
+      if (!k) return null;
+      return { kind: 'classic', d: +m[1], front: `今日经典：${k.item}\n它为什么经典？今天你会怎么用？`, back: `${k.why}\n\n例：${k.use[0][1]}` };
+    }
     m = /^d(\d+)j$/.exec(id);
     if (m) {
       const n = +m[1], d = LIT.learn[n], rec = state.days[n];
@@ -105,13 +112,14 @@
       if (d.type === 'learn') {
         const r = state.days[n]; if (!r) continue;
         const nt = r.notes || {};
-        const has = ['ask', 'retell', 'judge', 'link', 'out'].some(k => md(nt[k])) || typeof r.rating === 'number';
+        const has = ['ask', 'retell', 'judge', 'link', 'out', 'classic'].some(k => md(nt[k])) || typeof r.rating === 'number';
         if (!has) continue;
         const mod = LIT.meta.modules[d.mod] || { name: d.mod };
         lines.push(`## 第 ${n} 天 · ${mod.name} · ${d.title}`, '');
         if (r.done) lines.push(`完成：${r.done}${typeof r.rating === 'number' ? `　自评：L${r.rating} ${R[r.rating].name}` : ''}`, '');
         lines.push(`原文：${(d.texts || []).map(id => (LIT.texts[id] ? `${LIT.texts[id].a}《${LIT.texts[id].t}》` : id)).join('、')}`, '');
-        const sec = [['ask', '读前猜想', d.ask], ['retell', '复述', d.retell], ['judge', '判断', d.judge], ['link', '对照', d.link], ['out', '输出', d.out]];
+        const kc = LIT.classics && LIT.classics[n];
+        const sec = [['ask', '读前猜想', d.ask], ['retell', '复述', d.retell], ['judge', '判断', d.judge], ['link', '对照', d.link], ['out', '输出', d.out], ['classic', '用经典造句', kc ? '「' + kc.item + '」' : '']];
         sec.forEach(([k, name, prompt]) => { if (md(nt[k])) lines.push(`**${name}**　_${prompt}_`, '', md(nt[k]), ''); });
       } else {
         const r = state.reviews[n]; if (!r) continue;

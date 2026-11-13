@@ -49,7 +49,15 @@ Object.values(LIT.learn).filter(d => d.yan).sort((a, b) => a.d - b.d).forEach(d 
 });
 L.push('');
 
-L.push('## 十一、来源、版权与核验', '');
+L.push('## 十一、每课经典一览', '');
+L.push('每课「精读」都有一条经典：为什么经典、古人与近现代怎么用、今天怎么用（程序内有全文与例句）。', '');
+L.push('| 天 | 类型 | 经典 | 出处 | 古人怎么用（举一例） |', '| --- | --- | --- | --- | --- |');
+Object.keys(LIT.classics).map(Number).sort((a, b) => a - b).forEach(n => {
+  const k = LIT.classics[n];
+  L.push(`| ${n} | ${k.k} | ${k.item.replace(/\|/g, '／')} | ${k.src.replace(/\|/g, '／')} | ${(k.old[0][0] + '：' + k.old[0][1]).replace(/\|/g, '／')} |`);
+});
+L.push('');
+L.push('## 十二、来源、版权与核验', '');
 L.push('- 原文：本机 `~/Documents/书籍/文学/古籍下载/*.txt`（公版）与维基文库公有领域页面（原始 wikitext 存于 `lit-island/sources/wikisource/`，修订号与 SHA-256 见 `_ledger.tsv`）。每段原文在程序中标注来源文件、位置和校验值；`node tools/validate.js --check-sources` 可复核。');
 L.push('- 繁转简：OpenCC 自动转换；人名与古义字（儁、暐、藉、玁）做了保护，来源原貌（繁体）在程序中可切换查看。');
 L.push('- 现代注本只给 PDF 页码（PDF 阅读器页码），不摘抄。页码来源：PDF 书签（诗经注析、唐诗鉴赏辞典、宋词三百首笺注、花间集评注、红楼梦、东北丛书），或目录页＋偏移量并抽验（元人杂剧选＋26，已抽验；世说新语笺疏＋16，约数）。');

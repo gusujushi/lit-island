@@ -16,7 +16,9 @@
     setMeta(m) { L.meta = m; },
     addTexts(t) { Object.assign(L.texts, t); },
     addDays(list) { list.forEach(d => { L.learn[d.d] = d; }); },
+    classics: {},
     setLocalBooks(x) { L.local = x; },
+    addClassics(o) { Object.assign(L.classics, o); },
   };
 
   L.total = () => (L.meta && L.meta.total) || 90;
