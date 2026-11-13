@@ -1,6 +1,6 @@
 {
   "name": "lit-island",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "文学能力岛：九十天古典文学与历史学习程序（五步学习、间隔复习、讲清度评估；纯静态 PWA）",
   "scripts": {

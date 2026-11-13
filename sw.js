@@ -1,5 +1,5 @@
 /* 离线缓存：程序外壳与课程数据全部预缓存（约 0.5 MB），断网可学。改版时递增 VERSION。 */
-const VERSION = 'lit-island-v0.2.0';
+const VERSION = 'lit-island-v0.2.1';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/lit.js', 'js/plan.js', 'js/srs.js', 'js/store.js', 'js/app.js',
