@@ -1,4 +1,4 @@
-# 🏝️ 文学能力岛（lit-island）v0.5.0
+# 🏝️ 文学能力岛（lit-island）v0.6.0
 
 九十天古典文学与历史学习程序：诗经、魏晋南北朝、十六国诸燕、唐诗、五代十国、宋词、元曲、明清（心学、戏曲、小说笔记）、公案。每天 15–40 分钟，五步学习，间隔复习，按"讲清度"评估。程序流程沿用意大利语能力岛与新概念英语能力岛（学习计划可调、每 5 天一轮 4 学 1 复、间隔复习卡片、纯静态 PWA），把语言课的六步换成了文学课的五步：导读 → 原文 → 精读 → 思辨 → 输出。
 
@@ -11,6 +11,7 @@
 - **语音输入**：每个输入框右下角的 🎤，点一下开始说、再点一下结束，转成文字插进去。识别用本机的 Whisper 语音模型（与意大利语能力岛同一套、同一份文件，第一次用下载约 100 MB，之后断网可用），**录音不上传**。需要通过网址（https）打开；直接双击本地文件时用不了，可改用键盘听写。
 - **AI 老师（可选，DeepSeek）**：在「我的 → AI 老师」填自己的 API Key 后——语音识别完自动按本课原文和题目校对错字（小模型常把古文、人名、书名写成同音字）；原文旁可以「请 AI 讲解」和提问；思辨、输出可以请 AI 按讲清度点评。只发送文字、不发录音；Key 只存在本机浏览器，导出备份不含 Key。详见 [docs/VOICE_AI.md](docs/VOICE_AI.md)。
 - **手机上看注本**：在电脑上运行 `python3 tools/make_page_images.py`，把课程里的注本页码渲染成「注本图包」（zip）；用隔空投送或 Google Drive 传到手机，在「我的 → 注本页图」导入一次，之后每课注本旁出现"📷 看图"，断网可看。注本有版权，图包只供本人学习，不在本仓库、不发布。
+- **版本与更新**：页眉显示版本号；「我的」顶部有当前版本、更新日期、本次主要修改和全部更新记录，可以手动「检查更新」。程序离线优先：打开或切回时自动检查新版本，下载好后自动刷新，首页会提示一次本次改了什么。
 - 进度、笔记、卡片只存在当前浏览器里，不上传。iPhone 上"主屏幕 App"和 Safari 的进度是分开保存的：先添加到主屏幕再开始学；换设备时在「我的」导出备份、在新设备导入。
 
 ## 内容
@@ -41,6 +42,7 @@ data/meta.js      阶段、模块、书目、量规、时长档、月度回顾�
 data/texts.js     原文（自动生成，勿手改）
 data/days1-3.js   72 个学习日
 data/guide.js     方法页（也用于生成方案文档）
+data/changelog.js 更新记录（第一条即当前版本，手机「我的」页显示）
 data/books-local.js  本机 PDF 路径（不入库，tools/make_local_books.py 生成，可缺省）
 sources/wikisource/  维基文库原始 wikitext + _ledger.tsv
 tools/  extract_texts.py · text_spec.py · fetch_wikisource.py · make_local_books.py
@@ -62,7 +64,7 @@ PW=… ASSETS=/path/to/italy-learning node tests/e2e/voice.js              # 真
 node tools/export_plan.js <输出.md> vN YYYY-MM-DD   # 生成方案文档
 ```
 
-改课程只改 `data/days*.js`、`data/meta.js`、`data/guide.js`；改原文只改 `tools/text_spec.py` 再重抽。每次发布前递增 `sw.js` 的 `VERSION`，手机端才会拿到新版。
+改课程只改 `data/days*.js`、`data/meta.js`、`data/guide.js`；改原文只改 `tools/text_spec.py` 再重抽。每次发布：在 `data/changelog.js` 最前面加一条（版本号、日期、主要修改），把 `package.json` 的 version 和 `sw.js` 的 `VERSION` 改成同一个版本号（`validate.js` 会检查），手机端才会拿到新版并看到更新内容。
 
 ## 已知边界
 

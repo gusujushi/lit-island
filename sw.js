@@ -4,17 +4,18 @@
  *   缓存优先，放在两个能力岛共用的 isola-asr-v1 里；不随外壳版本更新而删除。下载 / 删除由 js/asr.js 负责。
  * ⚠️ 本程序和意大利语能力岛在同一个网站（同源），共用浏览器的 Cache Storage：
  *   清理旧缓存时只能删自己的（lit-island- 开头），不能动别人的（v0.4.0 及以前会把所有其他缓存都删掉，已修正）。 */
-const VERSION = 'lit-island-v0.5.0';
+const VERSION = 'lit-island-v0.6.0';
 const ASR = 'isola-asr-v1';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/lit.js', 'js/plan.js', 'js/srs.js', 'js/store.js', 'js/pages.js', 'js/zh-data.js', 'js/zh.js', 'js/audio.js', 'js/asr.js', 'js/asr-worker.js', 'js/ai.js', 'js/app.js',
-  'data/meta.js', 'data/texts.js', 'data/days1.js', 'data/days2.js', 'data/days3.js', 'data/classics1.js', 'data/classics2.js', 'data/guide.js',
+  'data/meta.js', 'data/texts.js', 'data/days1.js', 'data/days2.js', 'data/days3.js', 'data/classics1.js', 'data/classics2.js', 'data/guide.js', 'data/changelog.js',
 ];
 const OWN = () => new URL('./', self.registration.scope).pathname;   // 本程序的路径前缀，例如 /lit-island/
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // cache: 'reload'：绕过浏览器的网页缓存，确保存进来的是刚发布的新文件
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('lit-island-') && k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim()));

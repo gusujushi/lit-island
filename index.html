@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <header class="top"><div class="in"><a class="brand" href="#/today">🏝️ 文学能力岛</a><nav id="nav" aria-label="主导航"></nav></div></header>
+  <header class="top"><div class="in"><a class="brand" href="#/today">🏝️ 文学能力岛 <small class="ver" id="ver"></small></a><nav id="nav" aria-label="主导航"></nav></div></header>
   <main id="view" role="main"></main>
   <nav id="bottom" aria-label="主导航"></nav>
   <div id="toast" role="status" aria-live="polite"></div>
@@ -39,6 +39,7 @@
   <script src="data/classics1.js"></script>
   <script src="data/classics2.js"></script>
   <script src="data/guide.js"></script>
+  <script src="data/changelog.js"></script>
   <!-- 本机书籍路径（不入库，可缺省；由 tools/make_local_books.py 生成）。只在本地打开时加载，线上不请求。 -->
   <script>
     if (location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) document.write('<script src="data/books-local.js"><\/script>');

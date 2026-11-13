@@ -11,10 +11,12 @@ const ROOT = path.join(__dirname, '..', '..');
 const SHOTS = process.argv[2] || null;
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.svg': 'image/svg+xml', '.png': 'image/png' };
+let swOverride = null;   // 模拟"线上发布了新版本"：把 sw.js 的版本号换掉
 function serve() {
   return new Promise(res => {
     const srv = http.createServer((req, rsp) => {
       let p = decodeURIComponent(req.url.split('?')[0]); if (p.endsWith('/')) p += 'index.html';
+      if (p === '/sw.js' && swOverride) { rsp.writeHead(200, { 'Content-Type': 'text/javascript' }); rsp.end(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8').replace(/lit-island-v[0-9.]+'/, `lit-island-v${swOverride}'`)); return; }
       const f = path.join(ROOT, p);
       if (!f.startsWith(ROOT) || !fs.existsSync(f)) { rsp.writeHead(404); rsp.end(); return; }
       rsp.writeHead(200, { 'Content-Type': TYPES[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(rsp);
@@ -66,6 +68,8 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
   await page.click('text=开始第 1 天');
   await page.waitForSelector('.steps');
   ok((await page.textContent('h1')).includes('关雎'), '进入第 1 天');
+  const APPV = await page.evaluate(() => LIT.changelog[0].v);
+  ok((await page.textContent('#ver')) === 'v' + APPV, `页眉显示版本号 v${APPV}`);
 
   // 2. 第 1 天五步
   ok(await page.isVisible('text=读前问题'), '导读步：读前问题');
@@ -253,6 +257,26 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
   await page.evaluate(() => { const r = window.__lit.S.state.days[29]; r.mode = 'deep'; r.step = 1; window.__lit.render(); });
   ok((await page.$$eval('.card.text.opt', x => x.length)) === 1, '深读档：第 29 天选读展开');
 
+  // 5b. 版本与更新记录
+  await page.goto(base + 'index.html#/today');
+  ok(!(await page.isVisible('.whatsnew')), '新用户：首页不提示更新');
+  await page.evaluate(() => { window.__lit.S.state.settings.seenVersion = '0.5.0'; window.__lit.render(); });
+  ok((await page.textContent('.whatsnew h3')).includes('已更新到 v' + APPV), '从 v0.5.0 升级：首页提示已更新');
+  ok((await page.textContent('.whatsnew')).includes(await page.evaluate(() => LIT.changelog[0].items[0].slice(0, 12))), '首页提示：列出本次主要修改');
+  ok(!(await page.textContent('.whatsnew')).includes('v0.4.0'), '首页提示：只列 v0.5.0 之后的版本');
+  await page.click('button[data-act="seenver"]');
+  ok(!(await page.isVisible('.whatsnew')), '点"知道了"后不再提示');
+  await page.evaluate(() => { delete window.__lit.S.state.settings.seenVersion; window.__lit.render(); });
+  ok(await page.isVisible('.whatsnew details'), '从更早版本升级：首页提示带之前的更新记录');
+  await page.click('button[data-act="seenver"]');
+  await page.goto(base + 'index.html#/me');
+  const vc = await page.textContent('#ver-card');
+  ok(vc.includes('当前版本 v' + APPV) && /更新于 \d{4}-\d{2}-\d{2}/.test(vc), '我的：显示版本号与更新日期');
+  ok(vc.includes('全部更新记录') && vc.includes('v0.3.0'), '我的：全部更新记录');
+  await page.click('button[data-act="checkupdate"]');
+  await page.waitForFunction(() => /已是最新|检查失败/.test(document.querySelector('#upd-msg').textContent));
+  ok((await page.textContent('#upd-msg')).includes('已是最新版本 v' + APPV), '我的：检查更新（已是最新）');
+
   // 6. 其他视图
   for (const v of ['today', 'map', 'notes', 'me', 'guide']) {
     await page.goto(base + `index.html#/${v}`);
@@ -301,6 +325,32 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
   await page.goto(base + 'index.html#/day/41');
   ok((await page.textContent('h1')).includes('长恨歌'), '离线：课程数据可用');
   await ctx.setOffline(false);
+
+  // 8b. 手机更新流程：线上发布新版本 → 点「检查更新」→ 新版本下载、接管 → 自动刷新 → 旧缓存删除
+  swOverride = '9.9.9';
+  await page.goto(base + 'index.html#/me');
+  await page.waitForFunction(() => navigator.serviceWorker.controller);
+  const nav = page.waitForEvent('framenavigated', { timeout: 30000 });
+  await page.click('button[data-act="checkupdate"]');
+  await page.waitForFunction(() => /发现新版本 v9\.9\.9/.test((document.querySelector('#upd-msg') || {}).textContent || ''), null, { timeout: 15000 }).catch(() => {});
+  await nav;
+  await page.waitForLoadState();
+  let ks = await page.evaluate(() => caches.keys());
+  ok(ks.includes('lit-island-v9.9.9') && !ks.includes('lit-island-v' + APPV), '更新：新版本接管后自动刷新，旧缓存已删除（' + ks.join(',') + '）');
+  // 正在打字时不强行刷新，改为提示条
+  swOverride = '9.9.10';
+  await page.goto(base + 'index.html#/day/1');
+  await page.evaluate(() => { window.__lit.S.state.days[1].step = 3; window.__lit.render(); });
+  await page.focus('textarea[data-bind="day:1:notes.retell"]');
+  await page.evaluate(() => navigator.serviceWorker.getRegistration().then(r => r.update()));
+  await page.waitForSelector('#updbar', { timeout: 30000 });
+  ok((await page.textContent('#updbar')).includes('点此更新'), '更新：正在打字时显示"点此更新"，不强行刷新');
+  const nav2 = page.waitForEvent('framenavigated', { timeout: 30000 });
+  await page.click('#updbar button[data-act="doupdate"]');
+  await nav2; await page.waitForLoadState();
+  ks = await page.evaluate(() => caches.keys());
+  ok(ks.includes('lit-island-v9.9.10') && !ks.includes('lit-island-v9.9.9'), '更新：点提示条后刷新到新版本');
+  swOverride = null;
 
   // 9. file:// 直接打开
   const p2 = await browser.newPage();

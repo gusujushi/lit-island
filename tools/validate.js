@@ -96,5 +96,27 @@ errs.forEach(e => console.log('✗', e));
 Object.keys(LIT.classics).forEach(k => { if (!LIT.learn[k]) E(`经典第 ${k} 天不是学习日`); });
 console.log(`学习日 ${learnNums.length}，复习日 ${total - learnNums.length}，原文 ${Object.keys(LIT.texts).length} 段，卡片 ${learnNums.reduce((s, n) => s + LIT.learn[n].cards.length, 0)} 张，小测 ${learnNums.reduce((s, n) => s + LIT.learn[n].quiz.length, 0)} 题`);
 console.log('模块天数：' + Object.entries(count).map(([k, v]) => `${LIT.meta.modules[k].name} ${v}`).join('，'));
+// 版本与更新记录：data/changelog.js 第一条 = package.json version = sw.js VERSION；每条都要有日期和主要修改
+{
+  const cl = LIT.changelog || [];
+  const vc = (a, b) => { const x = a.split('.').map(Number), y = b.split('.').map(Number); for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; };
+  if (!cl.length) errs.push('缺少更新记录 data/changelog.js');
+  else {
+    cl.forEach((c, i) => {
+      if (!/^\d+\.\d+\.\d+$/.test(c.v || '') || !/^\d{4}-\d{2}-\d{2}$/.test(c.date || '') || !(c.items || []).length) errs.push(`更新记录第 ${i + 1} 条格式不对（要有 v、date、items）`);
+      if (i && vc(cl[i - 1].v, c.v) <= 0) errs.push(`更新记录要从新到旧排列：v${cl[i - 1].v} 在 v${c.v} 前面`);
+    });
+    const v = cl[0].v;
+    const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')).version;
+    const swText = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+    const sw = (swText.match(/lit-island-v([0-9.]+)'/) || [])[1];
+    if (pkg !== v) errs.push(`版本不一致：package.json ${pkg}，更新记录 ${v}`);
+    if (sw !== v) errs.push(`版本不一致：sw.js ${sw}，更新记录 ${v}（手机靠 sw.js 的版本号才会更新）`);
+    if (!swText.includes("'data/changelog.js'")) errs.push('sw.js 的离线清单缺 data/changelog.js');
+    if (!fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').includes('data/changelog.js')) errs.push('index.html 没有加载 data/changelog.js');
+    console.log(`版本 v${v}（${cl[0].date}），更新记录 ${cl.length} 条`);
+  }
+}
+
 console.log(errs.length ? `校验失败：${errs.length} 个错误` : '校验通过');
 process.exit(errs.length ? 1 : 0);

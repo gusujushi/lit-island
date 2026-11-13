@@ -7,6 +7,8 @@
     try { const k = '__lit_t'; localStorage.setItem(k, '1'); localStorage.removeItem(k); return localStorage; } catch (e) { return null; }
   }
   const S = Store.create(safeStorage());
+  const APP = (LIT.changelog && LIT.changelog[0]) || { v: '?', date: '', items: [] };   // 当前版本（data/changelog.js 第一条）
+  const vcmp = (a, b) => { const x = a.split('.').map(Number), y = b.split('.').map(Number); for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0); return 0; };
   const st = () => S.state;
   const today = () => Plan.today();
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -235,6 +237,19 @@
     return items.map(([k, ic, name]) => `<a href="#/${k}" class="${active === k ? 'on' : ''}"><span>${ic}</span>${name}${k === 'cards' && due ? `<i class="badge">${due}</i>` : ''}</a>`).join('');
   }
 
+  /* 首页：更新后提示一次本次改了什么（新用户开始时直接记为已读） */
+  function whatsNew() {
+    const s = st().settings, old = s.seenVersion;
+    if (!s.start || old === APP.v) return '';
+    const items = c => `<ul class="dots">${c.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+    const newer = old ? LIT.changelog.filter(c => vcmp(c.v, old) > 0) : [APP];
+    const earlier = old ? [] : LIT.changelog.slice(1);
+    return `<section class="card whatsnew"><h3>🆕 已更新到 v${esc(APP.v)} <span class="muted">${esc(APP.date)}</span></h3>
+      ${newer.map(c => (newer.length > 1 ? `<h4>v${esc(c.v)} · ${esc(c.date)}</h4>` : '') + items(c)).join('')}
+      ${earlier.length ? `<details><summary>之前的更新（v${earlier.map(c => esc(c.v)).join('、v')}）</summary>${earlier.map(c => `<h4>v${esc(c.v)} · ${esc(c.date)}</h4>` + items(c)).join('')}</details>` : ''}
+      <div class="row"><button class="btn small" data-act="seenver">知道了</button><a class="mini" href="#/me">版本与更新记录</a></div></section>`;
+  }
+
   /* ---------- 视图：今日 ---------- */
   function viewToday() {
     const s = st().settings;
@@ -273,6 +288,7 @@
       </section>`;
     }
     const lag = sum.behind.length;
+    main = whatsNew() + main;
     const lagTxt = lag ? `<span class="warn">落后 ${lag} 个单元</span>` : sum.ahead ? `<span class="ok">超前 ${sum.ahead} 个单元</span>` : '<span class="ok">正好在计划上</span>';
     const upcoming = [];
     for (let n = sum.next || LIT.total() + 1; n <= LIT.total() && upcoming.length < 5; n++) if (!isDone(n)) upcoming.push(n);
@@ -510,7 +526,12 @@
     const cells = []; const end = Plan.parse(today()); const start = Plan.addDays(today(), -83 - end.getDay());
     for (let i = 0; i < 84 + end.getDay() + 1; i++) { const dt = Plan.addDays(start, i); const m = st().log[dt] || 0; cells.push(`<i title="${dt} ${m} 分钟" class="h${m === 0 ? 0 : m < 20 ? 1 : m < 35 ? 2 : 3}"></i>`); }
     const total = Object.values(st().log).reduce((a, b) => a + b, 0);
+    const logList = list => list.map(c => `<h4>v${esc(c.v)} · ${esc(c.date)}</h4><ul class="dots">${c.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`).join('');
     return `<h1 class="page">我的</h1>
+      <section class="card" id="ver-card"><h3>📌 当前版本 v${esc(APP.v)} <span class="muted">更新于 ${esc(APP.date)}</span></h3>
+        <p class="hint">本次主要修改：</p><ul class="dots">${APP.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        ${/^https?:$/.test(location.protocol) ? '<div class="row wrap"><button class="btn ghost" data-act="checkupdate">检查更新</button><span id="upd-msg" class="muted"></span></div><p class="hint">程序每次打开或切回时会自动检查新版本，下载好后自动刷新。</p>' : '<p class="hint">直接打开的本地文件，总是最新，不需要更新。</p>'}
+        <details><summary>全部更新记录</summary>${logList(LIT.changelog.slice(1))}</details></section>
       <section class="card"><h3>各模块讲清度</h3><table class="gloss"><tr><th>模块</th><td>完成</td><td>平均自评</td><td>小测</td></tr>${rows}</table>
         <p class="hint">评估看"能不能讲清、能不能下有据的判断"（L0–L3），不看读了多少。</p></section>
       <section class="card"><h3>学习记录 <span class="muted">累计约 ${total} 分钟</span></h3><div class="heat">${cells.join('')}</div></section>
@@ -584,6 +605,7 @@
     $('#nav').innerHTML = nav(active);
     $('#bottom').innerHTML = nav(active);
     document.body.dataset.route = r.name;
+    const ve = $('#ver'); if (ve) ve.textContent = 'v' + APP.v;
     if (r.name === 'me') asrCard();
   }
 
@@ -658,6 +680,7 @@
       s.start = $('#f-start').value || today();
       s.weekdays = [...document.querySelectorAll('.f-week:checked')].map(x => +x.value);
       const m = document.querySelector('input[name="f-mode"]:checked'); s.mode = m ? m.value : 'std';
+      s.seenVersion = APP.v;
       S.save(); location.hash = '#/day/1'; render();
     },
     pickmode(el) { const rec = Store.dayRec(st(), +el.dataset.n); rec.mode = el.dataset.mode; S.save(); render(); },
@@ -700,6 +723,19 @@
     exportjson() { download(`文学能力岛备份_${today()}.json`, S.exportJSON(), 'application/json'); },
     importjson() { $('#import-file').click(); },
     mic(el) { micTap(el.dataset.target); },
+    seenver() { st().settings.seenVersion = APP.v; S.save(); render(); },
+    doupdate() { applyUpdate(); },
+    async checkupdate() {
+      const o = $('#upd-msg'); const say = t => { if (o) o.textContent = t; };
+      say('正在检查……');
+      try {
+        const rv = await remoteVersion();
+        if (!rv) throw new Error('读不到线上版本');
+        if (vcmp(rv, APP.v) <= 0) { say(`✅ 已是最新版本 v${APP.v}`); return; }
+        say(`发现新版本 v${rv}，正在下载……下载好会自动刷新`);
+        if (swReg) await swReg.update(); else applyUpdate();
+      } catch (e) { say('检查失败：' + (e.message || e) + '（可能没有联网）'); }
+    },
     vundo(el) {
       const L = voice.last, b = el.dataset.target; if (!L || L.bind !== b) return;
       const ta = vTarget(b); if (!ta) return;
@@ -755,7 +791,31 @@
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 
   render();
-  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(() => {});
+
+  /* ---------- 版本与更新：打开、切回时检查新版本；新版本接管后自动刷新（正在打字或录音时改为提示） ---------- */
+  let swReg = null, reloading = false;
+  let hadController = !!(navigator.serviceWorker && navigator.serviceWorker.controller);
+  function applyUpdate() { if (reloading) return; reloading = true; S.save(); location.reload(); }
+  function busy() { const a = document.activeElement; return !!voice.phase || !!(a && (a.tagName === 'TEXTAREA' || (a.tagName === 'INPUT' && a.type !== 'checkbox' && a.type !== 'radio'))); }
+  function updateReady() {
+    if (!busy()) { applyUpdate(); return; }
+    if ($('#updbar')) return;
+    const bar = document.createElement('div'); bar.id = 'updbar'; bar.className = 'updbar';
+    bar.innerHTML = '🆕 新版本已下载 <button class="mini" data-act="doupdate">点此更新</button>';
+    document.body.appendChild(bar);
+  }
+  async function remoteVersion() {
+    const t = await (await fetch('sw.js', { cache: 'no-store' })).text();
+    const m = t.match(/lit-island-v([0-9]+\.[0-9]+\.[0-9]+)/); return m ? m[1] : null;
+  }
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+    navigator.serviceWorker.register('sw.js').then(reg => { swReg = reg; }).catch(() => {});
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController) updateReady(); hadController = true; });
+    let lastCheck = Date.now();
+    const check = () => { if (swReg && Date.now() - lastCheck > 30000) { lastCheck = Date.now(); swReg.update().catch(() => {}); } };
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
+    window.addEventListener('focus', check);
+  }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeViewer(); });
   window.__lit = { S, render, actions, voice, aiView, get PG() { return PG; } };
 })();
