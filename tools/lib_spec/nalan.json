@@ -1,0 +1,525 @@
+{
+ "book": "nalan",
+ "units": [
+  {
+   "id": "nalan_changxiang1",
+   "t": "长相思（山一程）",
+   "a": "纳兰性德",
+   "why": "出关途中的名篇，以山水叠字与风雪声写乡愁",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "长相思·山一程"
+    }
+   ]
+  },
+  {
+   "id": "nalan_changxiang2",
+   "t": "长相思（一重山）",
+   "a": "纳兰性德",
+   "why": "同调另一首，换叠字写相思，与前首互读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "长相思·一重山"
+    }
+   ]
+  },
+  {
+   "id": "nalan_rumeng1",
+   "t": "如梦令（万帐穹庐人醉）",
+   "a": "纳兰性德",
+   "why": "边地夜宿，寥寥数语写尽“梦被河声搅碎”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "如梦令·万帐穹庐人醉"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_yinshan",
+   "t": "浣溪沙（万里阴山万里沙）",
+   "a": "纳兰性德",
+   "why": "边塞景象与闺中念想并置，塞外词里的柔笔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·万里阴山万里沙"
+    }
+   ]
+  },
+  {
+   "id": "nalan_dielianhua_chusai",
+   "t": "蝶恋花·出塞",
+   "a": "纳兰性德",
+   "why": "塞上怀古，“一往情深深几许”的出处",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "蝶恋花·出塞"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_jiangnv",
+   "t": "浣溪沙·姜女庙",
+   "a": "纳兰性德",
+   "why": "借孟姜女传说与秦亡写历史空幻",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·姜女庙"
+    }
+   ]
+  },
+  {
+   "id": "nalan_yuzhonghao_yinshan",
+   "t": "于中好（谁道阴山行路难）",
+   "a": "纳兰性德",
+   "why": "难得的塞外射猎词，前半豪壮、后半转冷",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "于中好·谁道阴山行路难"
+    }
+   ]
+  },
+  {
+   "id": "nalan_nanlouling",
+   "t": "南楼令·塞外重九",
+   "a": "纳兰性德",
+   "why": "节令、塞外、旧事三层情绪叠在一首里",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "南楼令·塞外重九"
+    }
+   ]
+  },
+  {
+   "id": "nalan_manting",
+   "t": "满庭芳（堠雪翻鸦）",
+   "a": "纳兰性德",
+   "why": "长调，由边地景物转入对兴亡胜负的议论",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "满庭芳·堠雪翻鸦"
+    }
+   ]
+  },
+  {
+   "id": "nalan_baizi_hanercun",
+   "t": "百字令·宿汉儿村",
+   "a": "纳兰性德",
+   "why": "长调羁旅，连用庾信、司马相如典写憔悴",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "百字令·宿汉儿村"
+    }
+   ]
+  },
+  {
+   "id": "nalan_langtaosha_wanghai",
+   "t": "浪淘沙·望海",
+   "a": "纳兰性德",
+   "why": "纳兰少见的开阔奇想，海上神话与自嘲并写",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浪淘沙·望海"
+    }
+   ]
+  },
+  {
+   "id": "nalan_qingping_tanqinxia",
+   "t": "清平乐·弹琴峡题壁",
+   "a": "纳兰性德",
+   "why": "题壁词，边愁与“知音”的追问",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "清平乐·弹琴峡题壁"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_yunshan",
+   "t": "浣溪沙（身向云山那畔行）",
+   "a": "纳兰性德",
+   "why": "行路词，尾句“古今幽恨几时平”收束",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·身向云山那畔行"
+    }
+   ]
+  },
+  {
+   "id": "nalan_pusa_huangyun",
+   "t": "菩萨蛮（黄云紫塞三千里）",
+   "a": "纳兰性德",
+   "why": "塞上暮色，听笳与残灯的短章",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "菩萨蛮·黄云紫塞三千里"
+    }
+   ]
+  },
+  {
+   "id": "nalan_dielianhua_lvyang",
+   "t": "蝶恋花（又到绿杨曾折处）",
+   "a": "纳兰性德",
+   "why": "行役词，“不恨天涯行役苦，只恨西风”一转",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "蝶恋花·又到绿杨曾折处"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_gubeikou",
+   "t": "浣溪沙·古北口",
+   "a": "纳兰性德",
+   "why": "出关途中，闲情与家书并写",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·古北口"
+    }
+   ]
+  },
+  {
+   "id": "nalan_mulanhua",
+   "t": "木兰花令·拟古决绝词",
+   "a": "纳兰性德",
+   "why": "“人生若只如初见”的出处，以弃妇口吻写变心",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "木兰花令·拟古决绝词"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huatangchun",
+   "t": "画堂春（一生一代一双人）",
+   "a": "纳兰性德",
+   "why": "情词名篇，用蓝桥、碧海两典写相隔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "画堂春·一生一代一双人"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_xifeng",
+   "t": "浣溪沙（谁念西风独自凉）",
+   "a": "纳兰性德",
+   "why": "“当时只道是寻常”的出处，悼亡词中最常被引",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·谁念西风独自凉"
+    }
+   ]
+  },
+  {
+   "id": "nalan_caisangzi_leyuefu",
+   "t": "采桑子（谁翻乐府凄凉曲）",
+   "a": "纳兰性德",
+   "why": "风雨夜的怀人词，“也”字叠用见情",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "采桑子·谁翻乐府凄凉曲"
+    }
+   ]
+  },
+  {
+   "id": "nalan_nanxiangzi",
+   "t": "南乡子·为亡妇题照",
+   "a": "纳兰性德",
+   "why": "题画像的悼亡词，写“画不成”的无力",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "南乡子·为亡妇题照"
+    }
+   ]
+  },
+  {
+   "id": "nalan_jinqu_jiri",
+   "t": "金缕曲·亡妇忌日有感",
+   "a": "纳兰性德",
+   "why": "长调悼亡，直写“此恨何时已”与来生之念",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "金缕曲·亡妇忌日有感"
+    }
+   ]
+  },
+  {
+   "id": "nalan_dielianhua_yue",
+   "t": "蝶恋花（辛苦最怜天上月）",
+   "a": "纳兰性德",
+   "why": "以月圆月缺写生死，“不辞冰雪为卿热”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "蝶恋花·辛苦最怜天上月"
+    }
+   ]
+  },
+  {
+   "id": "nalan_qinyuanchun",
+   "t": "沁园春·瞬息浮生",
+   "a": "纳兰性德",
+   "why": "词前小序记梦亡妇，悼亡词里系年线索最清楚的一首",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "沁园春·瞬息浮生"
+    }
+   ]
+  },
+  {
+   "id": "nalan_yuzhonghao_shengchen",
+   "t": "于中好·十月初四夜风雨其明日是亡妇生辰",
+   "a": "纳兰性德",
+   "why": "以生辰为题，小物件引出旧痛",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "于中好·十月初四夜风雨其明日是亡妇生辰"
+    }
+   ]
+  },
+  {
+   "id": "nalan_qingshanshi",
+   "t": "青衫湿·悼亡",
+   "a": "纳兰性德",
+   "why": "词牌即用“青衫湿”，写忽疑君到的幻觉",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "青衫湿·悼亡"
+    }
+   ]
+  },
+  {
+   "id": "nalan_linjiangxian_bajiao",
+   "t": "临江仙（点滴芭蕉心欲碎）",
+   "a": "纳兰性德",
+   "why": "雨夜读旧书，写故人手迹的模糊",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "临江仙·点滴芭蕉心欲碎"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_canxue",
+   "t": "浣溪沙（残雪凝辉冷画屏）",
+   "a": "纳兰性德",
+   "why": "“我是人间惆怅客”，写与友人同悲的夜晚",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·残雪凝辉冷画屏"
+    }
+   ]
+  },
+  {
+   "id": "nalan_linjiangxian_hanliu",
+   "t": "临江仙·寒柳",
+   "a": "纳兰性德",
+   "why": "咏物词，借寒柳写憔悴与旧梦，寄托存疑",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "临江仙·寒柳"
+    }
+   ]
+  },
+  {
+   "id": "nalan_caisangzi_dangshicuo",
+   "t": "采桑子（而今才道当时错）",
+   "a": "纳兰性德",
+   "why": "全篇都在悔，“落尽梨花月又西”收于景语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "采桑子·当时错"
+    }
+   ]
+  },
+  {
+   "id": "nalan_jianzi_xiangfeng",
+   "t": "减字木兰花·相逢不语",
+   "a": "纳兰性德",
+   "why": "写相逢一瞬，细节近于工笔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "减字木兰花·相逢不语"
+    }
+   ]
+  },
+  {
+   "id": "nalan_zhegutian_beili",
+   "t": "鹧鸪天·背立盈盈故作羞",
+   "a": "纳兰性德",
+   "why": "女子情态词，“待得郎来恨却休”的心理反转",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "鹧鸪天·背立盈盈故作羞"
+    }
+   ]
+  },
+  {
+   "id": "nalan_pusa_weichun",
+   "t": "菩萨蛮（为春憔悴留春住）",
+   "a": "纳兰性德",
+   "why": "惜春词，卖樱桃一笔把愁拉回人间",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "菩萨蛮·为春憔悴留春住"
+    }
+   ]
+  },
+  {
+   "id": "nalan_caisangzi_bodeng",
+   "t": "采桑子（拨灯书尽红笺也）",
+   "a": "纳兰性德",
+   "why": "写信、梦、夜雨三层，托潮水寄书",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "采桑子·拨灯书尽红笺也"
+    }
+   ]
+  },
+  {
+   "id": "nalan_jinqu_jiangximing",
+   "t": "金缕曲·姜西溟言别赋此赠之",
+   "a": "纳兰性德",
+   "why": "送别友人的长调，前半叙旧，后半写落魄",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "金缕曲·姜西溟言别赋此赠之"
+    }
+   ]
+  },
+  {
+   "id": "nalan_jinqu_weiximing",
+   "t": "金缕曲·慰西溟",
+   "a": "纳兰性德",
+   "why": "同赠一人的劝慰词，劝其放开功名",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "金缕曲·慰西溟"
+    }
+   ]
+  },
+  {
+   "id": "nalan_pusa_jiliangfen",
+   "t": "菩萨蛮·寄梁汾苕中",
+   "a": "纳兰性德",
+   "why": "寄友小令，隔空想象友人行舟",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "菩萨蛮·寄梁汾苕中"
+    }
+   ]
+  },
+  {
+   "id": "nalan_huanxisha_jisun",
+   "t": "浣溪沙·寄严荪友",
+   "a": "纳兰性德",
+   "why": "想象友人江南闲居，写羡慕与怀念",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "浣溪沙·寄严荪友"
+    }
+   ]
+  },
+  {
+   "id": "nalan_jinrenpeng",
+   "t": "金人捧露盘·净业寺观莲有怀荪友",
+   "a": "纳兰性德",
+   "why": "同怀荪友的长调，由眼前莲景跳到想象中的江南",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "金人捧露盘·净业寺观莲有怀荪友"
+    }
+   ]
+  },
+  {
+   "id": "nalan_yuzhonghao_xiaolou",
+   "t": "于中好（独背残阳上小楼）",
+   "a": "纳兰性德",
+   "why": "秋日登楼，末句“莫向横塘问旧游”作结",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "纳兰词.txt",
+     "title": "于中好·独背残阳上小楼"
+    }
+   ]
+  }
+ ]
+}

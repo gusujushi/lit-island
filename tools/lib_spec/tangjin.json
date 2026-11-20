@@ -1,0 +1,1270 @@
+{
+ "book": "tangjin",
+ "units": [
+  {
+   "id": "tangjin_wangyue",
+   "t": "望月怀远",
+   "a": "张九龄",
+   "why": "“海上生明月”开篇气象宏阔，五律以月寄相思的典范",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "望月懷遠",
+     "author": "張九齡"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_songdu",
+   "t": "送杜少府之任蜀川",
+   "a": "王勃",
+   "why": "初唐送别诗一扫悲戚，“海内存知己”是送别诗的转折名句",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "送杜少府之任蜀川",
+     "author": "王勃"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zaiyu",
+   "t": "在狱咏蝉",
+   "a": "骆宾王",
+   "why": "咏物即自况，狱中以蝉自喻，托物言志的代表",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "在獄詠蟬",
+     "author": "駱賓王"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_beigu",
+   "t": "次北固山下",
+   "a": "王湾",
+   "why": "“海日生残夜，江春入旧年”以时序交错写客愁，盛唐气象的名联",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "次北固山下",
+     "author": "王灣"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_pospo",
+   "t": "题破山寺后禅院",
+   "a": "常建",
+   "why": "以幽静写禅意，“曲径通幽处”的出处",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "題破山寺後禪院",
+     "author": "常建"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zengmeng",
+   "t": "赠孟浩然",
+   "a": "李白",
+   "why": "李白对前辈的直抒敬意，“风流”二字定孟浩然形象",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "贈孟浩然",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jingmen",
+   "t": "渡荆门送别",
+   "a": "李白",
+   "why": "青年李白出蜀的开阔视野，“山随平野尽”与杜甫“星垂平野阔”可对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "渡荊門送別",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_songyou",
+   "t": "送友人",
+   "a": "李白",
+   "why": "送别诗的工整范本，颔联对仗、“浮云游子意”以景喻情",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "送友人",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_yueshe",
+   "t": "月夜忆舍弟",
+   "a": "杜甫",
+   "why": "战乱中怀念兄弟，“月是故乡明”的出处，五律抒情的典型",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "月夜憶舍弟",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_tianmo",
+   "t": "天末怀李白",
+   "a": "杜甫",
+   "why": "杜甫怀李白的名篇，“文章憎命达”道出文人命运的悖论",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "天末懷李白",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_lvye",
+   "t": "旅夜书怀",
+   "a": "杜甫",
+   "why": "杜甫晚年漂泊的自画像，'星垂平野阔'与'天地一沙鸥'是五律写景与自况的典范",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "旅夜書懷",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_yueyang",
+   "t": "登岳阳楼",
+   "a": "杜甫",
+   "why": "“吴楚东南坼”五字写尽洞庭，登临诗中空间与身世并置的顶峰",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "登岳陽樓",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zhongnan",
+   "t": "终南山",
+   "a": "王维",
+   "why": "王维山水诗的大尺度写法，“分野中峰变”以少总多",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "終南山",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xiangji",
+   "t": "过香积寺",
+   "a": "王维",
+   "why": "以声光写幽寂，“泉声咽危石”炼字精绝，禅意诗的代表",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "過香積寺",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_hanjiang",
+   "t": "汉江临眺",
+   "a": "王维",
+   "why": "水墨式的开阔写法，“江流天地外”的空间感与留白",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "漢江臨眺",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zhongnanbie",
+   "t": "终南别业",
+   "a": "王维",
+   "why": "“行到水穷处，坐看云起时”的出处，王维晚年心境的自述",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "終南別業",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_dongting",
+   "t": "临洞庭上张丞相",
+   "a": "孟浩然",
+   "why": "干谒诗中以景托意的名篇，“气蒸云梦泽”气势罕见",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "臨洞庭上張丞相",
+     "author": "孟浩然"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_guren",
+   "t": "过故人庄",
+   "a": "孟浩然",
+   "why": "田园待客的日常诗，不假雕饰而韵味醇厚",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "過故人莊",
+     "author": "孟浩然"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xinnian",
+   "t": "新年作",
+   "a": "刘长卿",
+   "why": "贬谪中逢新年，“岭猿同旦暮”写逐臣情怀，中唐五律的细腻",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "新年作",
+     "author": "劉長卿"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_huaishang",
+   "t": "淮上喜会梁川故人",
+   "a": "韦应物",
+   "why": "久别重逢的悲喜，以问答式起结见中唐的淡远",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "淮上喜會梁川故人",
+     "author": "韋應物"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_waidi",
+   "t": "喜见外弟又言别",
+   "a": "李益",
+   "why": "乱后重逢旋又告别，几乎是一场对话的缩写",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "喜見外弟又言別",
+     "author": "李益"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_shuxian",
+   "t": "蜀先主庙",
+   "a": "刘禹锡",
+   "why": "咏史诗中评刘备的名篇，“天地英雄气”起笔不凡",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "蜀先主廟",
+     "author": "劉禹錫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_cao",
+   "t": "草",
+   "a": "白居易",
+   "why": "少年白居易的应试诗，“野火烧不尽”的出处，咏物取其生命力",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "草",
+     "author": "白居易"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chan",
+   "t": "蝉",
+   "a": "李商隐",
+   "why": "咏物兼自伤的晚唐名篇，与骆宾王《在狱咏蝉》可对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "蟬",
+     "author": "李商隱"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_songren",
+   "t": "送人东游",
+   "a": "温庭筠",
+   "why": "温庭筠少见的苍劲之作，送别里有秋景与世路",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "送人東遊",
+     "author": "溫庭筠"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_huanglou",
+   "t": "黄鹤楼",
+   "a": "崔颢",
+   "why": "七律名篇之冠，相传李白见而搁笔，前四句不拘格律而气势贯通",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "黃鶴樓",
+     "author": "崔顥"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jimen",
+   "t": "望蓟门",
+   "a": "祖咏",
+   "why": "盛唐边塞七律，“万里寒光生积雪”以景写军威",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "望薊門",
+     "author": "祖詠"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_fenghuang",
+   "t": "登金陵凤凰台",
+   "a": "李白",
+   "why": "李白对崔颢的回应，“长安不见使人愁”转写家国之忧",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "登金陵鳳凰臺",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiyu",
+   "t": "积雨辋川庄作",
+   "a": "王维",
+   "why": "王维田园七律的代表，“漠漠水田飞白鹭”色彩与动静兼备",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "積雨輞川莊作",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_kezhi",
+   "t": "客至",
+   "a": "杜甫",
+   "why": "草堂迎客的家常诗，家常口吻里有杜甫少见的轻快",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "客至",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_guanjun",
+   "t": "闻官军收河南河北",
+   "a": "杜甫",
+   "why": "杜甫自称一生最快之诗，“漫卷诗书喜欲狂”节奏如奔涌而下",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "聞官軍收河南河北",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_geye",
+   "t": "阁夜",
+   "a": "杜甫",
+   "why": "夔州岁暮，以天地动荡写个人孤怀，七律声调沉郁的典型",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "閣夜",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_huaigu3",
+   "t": "咏怀古迹·其三（昭君）",
+   "a": "杜甫",
+   "why": "借昭君写自己流寓，“千载琵琶作胡语”是点睛之笔",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "詠懷古跡(五首之三)",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_huaigu5",
+   "t": "咏怀古迹·其五（诸葛亮）",
+   "a": "杜甫",
+   "why": "杜甫推崇诸葛亮的集中表达，与《蜀相》互参",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "詠懷古跡(五首之五)",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_changsha",
+   "t": "长沙过贾谊宅",
+   "a": "刘长卿",
+   "why": "以贾谊遭遇自况，“寂寂江山摇落处”写尽谪臣同感",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "長沙過賈誼宅",
+     "author": "劉長卿"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_liuzhou",
+   "t": "登柳州城楼寄漳汀封连四州刺史",
+   "a": "柳宗元",
+   "why": "贬柳州时的登楼之作，“惊风乱飐芙蓉水”以景写愁",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "登柳州城樓寄漳汀封連四州刺史",
+     "author": "柳宗元"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xisai",
+   "t": "西塞山怀古",
+   "a": "刘禹锡",
+   "why": "怀古诗中兴亡感最冷静的一首，“千寻铁锁沉江底”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "西塞山懷古",
+     "author": "劉禹錫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_qianbei2",
+   "t": "遣悲怀·其二",
+   "a": "元稹",
+   "why": "悼亡诗以琐事写哀，“衣裳已施行看尽”写出日常的痛",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "遣悲懷(三首之二)",
+     "author": "元稹"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_wuti1",
+   "t": "无题（昨夜星辰昨夜风）",
+   "a": "李商隐",
+   "why": "“身无彩凤双飞翼，心有灵犀一点通”的出处，李商隐爱情诗的巅峰之一",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "無題",
+     "author": "李商隱",
+     "has": "昨夜星辰"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_suigong",
+   "t": "隋宫",
+   "a": "李商隐",
+   "why": "李商隐咏史讽刺之作，以反问与假设写隋炀帝荒政",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "隋宮",
+     "author": "李商隱",
+     "has": "紫泉宮殿"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_wuti3",
+   "t": "无题（飒飒东风细雨来）",
+   "a": "李商隐",
+   "why": "以闺情写求而不得，与“相见时难”另是一种无题",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "無題(二首之二)",
+     "author": "李商隱",
+     "has": "颯颯東風"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chouyi",
+   "t": "筹笔驿",
+   "a": "李商隐",
+   "why": "咏诸葛亮的七律，与杜甫写法对照",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "籌筆驛",
+     "author": "李商隱"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_lizhou",
+   "t": "利洲南渡",
+   "a": "温庭筠",
+   "why": "温庭筠清朗的渡口小景，远而不淡",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "利洲南渡",
+     "author": "溫庭筠"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_suwu",
+   "t": "苏武庙",
+   "a": "温庭筠",
+   "why": "咏苏武的名篇，以时间落差写忠节",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "蘇武廟",
+     "author": "溫庭筠"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_pinnv",
+   "t": "贫女",
+   "a": "秦韬玉",
+   "why": "“为他人作嫁衣裳”的出处，以贫女自况寒士",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "貧女",
+     "author": "秦韜玉"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xiangsi",
+   "t": "相思",
+   "a": "王维",
+   "why": "“红豆生南国”寥寥二十字，以物寄情最直白又最含蓄",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "相思",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zashi",
+   "t": "杂诗（君自故乡来）",
+   "a": "王维",
+   "why": "只问窗前寒梅，把对故乡的牵挂缩成一个细节",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "雜詩",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zhongnanxue",
+   "t": "终南望余雪",
+   "a": "祖咏",
+   "why": "应试诗仅作四句，咏物不写雪而雪自见",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "終南望餘雪",
+     "author": "祖詠"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiande",
+   "t": "宿建德江",
+   "a": "孟浩然",
+   "why": "“野旷天低树，江清月近人”以舟中所见写客愁",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "宿建德江",
+     "author": "孟浩然"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chunxiao",
+   "t": "春晓",
+   "a": "孟浩然",
+   "why": "最浅的诗，浅里有春夜风雨与惜春之意",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "春曉",
+     "author": "孟浩然"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_yesi",
+   "t": "夜思",
+   "a": "李白",
+   "why": "“床前明月光”，家喻户晓的思乡诗，写法几乎不用修辞",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "夜思",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_guanque",
+   "t": "登鹳雀楼",
+   "a": "王之涣",
+   "why": "五绝中写景兼哲思的名篇，“更上一层楼”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "登鸛雀樓",
+     "author": "王之渙"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiangxue",
+   "t": "江雪",
+   "a": "柳宗元",
+   "why": "贬谪者的孤绝自画像，“千山鸟飞绝”的空白",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "江雪",
+     "author": "柳宗元"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xinggong",
+   "t": "行宫",
+   "a": "元稹",
+   "why": "“白头宫女在，闲坐说玄宗”二十字写尽兴亡",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "行宮",
+     "author": "元稹"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_liushiju",
+   "t": "问刘十九",
+   "a": "白居易",
+   "why": "雪前小酒的邀请，日常口吻里有人情温度",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "問劉十九",
+     "author": "白居易"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_leyou",
+   "t": "登乐游原",
+   "a": "李商隐",
+   "why": "“夕阳无限好，只是近黄昏”，惋惜与警醒同在",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "登樂遊原",
+     "author": "李商隱"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xunyin",
+   "t": "寻隐者不遇",
+   "a": "贾岛",
+   "why": "以问答套叠写不遇之遇，“云深不知处”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "尋隱者不遇",
+     "author": "賈島"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_hanjiangdu",
+   "t": "渡汉江",
+   "a": "李频",
+   "why": "“近乡情更怯”写出归乡者的复杂心理",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "渡漢江",
+     "author": "李頻"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chunyuan",
+   "t": "春怨",
+   "a": "金昌绪",
+   "why": "唐代绝句里的口语诗，四句一气，句句相扣",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "春怨",
+     "author": "金昌緒"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_yujie",
+   "t": "玉阶怨",
+   "a": "李白",
+   "why": "宫怨诗的极简写法，一个动作替代所有哀怨",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "玉階怨",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_huixiang",
+   "t": "回乡偶书",
+   "a": "贺知章",
+   "why": "“乡音无改鬓毛衰”，老人返乡的悲喜与童稚的天真对照",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "回鄉偶書",
+     "author": "賀知章"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_taohua",
+   "t": "桃花溪",
+   "a": "张旭",
+   "why": "草圣张旭的山水小景，与陶渊明桃源传统的接续",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "桃花谿",
+     "author": "張旭"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiuyue9",
+   "t": "九月九日忆山东兄弟",
+   "a": "王维",
+   "why": "王维少年之作，“遥知兄弟登高处”从对方写起，思念翻进一层",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "九月九日憶山東兄弟",
+     "author": "王維"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_furong",
+   "t": "芙蓉楼送辛渐",
+   "a": "王昌龄",
+   "why": "“一片冰心在玉壶”，以送别寄托自己的操守",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "芙蓉樓送辛漸",
+     "author": "王昌齡"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_guiyuan",
+   "t": "闺怨",
+   "a": "王昌龄",
+   "why": "“忽见陌头杨柳色”，以瞬间的触动完成情绪的转折",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "閨怨",
+     "author": "王昌齡"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_liangzhou",
+   "t": "凉州词",
+   "a": "王翰",
+   "why": "边塞酒宴的豪放与苍凉，“醉卧沙场君莫笑”的两可读法",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "涼州詞",
+     "author": "王翰"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_guangling",
+   "t": "送孟浩然之广陵",
+   "a": "李白",
+   "why": "“孤帆远影碧空尽”，送别诗里最有画面感的结尾",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "送孟浩然之廣陵",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_xiajiangling",
+   "t": "下江陵",
+   "a": "李白",
+   "why": "速度写成诗，“千里江陵一日还”轻快如箭",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "下江陵",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_rujing",
+   "t": "逢入京使",
+   "a": "岑参",
+   "why": "马上相逢无纸笔，口头一句“报平安”的真实感",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "逢入京使",
+     "author": "岑參"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiangnan",
+   "t": "江南逢李龟年",
+   "a": "杜甫",
+   "why": "以一次重逢浓缩盛衰，“落花时节又逢君”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "江南逢李龜年",
+     "author": "杜甫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chuzhou",
+   "t": "滁州西涧",
+   "a": "韦应物",
+   "why": "“独怜幽草涧边生”，闲淡之中有不得志的暗示",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "滁州西澗",
+     "author": "韋應物"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_fengqiao",
+   "t": "枫桥夜泊",
+   "a": "张继",
+   "why": "“月落乌啼霜满天”，以声音与光线写夜泊愁眠",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "楓橋夜泊",
+     "author": "張繼"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_hanshi",
+   "t": "寒食",
+   "a": "韩翃",
+   "why": "“日暮汉宫传蜡烛”，借汉写唐，含蓄讽谕",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "寒食",
+     "author": "韓翃"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_shoujiang",
+   "t": "夜上受降城闻笛",
+   "a": "李益",
+   "why": "以笛声引出乡思，边塞诗里的听觉与月光",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "夜上受降城聞笛",
+     "author": "李益"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_wuyi",
+   "t": "乌衣巷",
+   "a": "刘禹锡",
+   "why": "“旧时王谢堂前燕”，以燕子的视角写世事沧桑",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "烏衣巷",
+     "author": "劉禹錫"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jinling",
+   "t": "题金陵渡",
+   "a": "张祜",
+   "why": "渡口夜景的素描，远近相映",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "題金陵渡",
+     "author": "張祜"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jinshi",
+   "t": "近试上张水部",
+   "a": "朱庆馀",
+   "why": "以新妇问夫婿喻应试问主考，干谒诗的巧妙形式",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "近試上張水部",
+     "author": "朱慶餘"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chibi",
+   "t": "赤壁",
+   "a": "杜牧",
+   "why": "以“铜雀春深锁二乔”翻出史评，杜牧咏史的典型反笔",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "赤壁",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_qinhuai",
+   "t": "泊秦淮",
+   "a": "杜牧",
+   "why": "“商女不知亡国恨”，借歌女写听者的忧思",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "泊秦淮",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_yangzhou",
+   "t": "寄扬州韩绰判官",
+   "a": "杜牧",
+   "why": "江南清景与扬州旧游的合写，“玉人何处教吹箫”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "寄揚州韓綽判官",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_qianhuai",
+   "t": "遣怀",
+   "a": "杜牧",
+   "why": "“十年一觉扬州梦”，杜牧对放浪岁月的回头一看",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "遣懷",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_qiuxi",
+   "t": "秋夕",
+   "a": "杜牧",
+   "why": "以冷色、小扇、牛郎织女写宫女的无寐，细节极简",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "秋夕",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_zengbie2",
+   "t": "赠别·其二",
+   "a": "杜牧",
+   "why": "“蜡烛有心还惜别”，以物代人哭的深情",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "贈別(二首之二)",
+     "author": "杜牧"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_change",
+   "t": "嫦娥",
+   "a": "李商隐",
+   "why": "“碧海青天夜夜心”，以神话写孤寂",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "嫦娥",
+     "author": "李商隱"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jiasheng",
+   "t": "贾生",
+   "a": "李商隐",
+   "why": "“不问苍生问鬼神”，一句话完成对君主的讽刺",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "賈生",
+     "author": "李商隱"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_changxin",
+   "t": "长信怨",
+   "a": "王昌龄",
+   "why": "“玉颜不及寒鸦色”，以鸦衬人的反差句",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "長信怨",
+     "author": "王昌齡"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chusai1",
+   "t": "出塞（秦时明月汉时关）",
+   "a": "王昌龄",
+   "why": "被推为七绝压卷之作的边塞名篇，写边防之思",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "出塞",
+     "author": "王昌齡",
+     "has": "秦時明月"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_qingping1",
+   "t": "清平调·其一",
+   "a": "李白",
+   "why": "以花喻人、以人喻花，李白应制诗里的轻灵",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "清平調(三首之一)",
+     "author": "李白"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_chusai2",
+   "t": "出塞（黄河远上白云间）",
+   "a": "王之涣",
+   "why": "“春风不度玉门关”，苍茫壮阔中含无声的哀怨",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "出塞",
+     "author": "王之渙",
+     "has": "黃河遠上"
+    }
+   ]
+  },
+  {
+   "id": "tangjin_jinlu",
+   "t": "金缕衣",
+   "a": "杜秋娘",
+   "why": "“莫待无花空折枝”，劝人惜时的民歌式口吻",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "唐诗三百首.txt",
+     "title": "金縷衣",
+     "author": "杜秋娘"
+    }
+   ]
+  }
+ ]
+}

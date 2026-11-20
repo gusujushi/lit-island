@@ -1,0 +1,920 @@
+{
+ "book": "songnan",
+ "units": [
+  {
+   "id": "songnan_shizhou",
+   "t": "石州慢",
+   "a": "张元干",
+   "why": "南渡词人的离别词，以“不尽眼中青，是愁来时节”收束，景与愁的对接极干脆",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "石州慢",
+     "author": "張元幹"
+    }
+   ]
+  },
+  {
+   "id": "songnan_lanling",
+   "t": "兰陵王",
+   "a": "张元干",
+   "why": "借旧京洛的行乐回忆写别后相思，层层追忆，是长调回环结构的样本",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蘭陵王",
+     "author": "張元幹"
+    }
+   ]
+  },
+  {
+   "id": "songnan_yemengde",
+   "t": "贺新郎（睡起流莺语）",
+   "a": "叶梦得",
+   "why": "上片惜春下片望远，结在“谁为我，唱金缕”的孤寂，南渡前后词风转向清旷的一例",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎",
+     "author": "葉夢得",
+     "has": "睡起流鶯語"
+    }
+   ]
+  },
+  {
+   "id": "songnan_chenyg1",
+   "t": "临江仙（高咏楚词酬午日）",
+   "a": "陈与义",
+   "why": "流离中的端午词，“无人知此意”一句把个人节序写成孤独",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "臨江仙",
+     "author": "陳與義",
+     "has": "高詠楚詞"
+    }
+   ]
+  },
+  {
+   "id": "songnan_chenyg2",
+   "t": "临江仙·夜登小阁忆洛中旧游",
+   "a": "陈与义",
+   "why": "以洛中旧游对照二十年劫后，“古今多少事，渔唱起三更”结得极克制",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "臨江仙·夜登小閣憶洛中舊游",
+     "author": "陳與義"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangxx1",
+   "t": "六州歌头（长淮望断）",
+   "a": "张孝祥",
+   "why": "主战词的代表，以三字短句的急促节奏写边地与忠愤",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "六州歌頭",
+     "author": "張孝祥",
+     "has": "長淮望斷"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangxx2",
+   "t": "念奴娇（洞庭青草）",
+   "a": "张孝祥",
+   "why": "写天人澄澈境界的名篇，可与苏轼赤壁词对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "念奴嬌",
+     "author": "張孝祥"
+    }
+   ]
+  },
+  {
+   "id": "songnan_luyou1",
+   "t": "卜算子·咏梅",
+   "a": "陆游",
+   "why": "咏梅即自况，“零落成泥碾作尘，只有香如故”是全词眼目",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "卜算子·詠梅",
+     "author": "陸游"
+    }
+   ]
+  },
+  {
+   "id": "songnan_luyou2",
+   "t": "渔家傲（东望山阴何处是）",
+   "a": "陆游",
+   "why": "以家书与兄弟之思写漂泊，语言平实近于白描",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "漁家傲",
+     "author": "陸游"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj1",
+   "t": "贺新郎（绿树听鹈鴂）",
+   "a": "辛弃疾",
+   "why": "以听鸟起兴，连用昭君、陈皇后、李陵、荆轲等别离典，是辛词用典密度的极端例子",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎",
+     "author": "辛棄疾",
+     "has": "綠樹聽鵜鴂"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj2",
+   "t": "贺新郎·赋琵琶",
+   "a": "辛弃疾",
+   "why": "咏物词，以琵琶串起昭君、江州司马、开元旧事，写兴亡之感",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎·賦琵琶",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj3",
+   "t": "念奴娇·书东流村壁",
+   "a": "辛弃疾",
+   "why": "借题壁写旧情，是辛词婉约一路的代表",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "念奴嬌·書東流村壁",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj4",
+   "t": "汉宫春（春已归来）",
+   "a": "辛弃疾",
+   "why": "立春词，“更没些闲”写东风，闲愁翻成对春的嗔怪",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "漢宮春",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj5",
+   "t": "水龙吟·登建康赏心亭",
+   "a": "辛弃疾",
+   "why": "登临词的名篇，“把吴钩看了，栏干拍遍，无人会、登临意”写尽壮志无人知",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "水龍吟·登建康賞心亭",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj6",
+   "t": "摸鱼儿（更能消几番风雨）",
+   "a": "辛弃疾",
+   "why": "惜春词里藏着对时局的忧惧，“怨春不语”处最见曲折",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "摸魚兒",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj7",
+   "t": "木兰花慢·滁州送范倅",
+   "a": "辛弃疾",
+   "why": "送别词而写到朝廷筹边之事，上片说别，下片转入国事",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "木蘭花慢·滁州送范倅",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj8",
+   "t": "祝英台近（宝钗分）",
+   "a": "辛弃疾",
+   "why": "闺情词，以“花卜归期”的细节写愁，“春带愁来”的反问最灵动",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "祝英臺近",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj9",
+   "t": "鹧鸪天·鹅湖归病起作",
+   "a": "辛弃疾",
+   "why": "病后闲居词，红莲白鸟里藏着不甘",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鷓鴣天·鵝湖歸病起作",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_xinqj10",
+   "t": "菩萨蛮·书江西造口壁",
+   "a": "辛弃疾",
+   "why": "小令写大事，借江水东流写山河与南渡之痛",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "菩薩蠻·書江西造口壁",
+     "author": "辛棄疾"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk1",
+   "t": "点绛唇·丁未冬，过吴松作",
+   "a": "姜夔",
+   "why": "清空词风的小令，“数峰清苦，商略黄昏雨”把山写成有意志的人",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "點絳唇",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk2",
+   "t": "鹧鸪天·元夕有所梦",
+   "a": "姜夔",
+   "why": "写梦中人比画像更真切，醒来山鸟一啼便散，一般系于姜夔早年情事",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鷓鴣天·元夕有所夢",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk3",
+   "t": "踏莎行·自沔东来",
+   "a": "姜夔",
+   "why": "以对方魂魄暗行写自己的相思，是姜词最凄迷的一首",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "踏莎行",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk4",
+   "t": "齐天乐（庾郎先自吟愁赋）",
+   "a": "姜夔",
+   "why": "咏蟋蟀的咏物词，以听声转写人事，咏物不黏滞",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "齊天樂",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk5",
+   "t": "暗香",
+   "a": "姜夔",
+   "why": "与《疏影》并称的咏梅自度曲，写旧时月色、玉人与寄远",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "暗香",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk6",
+   "t": "疏影",
+   "a": "姜夔",
+   "why": "《暗香》的姊妹篇，用昭君、寿阳公主等典写梅，意象密而气清",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "疏影",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk7",
+   "t": "念奴娇（闹红一舸）",
+   "a": "姜夔",
+   "why": "咏荷词，“冷香飞上诗句”取人荷合一，是姜词清冷风格的另一面",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "念奴嬌",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk8",
+   "t": "长亭怨慢（渐吹尽枝头香絮）",
+   "a": "姜夔",
+   "why": "送别词里的翻案：“树若有情时，不会得、青青如许”反桓温旧典而用之",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "長亭怨慢",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangk9",
+   "t": "淡黄柳",
+   "a": "姜夔",
+   "why": "寒食词，“空城晓角”开篇，写春寒硬而客愁深",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "淡黃柳",
+     "author": "姜夔"
+    }
+   ]
+  },
+  {
+   "id": "songnan_shidz1",
+   "t": "绮罗香·咏春雨",
+   "a": "史达祖",
+   "why": "咏物词的精工，通篇不言雨而处处是雨",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "綺羅香·詠春雨",
+     "author": "史達祖"
+    }
+   ]
+  },
+  {
+   "id": "songnan_shidz2",
+   "t": "双双燕·咏燕",
+   "a": "史达祖",
+   "why": "咏燕名篇，由燕写到人，“日日画阑独凭”处转折",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "雙雙燕·詠燕",
+     "author": "史達祖"
+    }
+   ]
+  },
+  {
+   "id": "songnan_shidz3",
+   "t": "秋霁",
+   "a": "史达祖",
+   "why": "咏秋而及故园之思，“翻书愁上鬓毛白”写客愁",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "秋霽",
+     "author": "史達祖"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liugu",
+   "t": "唐多令（芦叶满汀洲）",
+   "a": "刘过",
+   "why": "重过南楼的怀旧词，“旧江山、浑是新愁”以直白见沉痛",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "唐多令",
+     "author": "劉過"
+    }
+   ]
+  },
+  {
+   "id": "songnan_yuguobao",
+   "t": "风入松（一春长费买花钱）",
+   "a": "俞国宝",
+   "why": "西湖游春词，写湖上春日的闲适繁华",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "風入松",
+     "author": "俞國寶"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liukz1",
+   "t": "贺新郎·端午",
+   "a": "刘克庄",
+   "why": "把端午写成对屈原的追问，以议论入词",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎·端午",
+     "author": "劉克莊"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liukz2",
+   "t": "贺新郎·九日",
+   "a": "刘克庄",
+   "why": "重阳词而发“神州泪”，写老书生的家国忧",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎·九日",
+     "author": "劉克莊"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liukz3",
+   "t": "木兰花·戏林推",
+   "a": "刘克庄",
+   "why": "戏谑口吻里说“男儿西北有神州”，是辛派词风的短章",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "木蘭花·戲林推",
+     "author": "劉克莊"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy1",
+   "t": "风入松（听风听雨过清明）",
+   "a": "吴文英",
+   "why": "梦窗词里较近人情的一首，写清明怀人，以“幽阶一夜苔生”收束",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "風入松",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy2",
+   "t": "莺啼序·春晚感怀",
+   "a": "吴文英",
+   "why": "词调最长的一首，四片写十载西湖情事，是梦窗词结构与密度的极限",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鶯啼序·春晚感懷",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy3",
+   "t": "八声甘州·陪庾幕诸公游灵岩",
+   "a": "吴文英",
+   "why": "游吴王旧地的怀古词，借吴越兴亡发感，是梦窗词中较开阔的一首",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "八聲甘州·陪庾幕諸公遊靈岩",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy4",
+   "t": "唐多令（何处合成愁）",
+   "a": "吴文英",
+   "why": "拆字起句，“纵芭蕉、不雨也飕飕”是名句；与刘过同调可对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "唐多令",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy5",
+   "t": "齐天乐（烟波桃叶西陵路）",
+   "a": "吴文英",
+   "why": "西陵怀旧词，以“十年”回望，写别后重游",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "齊天樂",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy6",
+   "t": "高阳台·丰乐楼分韵得如字",
+   "a": "吴文英",
+   "why": "登临词，“伤春不在高楼上”翻出新意",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "高陽臺·豐樂樓分韻得如字",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy7",
+   "t": "浣溪沙（门隔花深旧梦游）",
+   "a": "吴文英",
+   "why": "梦窗小令，“落絮无声春堕泪”以通感写景，是密丽之外的轻手笔",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "吳文英",
+     "has": "門隔花深"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wuwy8",
+   "t": "贺新郎·陪履斋先生沧浪看梅",
+   "a": "吴文英",
+   "why": "陪人看梅而追问“中兴”旧事，是梦窗词里少有的时事怀抱",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎·陪履齋先生滄浪看梅",
+     "author": "吳文英"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liucw1",
+   "t": "兰陵王·丙子送春",
+   "a": "刘辰翁",
+   "why": "丙子为德祐二年（1276），借送春写故国之痛，“春去”层层叠唱",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蘭陵王·丙子送春",
+     "author": "劉辰翁"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liucw2",
+   "t": "永遇乐（璧月初晴）",
+   "a": "刘辰翁",
+   "why": "元夕词，写乱后灯火，可与李清照同调对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "永遇樂",
+     "author": "劉辰翁"
+    }
+   ]
+  },
+  {
+   "id": "songnan_liucw3",
+   "t": "宝鼎现",
+   "a": "刘辰翁",
+   "why": "以宣和旧事对照临安元夕，“父老犹记”与铜仙清泪之典并用",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "寶鼎現",
+     "author": "劉辰翁"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhoumi1",
+   "t": "高阳台（照野旌旗）",
+   "a": "周密",
+   "why": "送友人北行的词，“江南谁念方回”以贺铸自比",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "高陽臺",
+     "author": "周密"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhoumi2",
+   "t": "瑶花·送陈君衡被召",
+   "a": "周密",
+   "why": "同为送陈君衡之作，以梨云梅雪起，结在“二十四桥明月”的追忆",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "瑤花·送陳君衡被召",
+     "author": "周密"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhoumi3",
+   "t": "玉京秋",
+   "a": "周密",
+   "why": "客中秋词，小序点明调夹钟羽，是周密词精致的一面",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "玉京秋",
+     "author": "周密"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangj1",
+   "t": "瑞鹤仙·乡城见月",
+   "a": "蒋捷",
+   "why": "思乡词，“放冰蜍飞到，丝丝帘隙”写月奇警",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "瑞鶴仙·鄉城見月",
+     "author": "蔣捷"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangj2",
+   "t": "贺新郎（梦冷黄金屋）",
+   "a": "蒋捷",
+   "why": "以琵琶、秦筝写旧乐人的流落，家国之痛一般读作藏在咏物里",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎",
+     "author": "蔣捷"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangj3",
+   "t": "虞美人（少年听雨歌楼上）",
+   "a": "蒋捷",
+   "why": "三个年龄段听雨，结构干净，人生感透彻",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "虞美人",
+     "author": "蔣捷"
+    }
+   ]
+  },
+  {
+   "id": "songnan_jiangj4",
+   "t": "女冠子·元夕",
+   "a": "蒋捷",
+   "why": "元夕词，“羞与蛾儿争耍”可与辛弃疾“蛾儿雪柳”对照",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "女冠子·元夕",
+     "author": "蔣捷"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangy1",
+   "t": "高阳台·西湖春感",
+   "a": "张炎",
+   "why": "西湖春尽词，“怕见飞花，怕听啼鹃”惊心",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "高陽臺·西湖春感",
+     "author": "張炎"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangy2",
+   "t": "八声甘州（记玉关踏雪事清游）",
+   "a": "张炎",
+   "why": "北游旧事的伤感词，“一字无题处，落叶都愁”写空白的力量",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "八聲甘州",
+     "author": "張炎"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangy3",
+   "t": "解连环·孤雁",
+   "a": "张炎",
+   "why": "咏孤雁成名，世称“张孤雁”，咏物不黏著",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "解連環·孤雁",
+     "author": "張炎"
+    }
+   ]
+  },
+  {
+   "id": "songnan_zhangy4",
+   "t": "疏影·咏荷叶",
+   "a": "张炎",
+   "why": "以荷叶写心事，“盘心清露如铅水”最有重量",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "疏影·詠荷葉",
+     "author": "張炎"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wangsy1",
+   "t": "天香·龙涎香",
+   "a": "王沂孙",
+   "why": "咏龙涎香的咏物词，属《乐府补题》一组，寄托说法不一，存疑",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "天香·龍涎香",
+     "author": "王沂孫"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wangsy2",
+   "t": "眉妩·新月",
+   "a": "王沂孙",
+   "why": "咏新月，“难补金镜”常被读作家国之痛，属解读，存疑",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "眉嫵·新月",
+     "author": "王沂孫"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wangsy3",
+   "t": "齐天乐·蝉",
+   "a": "王沂孙",
+   "why": "咏蝉词，宫魂、铜仙铅泪入词，一般读作遗民故国之思",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "齊天樂·蟬",
+     "author": "王沂孫"
+    }
+   ]
+  },
+  {
+   "id": "songnan_wangsy4",
+   "t": "长亭怨慢·重过中庵故园",
+   "a": "王沂孙",
+   "why": "重过旧园之作，“抚乔木、年华将晚”写暮气",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "長亭怨慢·重過中庵故園",
+     "author": "王沂孫"
+    }
+   ]
+  },
+  {
+   "id": "songnan_lqz1",
+   "t": "凤凰台上忆吹箫",
+   "a": "李清照",
+   "why": "离别词的细腻，“生怕离怀别苦，多少事、欲说还休”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鳳凰臺上憶吹簫",
+     "author": "李清照"
+    }
+   ]
+  },
+  {
+   "id": "songnan_lqz2",
+   "t": "念奴娇（萧条庭院）",
+   "a": "李清照",
+   "why": "春寒闺思词，“险韵诗成，扶头酒醒”写出才女的孤寂",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "念奴嬌",
+     "author": "李清照"
+    }
+   ]
+  },
+  {
+   "id": "songnan_lqz3",
+   "t": "浣溪沙（髻子伤春懒更梳）",
+   "a": "李清照",
+   "why": "闺情小令，以“淡云来往月疏疏”的淡景写心境",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "李清照"
+    }
+   ]
+  }
+ ]
+}

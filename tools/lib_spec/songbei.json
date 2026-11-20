@@ -1,0 +1,929 @@
+{
+ "book": "songbei",
+ "units": [
+  {
+   "id": "songbei_yanshanting",
+   "t": "燕山亭·北行见杏花",
+   "a": "赵佶",
+   "why": "传为徽宗被俘北行途中咏杏花，以花自喻，亡国之痛写得极直",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "燕山亭",
+     "author": "趙佶"
+    }
+   ]
+  },
+  {
+   "id": "songbei_sumuzhe",
+   "t": "苏幕遮",
+   "a": "范仲淹",
+   "why": "“碧云天，黄叶地”开篇，边帅笔下的秋色乡思，词境阔大",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蘇幕遮",
+     "author": "范仲淹"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yujiaao",
+   "t": "渔家傲",
+   "a": "范仲淹",
+   "why": "宋词里少见的边塞词，“将军白发征夫泪”写出守边者的两难",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "漁家傲",
+     "author": "范仲淹"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yujiexing_fan",
+   "t": "御街行",
+   "a": "范仲淹",
+   "why": "同一位边帅写闺思般的夜愁，“酒未到、先成泪”出名",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "御街行",
+     "author": "范仲淹"
+    }
+   ]
+  },
+  {
+   "id": "songbei_qianqiusui_zx",
+   "t": "千秋岁",
+   "a": "张先",
+   "why": "“心似双丝网，中有千千结”，以网喻情的名句出处",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "千秋歲",
+     "author": "張先"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yiconghua",
+   "t": "一丛花",
+   "a": "张先",
+   "why": "“不如桃杏，犹解嫁东风”，以怨语写情，当时即传诵",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "一叢花",
+     "author": "張先"
+    }
+   ]
+  },
+  {
+   "id": "songbei_tianxianzi",
+   "t": "天仙子",
+   "a": "张先",
+   "why": "“云破月来花弄影”，炼字与“影”字句的代表",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "天仙子",
+     "author": "張先"
+    }
+   ]
+  },
+  {
+   "id": "songbei_qingmenyin",
+   "t": "青门引",
+   "a": "张先",
+   "why": "“隔墙送过秋千影”，以影写人，小令的含蓄示范",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "青門引",
+     "author": "張先"
+    }
+   ]
+  },
+  {
+   "id": "songbei_huanxisha_ys2",
+   "t": "浣溪沙（一向年光有限身）",
+   "a": "晏殊",
+   "why": "晏殊另一首浣溪沙，“不如怜取眼前人”是理智劝解式的伤春",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "晏殊",
+     "has": "一向年光"
+    }
+   ]
+  },
+  {
+   "id": "songbei_qingpingle_ys1",
+   "t": "清平乐（红笺小字）",
+   "a": "晏殊",
+   "why": "“鸿雁在云鱼在水”，寄书不达的闺思，典型的晏氏温润",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "清平樂",
+     "author": "晏殊",
+     "has": "紅箋小字"
+    }
+   ]
+  },
+  {
+   "id": "songbei_mulanhua_ys1",
+   "t": "木兰花（池塘水绿风微暖）",
+   "a": "晏殊",
+   "why": "“当时共我赏花人，点检如今无一半”，欢宴追忆里藏着人事凋零",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "木蘭花",
+     "author": "晏殊",
+     "has": "池塘水綠"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yulouchun_ys",
+   "t": "玉楼春",
+   "a": "晏殊",
+   "why": "“无情不似多情苦”，把相思写成一个可以丈量的“有穷”与“无尽”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "玉樓春",
+     "author": "晏殊"
+    }
+   ]
+  },
+  {
+   "id": "songbei_tasaxing_ys2",
+   "t": "踏莎行（小径红稀）",
+   "a": "晏殊",
+   "why": "“斜阳却照深深院”，以景作结，闲愁不说破",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "踏莎行",
+     "author": "晏殊",
+     "has": "小徑紅稀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_ys",
+   "t": "蝶恋花（六曲阑干偎碧树）",
+   "a": "晏殊",
+   "why": "春日午睡惊梦，“惊残好梦无寻处”收得干净",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "晏殊",
+     "has": "六曲闌干"
+    }
+   ]
+  },
+  {
+   "id": "songbei_mulanhua_sq",
+   "t": "木兰花（东城渐觉风光好）",
+   "a": "宋祁",
+   "why": "“红杏枝头春意闹”的出处，一个“闹”字成了词史上的炼字公案",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "木蘭花",
+     "author": "宋祁"
+    }
+   ]
+  },
+  {
+   "id": "songbei_shengchazi_oy",
+   "t": "生查子（去年元夜时）",
+   "a": "欧阳修",
+   "why": "今昔对照的结构范本；作者归属另有一说，是版本问题的活例子",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "生查子",
+     "author": "歐陽修"
+    }
+   ]
+  },
+  {
+   "id": "songbei_caisangzi_oy",
+   "t": "采桑子（群芳过后西湖好）",
+   "a": "欧阳修",
+   "why": "“始觉春空”，在繁华散尽处写出另一种清静",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "采桑子",
+     "author": "歐陽修"
+    }
+   ]
+  },
+  {
+   "id": "songbei_tasaxing_oy",
+   "t": "踏莎行（候馆梅残）",
+   "a": "欧阳修",
+   "why": "“平芜尽处是春山，行人更在春山外”，以空间推远写离愁",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "踏莎行",
+     "author": "歐陽修"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_oy2",
+   "t": "蝶恋花（谁道闲情抛弃久）",
+   "a": "欧阳修",
+   "why": "“为问新愁，何事年年有”，自问式的愁；归属另有异说",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "歐陽修",
+     "has": "誰道閒情"
+    }
+   ]
+  },
+  {
+   "id": "songbei_langtaosha_oy",
+   "t": "浪淘沙令（把酒祝东风）",
+   "a": "欧阳修",
+   "why": "“今年花胜去年红”，以年年花事写聚散",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浪淘沙令",
+     "author": "歐陽修"
+    }
+   ]
+  },
+  {
+   "id": "songbei_huanxisha_oy",
+   "t": "浣溪沙（堤上游人逐画船）",
+   "a": "欧阳修",
+   "why": "“白发戴花君莫笑”，宴游词里的旷达",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "歐陽修"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_ly",
+   "t": "蝶恋花（伫倚危楼风细细）",
+   "a": "柳永",
+   "why": "“衣带渐宽终不悔”，柳永少有的内敛之作",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "柳永"
+    }
+   ]
+  },
+  {
+   "id": "songbei_bashengganzhou",
+   "t": "八声甘州",
+   "a": "柳永",
+   "why": "“渐霜风凄紧，关河冷落，残照当楼”，慢词里写秋景最有骨力的一首",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "八聲甘州",
+     "author": "柳永"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yuhudie_ly",
+   "t": "玉蝴蝶",
+   "a": "柳永",
+   "why": "“望处雨收云断”，登临怀人，慢词铺叙的典型",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "玉蝴蝶",
+     "author": "柳永"
+    }
+   ]
+  },
+  {
+   "id": "songbei_shaonianyou_ly",
+   "t": "少年游",
+   "a": "柳永",
+   "why": "长安古道上的秋日倦游，写的是功名路上的失落",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "少年遊",
+     "author": "柳永"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yebanyue",
+   "t": "夜半乐",
+   "a": "柳永",
+   "why": "一路水程写成一幅行旅图，三叠结构清楚",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "夜半樂",
+     "author": "柳永"
+    }
+   ]
+  },
+  {
+   "id": "songbei_guizhixiang",
+   "t": "桂枝香",
+   "a": "王安石",
+   "why": "金陵怀古词的名篇，“六朝旧事随流水”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "桂枝香",
+     "author": "王安石"
+    }
+   ]
+  },
+  {
+   "id": "songbei_linjiangxian_yjd",
+   "t": "临江仙（梦后楼台高锁）",
+   "a": "晏几道",
+   "why": "“落花人独立，微雨燕双飞”，晏几道最常被举的词之一",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "臨江仙",
+     "author": "晏幾道"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_yjd2",
+   "t": "蝶恋花（醉别西楼醒不记）",
+   "a": "晏几道",
+   "why": "“红烛自怜无好计，夜寒空替人垂泪”，拟人手法写孤单",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "晏幾道",
+     "has": "醉別西樓"
+    }
+   ]
+  },
+  {
+   "id": "songbei_zhegutian_yjd",
+   "t": "鹧鸪天（彩袖殷勤捧玉钟）",
+   "a": "晏几道",
+   "why": "“犹恐相逢是梦中”，重逢之喜写成不信之惧",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鷓鴣天",
+     "author": "晏幾道",
+     "has": "彩袖殷勤"
+    }
+   ]
+  },
+  {
+   "id": "songbei_shengchazi_yjd",
+   "t": "生查子（关山魂梦长）",
+   "a": "晏几道",
+   "why": "“真个别离难，不似相逢好”，口语入词",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "生查子",
+     "author": "晏幾道",
+     "has": "關山魂夢"
+    }
+   ]
+  },
+  {
+   "id": "songbei_ruanlanggui_yjd",
+   "t": "阮郎归（旧香残粉似当初）",
+   "a": "晏几道",
+   "why": "“梦魂纵有也成虚，那堪和梦无”，层层递进的失落",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "阮郎歸",
+     "author": "晏幾道",
+     "has": "舊香殘粉"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yujiexing_yjd",
+   "t": "御街行（街南绿树春饶絮）",
+   "a": "晏几道",
+   "why": "“落花犹在，香屏空掩，人面知何处”，旧地重游的写法",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "御街行",
+     "author": "晏幾道"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yumeiren_yjd",
+   "t": "虞美人（曲阑干外天如水）",
+   "a": "晏几道",
+   "why": "“初将明月比佳期”，以月圆写盼人归",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "虞美人",
+     "author": "晏幾道"
+    }
+   ]
+  },
+  {
+   "id": "songbei_siyuanren",
+   "t": "思远人",
+   "a": "晏几道",
+   "why": "“红笺为无色”，泪写成信的细节",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "思遠人",
+     "author": "晏幾道"
+    }
+   ]
+  },
+  {
+   "id": "songbei_shuilongyin_ss",
+   "t": "水龙吟·次韵章质夫杨花词",
+   "a": "苏轼",
+   "why": "咏物而不黏滞，“似花还似非花”是次韵词压过原唱的名例",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "水龍吟",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yongyule_ss",
+   "t": "永遇乐·彭城夜宿燕子楼",
+   "a": "苏轼",
+   "why": "“古今如梦，何曾梦觉”，由梦中人事推到古今之叹",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "永遇樂",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dongxiange_ss",
+   "t": "洞仙歌",
+   "a": "苏轼",
+   "why": "夏夜纳凉，“流年暗中偷换”是全词最重的一笔",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "洞仙歌",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_busuanzi_ss",
+   "t": "卜算子·黄州定惠院寓居作",
+   "a": "苏轼",
+   "why": "“拣尽寒枝不肯栖”，黄州时期以孤鸿自况的名篇",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "卜算子",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_linjiangxian_ss",
+   "t": "临江仙（夜饮东坡醒复醉）",
+   "a": "苏轼",
+   "why": "“小舟从此逝，江海寄余生”，黄州夜归的自我安顿",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "臨江仙",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_hexinlang_ss",
+   "t": "贺新郎（乳燕飞华屋）",
+   "a": "苏轼",
+   "why": "夏日闺中的双线写法，榴花与美人互相映照",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "賀新郎",
+     "author": "蘇軾"
+    }
+   ]
+  },
+  {
+   "id": "songbei_zhegutian_hty",
+   "t": "鹧鸪天（黄菊枝头生晓寒）",
+   "a": "黄庭坚",
+   "why": "黄庭坚词里的疏狂口吻，“醉里簪花倒着冠”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鷓鴣天",
+     "author": "黃庭堅"
+    }
+   ]
+  },
+  {
+   "id": "songbei_wanghaichao_qg",
+   "t": "望海潮",
+   "a": "秦观",
+   "why": "洛阳旧游的追忆，“暗随流水到天涯”",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "望海潮",
+     "author": "秦觀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_manyuanfang_qg",
+   "t": "满庭芳（山抹微云）",
+   "a": "秦观",
+   "why": "“山抹微云，天黏衰草”的炼字，是秦观最常被引的名句",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "滿庭芳",
+     "author": "秦觀",
+     "has": "山抹微雲"
+    }
+   ]
+  },
+  {
+   "id": "songbei_tasaxing_qg",
+   "t": "踏莎行（雾失楼台）",
+   "a": "秦观",
+   "why": "贬谪途中的名篇，“郴江幸自绕郴山”问得无理而有情",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "踏莎行",
+     "author": "秦觀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_zhegutian_qg",
+   "t": "鹧鸪天（枝上流莺和泪闻）",
+   "a": "秦观",
+   "why": "“雨打梨花深闭门”，以景结情的收法",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "鷓鴣天",
+     "author": "秦觀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_jianzimulanhua_qg",
+   "t": "减字木兰花（天涯旧恨）",
+   "a": "秦观",
+   "why": "“过尽飞鸿字字愁”，短调里最后一句的力量",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "減字木蘭花",
+     "author": "秦觀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_huanxisha_qg",
+   "t": "浣溪沙（漠漠轻寒上小楼）",
+   "a": "秦观",
+   "why": "“自在飞花轻似梦，无边丝雨细如愁”，以虚写实的比喻",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "秦觀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_zlz",
+   "t": "蝶恋花（欲减罗衣寒未去）",
+   "a": "赵令畤",
+   "why": "以“深深处”“清明雨”写困在春愁里的人",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "趙令畤",
+     "has": "欲減羅衣"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dongxiange_bbz",
+   "t": "洞仙歌·泗州中秋作",
+   "a": "晁补之",
+   "why": "苏门词人的中秋词，与东坡《水调歌头》可对读",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "洞仙歌",
+     "author": "晁補之"
+    }
+   ]
+  },
+  {
+   "id": "songbei_yishaonian_bbz",
+   "t": "忆少年·别历下",
+   "a": "晁补之",
+   "why": "“无穷官柳，无情画舸，无根行客”，连用三个“无”字起笔",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "憶少年",
+     "author": "晁補之"
+    }
+   ]
+  },
+  {
+   "id": "songbei_busuanzi_lzy",
+   "t": "卜算子（我住长江头）",
+   "a": "李之儀",
+   "why": "民歌式的长江相思，“共饮长江水”是全词眼",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "卜算子",
+     "author": "李之儀"
+    }
+   ]
+  },
+  {
+   "id": "songbei_xifenfei",
+   "t": "惜分飞·富阳僧舍作别语赠妓琼芳",
+   "a": "毛滂",
+   "why": "别情词里的“魂分付潮回去”，以潮水送魂",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "惜分飛",
+     "author": "毛滂"
+    }
+   ]
+  },
+  {
+   "id": "songbei_ruilongyin",
+   "t": "瑞龙吟",
+   "a": "周邦彦",
+   "why": "“章台路”起笔，旧地重游的三叠结构，周邦彦章法的样本",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "瑞龍吟",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_lanlingwang",
+   "t": "兰陵王",
+   "a": "周邦彦",
+   "why": "柳、送别、愁，一层层向后推，是周邦彦最有名的长调",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蘭陵王",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_liuchou",
+   "t": "六丑·蔷薇谢后作",
+   "a": "周邦彦",
+   "why": "借落花写自身，是周邦彦咏物长调的代表",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "六醜",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_manyuanfang_zbyan",
+   "t": "满庭芳·夏日溧水无想山作",
+   "a": "周邦彦",
+   "why": "夏日倦客词，“莫思身外，长近樽前”的自嘲",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "滿庭芳",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_zbyan",
+   "t": "蝶恋花（月皎惊乌栖不定）",
+   "a": "周邦彦",
+   "why": "晓别场景像一组镜头，“楼上阑干横斗柄”收得有画面",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_guanheling",
+   "t": "关河令",
+   "a": "周邦彦",
+   "why": "一首短小的清秋词，“孤灯相映”处写寂静",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "關河令",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_xihe",
+   "t": "西河·金陵怀古",
+   "a": "周邦彦",
+   "why": "“燕子不知何世”暗用刘禹锡《乌衣巷》，怀古词的另一种写法",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "西河",
+     "author": "周邦彥"
+    }
+   ]
+  },
+  {
+   "id": "songbei_qingyuan_hz",
+   "t": "青玉案（凌波不过横塘路）",
+   "a": "贺铸",
+   "why": "“一川烟草，满城风絮，梅子黄时雨”，以三景比愁，使贺铸得“贺梅子”之称",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "青玉案",
+     "author": "賀鑄"
+    }
+   ]
+  },
+  {
+   "id": "songbei_gengluozi_hz",
+   "t": "更漏子（上东门）",
+   "a": "贺铸",
+   "why": "小令里“无际恨，见闲愁，侵寻天尽头”的空间感",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "更漏子",
+     "author": "賀鑄"
+    }
+   ]
+  },
+  {
+   "id": "songbei_huanxisha_hz",
+   "t": "浣溪沙（楼角初销一缕霞）",
+   "a": "贺铸",
+   "why": "春夜摘梅的短小场景，写得干净",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "浣溪沙",
+     "author": "賀鑄",
+     "has": "樓角初銷"
+    }
+   ]
+  },
+  {
+   "id": "songbei_shizhoumn",
+   "t": "石州慢",
+   "a": "贺铸",
+   "why": "“芭蕉不展丁香结”，以植物写心事",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "石州慢",
+     "author": "賀鑄"
+    }
+   ]
+  },
+  {
+   "id": "songbei_dielianhua_hz",
+   "t": "蝶恋花（几许伤春春复暮）",
+   "a": "贺铸",
+   "why": "“数点雨声风约住，朦胧淡月云来去”，景语收尾",
+   "passages": [
+    {
+     "kind": "chtxt",
+     "file": "宋词三百首.txt",
+     "title": "蝶戀花",
+     "author": "賀鑄",
+     "has": "幾許傷春"
+    }
+   ]
+  }
+ ]
+}

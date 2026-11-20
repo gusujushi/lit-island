@@ -1,0 +1,1265 @@
+{
+ "book": "shijingf",
+ "units": [
+  {
+   "id": "shijingf_gedan",
+   "t": "葛覃",
+   "a": "《诗经·周南》",
+   "why": "出嫁女子归宁前的织葛、浣衣、告假，叙事平实，劳动与心思相连",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "葛覃",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_juaner",
+   "t": "卷耳",
+   "a": "《诗经·周南》",
+   "why": "一首诗里同时写采卷耳的女子和远行的丈夫，双向思念的结构很早见",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "卷耳",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jiumu",
+   "t": "樛木",
+   "a": "《诗经·周南》",
+   "why": "以葛藟攀附樛木起兴的祝福诗，福履绥之一语多被引用",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "樛木",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_taoyao",
+   "t": "桃夭",
+   "a": "《诗经·周南》",
+   "why": "周代婚嫁祝歌的代表，'之子于归''宜其室家'的出处，比兴与重章叠句的范本",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "桃夭",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_tuju",
+   "t": "兔罝",
+   "a": "《诗经·周南》",
+   "why": "以设网捕兔写武夫的严整，干城、好仇、腹心三称谓层层递进",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "兔罝",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_fuyi",
+   "t": "芣苡",
+   "a": "《诗经·周南》",
+   "why": "全篇只换动词的采集歌，重章叠句最极端的形态，劳动节奏即诗的节奏",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "芣苡",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_hanguang",
+   "t": "汉广",
+   "a": "《诗经·周南》",
+   "why": "可望不可即的求女诗，'汉之广矣'一章将失落写成江汉的距离",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "汉广",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_rufen",
+   "t": "汝坟",
+   "a": "《诗经·周南》",
+   "why": "妇人思念远役的丈夫，'未见君子，怒如调饥'写出等待的煎熬",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "汝坟",
+     "meta": "周南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_quechao",
+   "t": "鹊巢",
+   "a": "《诗经·召南》",
+   "why": "以鸠居鹊巢起兴的迎亲诗，婚礼车辆之盛",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鹊巢",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_caochong",
+   "t": "草虫",
+   "a": "《诗经·召南》",
+   "why": "女子秋日思夫，由草虫鸣叫触发的心理三叠，情感层层转深",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "草虫",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_gantang",
+   "t": "甘棠",
+   "a": "《诗经·召南》",
+   "why": "民众怀念召伯而爱护甘棠树，由物及人的纪念诗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "甘棠",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xinglu",
+   "t": "行露",
+   "a": "《诗经·召南》",
+   "why": "女子拒婚诉讼，罕见的女性刚强声音，兼有诗与诉词的口吻",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "行露",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_gaoyang",
+   "t": "羔羊",
+   "a": "《诗经·召南》",
+   "why": "讽刺或赞美官吏衣着从容，委蛇一词的出处",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "羔羊",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yinqilei",
+   "t": "殷其雷",
+   "a": "《诗经·召南》",
+   "why": "妻子对远役丈夫的呼唤，'何斯违斯'的追问",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "殷其雷",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_biaoyoumei",
+   "t": "摽有梅",
+   "a": "《诗经·召南》",
+   "why": "梅子渐落，女子盼嫁，时间焦虑的早期写法",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "摽有梅",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yeyousijun",
+   "t": "野有死麕",
+   "a": "《诗经·召南》",
+   "why": "求爱与礼物的野外情诗，'无感我帨兮'的紧张感",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "野有死麕",
+     "meta": "召南"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_beizhoubei",
+   "t": "柏舟",
+   "a": "《诗经·邶风》",
+   "why": "以泛舟起兴的忧愤诗，'我心匪石，不可转也'的出处，三个“匪”字句撑起全诗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "柏舟",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_lvyi",
+   "t": "绿衣",
+   "a": "《诗经·邶风》",
+   "why": "睹衣生忧的诗，悼亡与伤己两说并存，衣、丝、织衣人层层引出怀思",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "绿衣",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yanyan",
+   "t": "燕燕",
+   "a": "《诗经·邶风》",
+   "why": "送别诗之祖，'瞻望弗及，泣涕如雨'的情感起点",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "燕燕",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jigu",
+   "t": "击鼓",
+   "a": "《诗经·邶风》",
+   "why": "士兵从军的怨叹，'执子之手，与子偕老'的原始语境",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "击鼓",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_kaifeng",
+   "t": "凯风",
+   "a": "《诗经·邶风》",
+   "why": "儿子自责不能慰母的孝思诗，以凯风、寒泉起兴",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "凯风",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_gufengbei",
+   "t": "谷风",
+   "a": "《诗经·邶风》",
+   "why": "弃妇诗的一个版本，与卫风《氓》形成对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "谷风",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_shiwei",
+   "t": "式微",
+   "a": "《诗经·邶风》",
+   "why": "役夫呼唤'胡不归'，简短而沉痛的服役诗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "式微",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_paoyouku",
+   "t": "匏有苦叶",
+   "a": "《诗经·邶风》",
+   "why": "济水涉渡写成婚恋的等待，'深则厉，浅则揭'的生活智慧",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "匏有苦叶",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jingnv",
+   "t": "静女",
+   "a": "《诗经·邶风》",
+   "why": "约会情诗，'爱而不见，搔首踟蹰'的生活细节与彤管之赠",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "静女",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_beimen",
+   "t": "北门",
+   "a": "《诗经·邶风》",
+   "why": "小官吏自述生计与役务之苦，'已焉哉'的无奈",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "北门",
+     "meta": "邶"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_beizhouyong",
+   "t": "柏舟",
+   "a": "《诗经·鄘风》",
+   "why": "共姜誓守与母命冲突的誓言诗（存疑），与邶风同名宜对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "柏舟",
+     "meta": "鄘"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_sangzhong",
+   "t": "桑中",
+   "a": "《诗经·鄘风》",
+   "why": "幽会情诗，三章点名地点，读法与诗序评判之争见证诗学观念",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "桑中",
+     "meta": "鄘"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xiangshu",
+   "t": "相鼠",
+   "a": "《诗经·鄘风》",
+   "why": "以鼠有皮有齿有体反衬无仪无止无礼的讽刺诗，辛辣直白",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "相鼠",
+     "meta": "鄘"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zaichi",
+   "t": "载驰",
+   "a": "《诗经·鄘风》",
+   "why": "许穆夫人忧祖国之亡，传统认定的中国最早女诗人作品之一",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "载驰",
+     "meta": "鄘"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_qiyu",
+   "t": "淇奥",
+   "a": "《诗经·卫风》",
+   "why": "以淇水边绿竹赞美君子，'如切如磋，如琢如磨'的出处",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "淇奥",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_kaopan",
+   "t": "考槃",
+   "a": "《诗经·卫风》",
+   "why": "隐者自适之歌，宽、薖、轴三章写独处的满足",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "考槃",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_shuoren",
+   "t": "硕人",
+   "a": "《诗经·卫风》",
+   "why": "描写庄姜之美的名篇，'手如柔荑'一段是中国美人描写的源头",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "硕人",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_heguang",
+   "t": "河广",
+   "a": "《诗经·卫风》",
+   "why": "宋襄公之母思归卫国，夸张手法写思乡之深",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "河广",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_boxi",
+   "t": "伯兮",
+   "a": "《诗经·卫风》",
+   "why": "思妇诗，'岂无膏沐，谁适为容'一句道出情感内核",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "伯兮",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_mugua",
+   "t": "木瓜",
+   "a": "《诗经·卫风》",
+   "why": "投报往来的诗，'永以为好也'成为礼尚往来的典故",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "木瓜",
+     "meta": "卫"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_junziyuyi",
+   "t": "君子于役",
+   "a": "《诗经·王风》",
+   "why": "黄昏时分农家日常里的思夫，'鸡栖于埘'一段是最日常的景语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "君子于役",
+     "meta": "王"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yangzhishuiwang",
+   "t": "扬之水",
+   "a": "《诗经·王风》",
+   "why": "戍卫申国的士兵思家，'不与我戍申'的怨",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "扬之水",
+     "meta": "王"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zhonggu",
+   "t": "中谷有蓷",
+   "a": "《诗经·王风》",
+   "why": "荒年弃妇之叹，蓷由湿转干象征女子境遇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "中谷有蓷",
+     "meta": "王"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_tuyuan",
+   "t": "兔爰",
+   "a": "《诗经·王风》",
+   "why": "'我生之初，尚无为'的乱世叹息",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "兔爰",
+     "meta": "王"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_caige",
+   "t": "采葛",
+   "a": "《诗经·王风》",
+   "why": "'一日不见，如三秋兮'的出处，短短三章把时间感拉长",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "采葛",
+     "meta": "王"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_ziyi",
+   "t": "缁衣",
+   "a": "《诗经·郑风》",
+   "why": "赠衣、改衣、授馆，以一件衣服写情谊",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "缁衣",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jiangzhongzi",
+   "t": "将仲子",
+   "a": "《诗经·郑风》",
+   "why": "女子拒绝情人翻墙的复杂心理，'畏人之多言'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "将仲子",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_nvyuejiming",
+   "t": "女曰鸡鸣",
+   "a": "《诗经·郑风》",
+   "why": "夫妻晨起对话，《诗经》中最日常温馨的夫妇诗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "女曰鸡鸣",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_younvtongche",
+   "t": "有女同车",
+   "a": "《诗经·郑风》",
+   "why": "同车之女的美，'颜如舜华'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "有女同车",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_shanyoufusu",
+   "t": "山有扶苏",
+   "a": "《诗经·郑风》",
+   "why": "男女戏谑，'不见子都，乃见狂且'的反语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "山有扶苏",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jiaotong",
+   "t": "狡童",
+   "a": "《诗经·郑风》",
+   "why": "情人闹别扭，'不与我言兮'的撒娇与失落",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "狡童",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_qianchang",
+   "t": "褰裳",
+   "a": "《诗经·郑风》",
+   "why": "女子戏谑情人，'子不我思，岂无他人'的泼辣",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "褰裳",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_fengyu",
+   "t": "风雨",
+   "a": "《诗经·郑风》",
+   "why": "'风雨如晦，鸡鸣不已'，以风雨之暗衬重逢之喜",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "风雨",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zijin",
+   "t": "子衿",
+   "a": "《诗经·郑风》",
+   "why": "'青青子衿，悠悠我心'的出处，一日不见如三月的名篇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "子衿",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_chuqidongmen",
+   "t": "出其东门",
+   "a": "《诗经·郑风》",
+   "why": "东门女子如云，而'匪我思存'，专情的宣言",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "出其东门",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yeyoumancao",
+   "t": "野有蔓草",
+   "a": "《诗经·郑风》",
+   "why": "邂逅之诗，'邂逅相遇，适我愿兮'的意外之喜",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "野有蔓草",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zhenwei",
+   "t": "溱洧",
+   "a": "《诗经·郑风》",
+   "why": "上巳节男女游春，'赠之以勺药'，热闹中见风俗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "溱洧",
+     "meta": "郑"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jiming",
+   "t": "鸡鸣",
+   "a": "《诗经·齐风》",
+   "why": "一问一答的对话体，以鸡鸣与苍蝇声、晨光与月光的借口写赖床，幽默而亲昵",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鸡鸣",
+     "meta": "齐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_huan",
+   "t": "还",
+   "a": "《诗经·齐风》",
+   "why": "猎人相遇互相称赞的对话体，'揖我谓我儇兮'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "还",
+     "meta": "齐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_dongfangweiming",
+   "t": "东方未明",
+   "a": "《诗经·齐风》",
+   "why": "役夫抱怨征召无定时，'颠倒衣裳'的生动细节",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "东方未明",
+     "meta": "齐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_nanshan",
+   "t": "南山",
+   "a": "《诗经·齐风》",
+   "why": "讽刺齐襄公兄妹乱伦，政治讽刺的直笔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "南山",
+     "meta": "齐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yijie",
+   "t": "猗嗟",
+   "a": "《诗经·齐风》",
+   "why": "赞美射手，对鲁庄公的评价，'猗嗟昌兮，颀而长兮'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "猗嗟",
+     "meta": "齐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yuantao",
+   "t": "园有桃",
+   "a": "《诗经·魏风》",
+   "why": "士人忧世无人理解，'不知我者，谓我士也骄'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "园有桃",
+     "meta": "魏"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zhigu",
+   "t": "陟岵",
+   "a": "《诗经·魏风》",
+   "why": "登山遥望父母兄长的叮嘱，'上慎旃哉，犹来无止'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "陟岵",
+     "meta": "魏"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_shimuzhijian",
+   "t": "十亩之间",
+   "a": "《诗经·魏风》",
+   "why": "采桑女归家的轻快田园小诗，'行与子逝兮'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "十亩之间",
+     "meta": "魏"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xishuai",
+   "t": "蟋蟀",
+   "a": "《诗经·唐风》",
+   "why": "'今我不乐，日月其除'的及时行乐与'好乐无荒'的自警",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "蟋蟀",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yangzhishuitang",
+   "t": "扬之水",
+   "a": "《诗经·唐风》",
+   "why": "'白石凿凿'起兴，写密谋前的低语与恐惧",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "扬之水",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_choumou",
+   "t": "绸缪",
+   "a": "《诗经·唐风》",
+   "why": "新婚之夜的诗，'今夕何夕，见此良人'的惊喜",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "绸缪",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_baoyu",
+   "t": "鸨羽",
+   "a": "《诗经·唐风》",
+   "why": "徭役之重使农民不能耕作，'王事靡盬'的怨天呼号",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鸨羽",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_wuyitang",
+   "t": "无衣",
+   "a": "《诗经·唐风》",
+   "why": "我有衣却求你所赐，写谦与请求；与秦风《无衣》同题异趣，宜对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "无衣",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_gesheng",
+   "t": "葛生",
+   "a": "《诗经·唐风》",
+   "why": "悼亡诗，'夏之日，冬之夜'与'百岁之后，归于其居'的死后同穴之愿",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "葛生",
+     "meta": "唐"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xiaorong",
+   "t": "小戎",
+   "a": "《诗经·秦风》",
+   "why": "妻子想念远征丈夫，兼写战车兵器之精，秦人尚武之气",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "小戎",
+     "meta": "秦"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_zhongnan",
+   "t": "终南",
+   "a": "《诗经·秦风》",
+   "why": "秦君入朝的赞美诗，'君子至止，锦衣狐裘'的礼貌",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "终南",
+     "meta": "秦"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_huangniaoqin",
+   "t": "黄鸟",
+   "a": "《诗经·秦风》",
+   "why": "哀悼秦穆公殉葬三良，'谁从穆公，子车奄息'的史诗性控诉",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "黄鸟",
+     "meta": "秦"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_chenfeng",
+   "t": "晨风",
+   "a": "《诗经·秦风》",
+   "why": "女子被弃的哀叹，'如何如何，忘我实多'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "晨风",
+     "meta": "秦"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_weiyang",
+   "t": "渭阳",
+   "a": "《诗经·秦风》",
+   "why": "秦康公送舅父重耳，亲情与权力的交织",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "渭阳",
+     "meta": "秦"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_wanqiu",
+   "t": "宛丘",
+   "a": "《诗经·陈风》",
+   "why": "荡子在宛丘舞蹈，旁观者'洵有情兮，而无望兮'的复杂心情",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "宛丘",
+     "meta": "陈"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_dongmenzhifen",
+   "t": "东门之枌",
+   "a": "《诗经·陈风》",
+   "why": "男女聚会舞蹈，'谷旦于差'，陈地巫风与民俗",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "东门之枌",
+     "meta": "陈"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_hengmen",
+   "t": "衡门",
+   "a": "《诗经·陈风》",
+   "why": "隐者自安，'岂其食鱼，必河之鲂'的知足之语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "衡门",
+     "meta": "陈"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_dongmenzhichi",
+   "t": "东门之池",
+   "a": "《诗经·陈风》",
+   "why": "在池边沤麻的求偶诗，歌咏对象的'可与晤歌'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "东门之池",
+     "meta": "陈"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_yuechu",
+   "t": "月出",
+   "a": "《诗经·陈风》",
+   "why": "以月写美人，'舒窈纠兮'，叠韵词之极致",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "月出",
+     "meta": "陈"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_gaoqiuhui",
+   "t": "羔裘",
+   "a": "《诗经·桧风》",
+   "why": "以在位者羔裘狐裘的光鲜，反衬旁观者的忧心，对比式的含蓄讽刺",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "羔裘",
+     "meta": "桧"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xiyoucuchu",
+   "t": "隰有苌楚",
+   "a": "《诗经·桧风》",
+   "why": "羡慕草木无知无家的绝望，'乐子之无知'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "隰有苌楚",
+     "meta": "桧"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_feifeng",
+   "t": "匪风",
+   "a": "《诗经·桧风》",
+   "why": "周道的怀念，远行者望故国，'谁将西归，怀之好音'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "匪风",
+     "meta": "桧"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_fuyou",
+   "t": "蜉蝣",
+   "a": "《诗经·曹风》",
+   "why": "以蜉蝣朝生暮死写生命短暂的忧伤，'于我归处'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "蜉蝣",
+     "meta": "曹"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_houren",
+   "t": "候人",
+   "a": "《诗经·曹风》",
+   "why": "讽刺小人得宠、贤者受苦，'彼其之子，不称其服'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "候人",
+     "meta": "曹"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_shijiu",
+   "t": "鳲鸠",
+   "a": "《诗经·曹风》",
+   "why": "以鸤鸠喻君子用心均平，'其仪不忒，正是四国'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鳲鸠",
+     "meta": "曹"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_xiaquan",
+   "t": "下泉",
+   "a": "《诗经·曹风》",
+   "why": "怀念周王室的盛世，以苞稂、苞萧起兴",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "下泉",
+     "meta": "曹"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_chixiao",
+   "t": "鸱鸮",
+   "a": "《诗经·豳风》",
+   "why": "鸟的口吻，以母鸟筑巢写周公辩白与自危，'予室翘翘'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鸱鸮",
+     "meta": "豳"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_dongshan",
+   "t": "东山",
+   "a": "《诗经·豳风》",
+   "why": "征人归乡途中的想象，《诗经》叙事诗之最",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "东山",
+     "meta": "豳"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_pofu",
+   "t": "破斧",
+   "a": "《诗经·豳风》",
+   "why": "东征将士赞美周公，'周公东征，四国是皇'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "破斧",
+     "meta": "豳"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_ike",
+   "t": "伐柯",
+   "a": "《诗经·豳风》",
+   "why": "以伐柯必用斧起兴写婚姻须有媒，'取妻如何，匪媒不得'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "伐柯",
+     "meta": "豳"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_jiuyu",
+   "t": "九罭",
+   "a": "《诗经·豳风》",
+   "why": "周公东归的挽留诗，'公归无所，於女信处'",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "九罭",
+     "meta": "豳"
+    }
+   ]
+  },
+  {
+   "id": "shijingf_langba",
+   "t": "狼跋",
+   "a": "《诗经·豳风》",
+   "why": "以狼的进退两难喻周公遭谗仍从容，德音不瑕",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "狼跋",
+     "meta": "豳"
+    }
+   ]
+  }
+ ]
+}

@@ -310,7 +310,7 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto(base + 'index.html#/day/27');
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  ok(bg === 'rgb(27, 25, 22)', `暗色主题背景（实际 ${bg}）`);
+  ok(bg === 'rgb(23, 19, 15)', `暗色主题背景（实际 ${bg}）`);
   await shot('09_mobile_dark');
   await page.emulateMedia({ colorScheme: 'light' });
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /* 课程数据校验：结构、引用、天数、题目格式、页码范围、原文来源可追溯。任何错误 → 退出码 1。
- * 用法：node tools/validate.js [--check-sources]
- *   --check-sources：同时重新计算本机 txt 与维基文库文件的 SHA-256，确认与 texts.js 记录一致。 */
+ * 用法：node tools/validate.js [--check-sources] [--lib 书号]
+ *   --check-sources：同时重新计算本机 txt 与维基文库文件的 SHA-256，确认与 texts.js、书库原文记录一致。
+ *   --lib 书号：书库只查这一本（撰写者交付前用）；不带时查全部书库。 */
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -70,7 +71,7 @@ Object.entries(LIT.texts).forEach(([id, t]) => {
 if (process.argv.includes('--check-sources')) {
   const cache = {};
   const sha = f => (cache[f] = cache[f] || crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'));  // 原始字节
-  Object.entries(LIT.texts).forEach(([id, t]) => {
+  Object.entries(Object.assign({}, LIT.texts, LIT.libText)).forEach(([id, t]) => {
     const first = t.src.file.split(' + ')[0];
     const f = first.startsWith('sources/') ? path.join(ROOT, first) : first.includes('/') ? path.join(path.dirname(BOOKS), first) : path.join(BOOKS, first);
     if (!fs.existsSync(f)) { E(`原文 ${id} 的来源文件不存在：${f}`); return; }
@@ -90,6 +91,16 @@ LIT.meta.phases.forEach(p => { if (!p.month || p.month.length < 3) E(`阶段 ${p
 // 模块天数
 const count = {};
 learnNums.forEach(n => { const m = LIT.learn[n].mod; count[m] = (count[m] || 0) + 1; });
+
+// 书库（docs/LIB_FORMAT.md）
+{
+  const libArg = process.argv.includes('--lib') ? process.argv[process.argv.indexOf('--lib') + 1] : null;
+  const { checkLib } = require('./lib_check.js');
+  (LIT.loadErrors || []).forEach(e => (libArg ? W : E)('书库文件读不了：' + e));
+  const r = checkLib(LIT, { book: libArg });
+  r.errs.forEach(E); r.warns.forEach(W);
+  console.log(`书库：${LIT.lib.books.filter(b => b.units.length).length} 本书，${Object.keys(LIT.lib.units).length} 个单元，原文 ${Object.keys(LIT.libText).length} 段${libArg ? '（本次只查 ' + libArg + '）' : ''}`);
+}
 
 warns.forEach(w => console.log('⚠', w));
 errs.forEach(e => console.log('✗', e));

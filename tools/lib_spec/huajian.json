@@ -1,0 +1,964 @@
+{
+ "book": "huajian",
+ "units": [
+  {
+   "id": "huajian_wen_pusa2",
+   "t": "菩萨蛮（水晶帘里玻璃枕）",
+   "a": "温庭筠",
+   "why": "“江上柳如烟，雁飞残月天”从闺中陈设一跳到江岸远景，是花间词镜头式转场的典型",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "菩萨蛮",
+     "meta": "其二 · 温庭筠"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_pusa6",
+   "t": "菩萨蛮（玉楼明月长相忆）",
+   "a": "温庭筠",
+   "why": "送别、独居、残梦依次排开，末尾以“花落子规啼”的声音收束",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "菩萨蛮",
+     "meta": "其六 · 温庭筠"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_genglou1",
+   "t": "更漏子（柳丝长）",
+   "a": "温庭筠",
+   "why": "三字短句起调，“花外漏声迢递”把时间推进写成了声音",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "更漏子",
+     "meta": "其一 · 温庭筠"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_genglou6",
+   "t": "更漏子（玉炉香）",
+   "a": "温庭筠",
+   "why": "“梧桐树，三更雨”一段以雨声写一夜无眠，温词里最常被单独拈出的篇章",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "更漏子",
+     "meta": "其六 · 温庭筠"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_hedushen",
+   "t": "河渎神（孤庙对寒潮）",
+   "a": "温庭筠",
+   "why": "祭神词里夹进离愁，“铜鼓赛神来”保留了调名的祭祀底色",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "河渎神",
+     "meta": "孤庙对寒潮"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_mengjiangnan",
+   "t": "梦江南二首",
+   "a": "温庭筠",
+   "why": "“过尽千帆皆不是”是等待题材里最耐读的一句，两首相连读更完整",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "梦江南",
+     "meta": "千万恨",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "梦江南",
+     "meta": "梳洗罢",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_hechuan",
+   "t": "河传（湖上）",
+   "a": "温庭筠",
+   "why": "河传调句短韵密、频繁换韵，是观察花间词节奏手段的好样本",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "河传",
+     "meta": "河传·湖上"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wen_heyebei",
+   "t": "荷叶杯二首",
+   "a": "温庭筠",
+   "why": "同调两首，三字句和短韵构成跳跃节奏，采莲场景里写人愁",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "荷叶杯",
+     "meta": "一点露珠",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "荷叶杯",
+     "meta": "镜水夜来",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_huangfu_mengjiangnan",
+   "t": "梦江南二首",
+   "a": "皇甫松",
+   "why": "梦里写江南，“夜船吹笛雨萧萧”是花间词里少见的开阔清冷",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "梦江南",
+     "meta": "兰烬落",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "梦江南",
+     "meta": "楼上寝",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_huangfu_cailianzi",
+   "t": "采莲子二首",
+   "a": "皇甫松",
+   "why": "括注里的“举棹”“年少”像歌唱时的应和，保留了民歌演唱的痕迹",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "采莲子",
+     "meta": "菡萏香莲",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "采莲子",
+     "meta": "船动湖光",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_huansha_yeye",
+   "t": "浣溪沙（夜夜相思更漏残）",
+   "a": "韦庄",
+   "why": "“咫尺画堂深似海”以近写远，是韦庄白描的路数",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "浣溪沙",
+     "meta": "夜夜相思"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_pusa_hong",
+   "t": "菩萨蛮（红楼别夜堪惆怅）",
+   "a": "韦庄",
+   "why": "与主线《人人尽说江南好》同调，这一首写离别，对读可见韦词的直白",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "菩萨蛮",
+     "meta": "红楼别夜"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_pusa_jinru",
+   "t": "菩萨蛮（如今却忆江南乐）",
+   "a": "韦庄",
+   "why": "“此度见花枝，白头誓不归”以反话写乡愁，是《人人尽说江南好》的姊妹篇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "菩萨蛮",
+     "meta": "如今却忆"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_yingtian",
+   "t": "应天长（别来半岁音书绝）",
+   "a": "韦庄",
+   "why": "“难相见，易相别”六字对举，写尽相思的不对称",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "应天长",
+     "meta": "别来半岁"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_heyebei",
+   "t": "荷叶杯（记得那年花下）",
+   "a": "韦庄",
+   "why": "回忆体小令，“如今俱是异乡人，相见更无因”把旧情落在身世上",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "荷叶杯",
+     "meta": "记得那年"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_yejinmen",
+   "t": "谒金门（空相忆）",
+   "a": "韦庄",
+   "why": "“满院落花春寂寂，断肠芳草碧”以景收情，不再多言",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "谒金门",
+     "meta": "空相忆"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_hechuan",
+   "t": "河传（何处）",
+   "a": "韦庄",
+   "why": "隋堤怀古与艳情混写，“古今愁”三字收住一片繁华",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "河传",
+     "meta": "河传·何处"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_sidixiang",
+   "t": "思帝乡（春日游）",
+   "a": "韦庄",
+   "why": "女子主动表白，“纵被无情弃，不能羞”直白而大胆",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "思帝乡",
+     "meta": "春日游"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_nvguanzi",
+   "t": "女冠子二首",
+   "a": "韦庄",
+   "why": "一首写别时，一首写梦中相见，两首能接成一段情节",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "女冠子",
+     "meta": "四月十七",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "女冠子",
+     "meta": "昨夜夜半",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_wei_mulanhua",
+   "t": "木兰花（独上小楼春欲暮）",
+   "a": "韦庄",
+   "why": "“千山万水不曾行，魂梦欲教何处觅”以从未走过的路写思念之远",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "木兰花",
+     "meta": "独上小楼"
+    }
+   ]
+  },
+  {
+   "id": "huajian_xue_huansha",
+   "t": "浣溪沙（红蓼渡头秋正雨）",
+   "a": "薛昭蕴",
+   "why": "视角落在船夫眼里，“几回愁煞棹船郎”是花间词里少有的旁观写法",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "浣溪沙",
+     "meta": "红蓼渡头"
+    }
+   ]
+  },
+  {
+   "id": "huajian_niuqiao_wangjiangyuan",
+   "t": "望江怨（东风急）",
+   "a": "牛峤",
+   "why": "短短几句里动作与对白并置，“寄语薄情郎”的直呼是牛峤的口语化特色",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "望江怨",
+     "meta": "东风急"
+    }
+   ]
+  },
+  {
+   "id": "huajian_niuqiao_pusa",
+   "t": "菩萨蛮（玉楼冰簟鸳鸯锦）",
+   "a": "牛峤",
+   "why": "“须作一生拌，尽君今日欢”是花间词里最干脆的誓语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "菩萨蛮",
+     "meta": "玉楼冰簟"
+    }
+   ]
+  },
+  {
+   "id": "huajian_zhangbi_huansha",
+   "t": "浣溪沙（独立寒阶望月华）",
+   "a": "张泌",
+   "why": "“人间无路到仙家，但凭魂梦访天涯”以仙凡阻隔写相隔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "浣溪沙",
+     "meta": "独立寒阶"
+    }
+   ]
+  },
+  {
+   "id": "huajian_maowx_ganzhou",
+   "t": "甘州遍（秋风紧）",
+   "a": "毛文锡",
+   "why": "花间词中罕见的边塞词，“青冢北，黑山西”的地名带出另一种声口",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "甘州遍",
+     "meta": "秋风紧"
+    }
+   ]
+  },
+  {
+   "id": "huajian_maowx_zuihuajian",
+   "t": "醉花间（休相问）",
+   "a": "毛文锡",
+   "why": "“休相问，怕相问，相问还添恨”以重叠句式写不敢问的心理",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "醉花间",
+     "meta": "休相问"
+    }
+   ]
+  },
+  {
+   "id": "huajian_niuxj_linjiangxian",
+   "t": "临江仙（峭碧参差十二峰）",
+   "a": "牛希济",
+   "why": "咏巫山神女旧事，景语与典故叠用，收于“征棹动晨钟”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "临江仙",
+     "meta": "峭碧参差"
+    }
+   ]
+  },
+  {
+   "id": "huajian_niuxj_shengchazi",
+   "t": "生查子（春山烟欲收）",
+   "a": "牛希济",
+   "why": "结句“记得绿罗裙，处处怜芳草”化物为情，是花间小令里最常被记住的结尾之一",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "生查子",
+     "meta": "春山烟欲收"
+    }
+   ]
+  },
+  {
+   "id": "huajian_ouyang_nanxiangzi",
+   "t": "南乡子二首",
+   "a": "欧阳炯",
+   "why": "写南国水乡风物与女子，花间词中少有的地域色彩",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "南乡子",
+     "meta": "岸远沙平",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "南乡子",
+     "meta": "路入南中",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_ouyang_jiangchengzi",
+   "t": "江城子（晚日金陵岸草平）",
+   "a": "欧阳炯",
+   "why": "“六代繁华，暗逐逝波声”，短短几句写完金陵兴替",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "江城子",
+     "meta": "晚日金陵"
+    }
+   ]
+  },
+  {
+   "id": "huajian_hening_caisangzi",
+   "t": "采桑子（蝤蛴领上诃梨子）",
+   "a": "和凝",
+   "why": "写闺中少女的日常与春思，“春思翻教阿母疑”有市井趣味",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "采桑子",
+     "meta": "蝤蛴领上"
+    }
+   ]
+  },
+  {
+   "id": "huajian_guxiong_huansha",
+   "t": "浣溪沙（红藕香寒翠渚平）",
+   "a": "顾敻",
+   "why": "由秋景起、以“小窗孤烛泪纵横”收，层层递进",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "浣溪沙",
+     "meta": "红藕香寒"
+    }
+   ]
+  },
+  {
+   "id": "huajian_guxiong_suzhongqing",
+   "t": "诉衷情（永夜抛人何处去）",
+   "a": "顾敻",
+   "why": "“换我心为你心，始知相忆深”是花间词里最直白的情语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "诉衷情",
+     "meta": "永夜抛人"
+    }
+   ]
+  },
+  {
+   "id": "huajian_sun_hechuan",
+   "t": "河传（太平天子）",
+   "a": "孙光宪",
+   "why": "写隋炀帝开运河、游江都，是花间词里少有的史论式作品",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "河传",
+     "meta": "太平天子"
+    }
+   ]
+  },
+  {
+   "id": "huajian_sun_houtinghua",
+   "t": "后庭花（石城依旧空江国）",
+   "a": "孙光宪",
+   "why": "调名与“故宫春色”相扣，是怀古兼咏物的小令",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "后庭花",
+     "meta": "石城依旧"
+    }
+   ]
+  },
+  {
+   "id": "huajian_sun_yejinmen",
+   "t": "谒金门（留不得）",
+   "a": "孙光宪",
+   "why": "起句“留不得！”决绝，写扬州别后，末以孤鸾自况",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "谒金门",
+     "meta": "留不得"
+    }
+   ]
+  },
+  {
+   "id": "huajian_sun_siyueren",
+   "t": "思越人（古台平）",
+   "a": "孙光宪",
+   "why": "姑苏台、馆娃宫的怀古，“翠黛空留千载恨”以西子的眉黛作笔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "思越人",
+     "meta": "古台平"
+    }
+   ]
+  },
+  {
+   "id": "huajian_weicb_yuge",
+   "t": "渔歌子（柳如眉）",
+   "a": "魏承班",
+   "why": "渔歌子本以渔隐为题，魏承班却写闺情，调与题的错位值得细看",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "渔歌子",
+     "meta": "柳如眉"
+    }
+   ]
+  },
+  {
+   "id": "huajian_lu_linjiangxian",
+   "t": "临江仙（金锁重门荒苑静）",
+   "a": "鹿虔扆",
+   "why": "“暗伤亡国”四字直接挑明，花间集里少有的家国之痛",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "临江仙",
+     "meta": "金锁重门"
+    }
+   ]
+  },
+  {
+   "id": "huajian_lixun_yuge",
+   "t": "渔歌子二首",
+   "a": "李珣",
+   "why": "渔父词写隐逸，“名利不将心挂”与艳情词形成对照",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "渔歌子",
+     "meta": "楚山青",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "渔歌子",
+     "meta": "荻花秋",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_lixun_wushan",
+   "t": "巫山一段云二首",
+   "a": "李珣",
+   "why": "两首都扣着巫山神女旧事，调名本意与咏古合一",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "巫山一段云",
+     "meta": "有客经巫峡",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "巫山一段云",
+     "meta": "古庙依青嶂",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_lixun_nanxiangzi",
+   "t": "南乡子（烟漠漠）",
+   "a": "李珣",
+   "why": "羁旅词，“岸花零落鹧鸪啼”以鸟声写行路之难",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "南乡子",
+     "meta": "烟漠漠"
+    }
+   ]
+  },
+  {
+   "id": "huajian_lixun_hechuan",
+   "t": "河传（去去）",
+   "a": "李珣",
+   "why": "行役与怀人合写，“朝云暮雨，依旧十二峰前”承接巫山旧事",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "花间集.txt",
+     "title": "河传",
+     "meta": "去去"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_yingtian",
+   "t": "应天长（一钩初月临妆镜）",
+   "a": "李璟",
+   "why": "以一钩初月起兴，落花、春愁、病酒层层铺开",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "应天长·一钩初月临妆镜"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_wangyuanxing",
+   "t": "望远行（碧砌花光照眼明）",
+   "a": "李璟",
+   "why": "“辽阳月、秣陵砧，不传消息但传情”以地名对举，写思妇与征人",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "望远行·碧砌花光照眼"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_shouquan",
+   "t": "摊破浣溪沙（手卷真珠上玉钩）",
+   "a": "李璟",
+   "why": "与主线《菡萏香销》同调，这一首更偏闺怨，“丁香空结雨中愁”可对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "摊破浣溪沙·手卷真珠上玉钩"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_wuyeti",
+   "t": "乌夜啼（昨夜风兼雨）",
+   "a": "李煜",
+   "why": "后期词里典型的消极口吻，“算来一梦浮生”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "乌夜啼·昨夜风兼雨"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_yihuzhu",
+   "t": "一斛珠（晓妆初过）",
+   "a": "李煜",
+   "why": "描摹女子动作的前期艳词，细节写得很实",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "一斛珠·晓妆初过"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_ziyege",
+   "t": "子夜歌（人生愁恨何能免）",
+   "a": "李煜",
+   "why": "“故国梦重归，觉来双泪垂”以梦写亡国之痛",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "子夜歌·人生愁恨何能免"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_linjiangxian",
+   "t": "临江仙（樱桃落尽春归去）",
+   "a": "李煜",
+   "why": "以暮春景物写人去楼空，末句“空持罗带”收于动作",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "临江仙·樱桃落尽春归去"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_wangjiangnan",
+   "t": "望江南二首",
+   "a": "李煜",
+   "why": "一首写泪、一首写梦，“车如流水马如龙”是梦里旧日繁华",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "望江南·多少泪",
+     "t": "其一"
+    },
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "望江南·多少恨",
+     "t": "其二"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_qingpingle",
+   "t": "清平乐（别来春半）",
+   "a": "李煜",
+   "why": "“离恨恰如春草，更行更远还生”以春草喻离恨，是后主常被称道的比喻",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "清平乐·别来春半"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_caisangzi",
+   "t": "采桑子（庭前春逐红英尽）",
+   "a": "李煜",
+   "why": "以“细雨霏微，不放双眉时暂开”写愁，作者归属存疑",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "采桑子·庭前春逐红英尽"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_dielianhua",
+   "t": "蝶恋花（遥夜亭皋闲信步）",
+   "a": "李煜",
+   "why": "“人间没个安排处”收尾，作者归属存疑",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "蝶恋花·遥夜亭皋闲信步"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_xiangjian2",
+   "t": "相见欢（林花谢了春红）",
+   "a": "李煜",
+   "why": "与主线《无言独上西楼》同调，“自是人生长恨水长东”是词意的核心",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "相见欢·林花谢了春红"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_ruanlanggui",
+   "t": "阮郎归（呈郑王十二弟）",
+   "a": "李煜",
+   "why": "题中“呈郑王十二弟”点明是赠弟之作，惜春之笔里含着兄弟之情",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "阮郎归·呈郑王十二弟"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_langtaosha",
+   "t": "浪淘沙（往事只堪哀）",
+   "a": "李煜",
+   "why": "“金剑已沉埋，壮气蒿莱”是后主词里少见的刚笔",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "浪淘沙·往事只堪哀"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_yumeiren2",
+   "t": "虞美人（风回小院庭芜绿）",
+   "a": "李煜",
+   "why": "同调写早春与白发，“满鬓清霜残雪”以景喻人",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "虞美人·风回小院庭芜绿"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_xiexin",
+   "t": "谢新恩（冉冉秋光留不住）",
+   "a": "李煜",
+   "why": "重阳登临，“愁恨年年长相侣”写愁成了年年相伴的东西",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "谢新恩·冉冉秋光留不住"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_huansha_hong",
+   "t": "浣溪沙（红日已高三丈透）",
+   "a": "李煜",
+   "why": "前期宫廷享乐的写实，金炉、香兽、红锦地，场景铺陈细密",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "浣溪沙·红日已高三丈透"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_huansha_zhuan",
+   "t": "浣溪沙（转烛飘蓬一梦归）",
+   "a": "李煜",
+   "why": "“转烛飘蓬”以烛火与飞蓬喻身世，“天教心愿与身违”写心愿落空",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "浣溪沙·转烛飘蓬一梦归"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_changxiangsi",
+   "t": "长相思（一重山）",
+   "a": "李煜",
+   "why": "一重山两重山的叠沓，写相思的绵延，句式整齐而哀婉",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "长相思·一重山"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_yufu",
+   "t": "渔父（浪花有意千里雪）",
+   "a": "李煜",
+   "why": "后主少见的闲适之作，“万顷波中得自由”带着渔隐的向往",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "渔父·浪花有意千里雪"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_wangjiangmei",
+   "t": "望江梅（闲梦远）",
+   "a": "李煜",
+   "why": "同写南国，一首春、一首秋，“芦花深处泊孤舟”是图画",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "望江梅·闲梦远"
+    }
+   ]
+  },
+  {
+   "id": "huajian_nt_pusa",
+   "t": "菩萨蛮（花明月暗笼轻雾）",
+   "a": "李煜",
+   "why": "写幽会的艳词，“铲袜步香阶，手提金缕鞋”的细节常与小周后的本事相联，存疑",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "南唐二主词.txt",
+     "title": "菩萨蛮·花明月暗笼轻雾"
+    }
+   ]
+  }
+ ]
+}

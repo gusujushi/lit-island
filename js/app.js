@@ -81,7 +81,9 @@
   function voiceCtx(bind) {
     const [kind, a, path] = bind.split(':');
     const textsOf = ids => (ids || []).slice(0, 2).filter(id => LIT.texts[id]).map(id => ({ t: LIT.texts[id].t, a: LIT.texts[id].a, text: LIT.texts[id].simp }));
-    if (kind === 'ask') { const t = LIT.texts[a]; return t ? { title: t.t, texts: textsOf([a]), question: '对这篇原文的提问' } : {}; }
+    const unitCtx = (id, q) => { const u = LIB.units[id], nn = LIT.libNotes[id] || {}; return u ? { title: u.t + '（' + u.a + '）', question: q, texts: [{ t: u.t, a: u.a, text: LIT.unitTexts(id).map(x => x.simp).join('\n') }], words: (nn.notes || []).map(x => x[0]).slice(0, 15).concat(nn.line ? [nn.line[0]] : []) } : {}; };
+    if (kind === 'ask') { if (LIB.units[a]) return unitCtx(a, '对这篇原文的提问'); const t = LIT.texts[a]; return t ? { title: t.t, texts: textsOf([a]), question: '对这篇原文的提问' } : {}; }
+    if (kind === 'lib') { const nn = LIT.libNotes[a] || {}; return unitCtx(a, path === 'think' && nn.think ? nn.think[0] : nn.line ? '用「' + nn.line[0] + '」造一个句子' : ''); }
     let n = +a, q = '';
     if (kind === 'rev') {
       const m = /^(recall|revise)\.(\d+)$/.exec(path || '');
@@ -99,13 +101,14 @@
     const ta = vTarget(bind);
     const [kind, n, path] = bind.split(':');
     let cur = ta ? ta.value : '';
-    if (!ta && (kind === 'day' || kind === 'rev')) { const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n); cur = path.split('.').reduce((o, k) => (o ? o[k] : ''), rec) || ''; }
+    const recOf = () => (kind === 'lib' ? Store.libRec(st(), n) : kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n));
+    if (!ta && (kind === 'day' || kind === 'rev' || kind === 'lib')) cur = path.split('.').reduce((o, k) => (o ? o[k] : ''), recOf()) || '';
     const r = ZH.insertAt(cur, voice.at, text);
     if (ta) {
       ta.value = r.value; ta.dispatchEvent(new Event('input', { bubbles: true }));
       try { ta.setSelectionRange(r.end, r.end); } catch (e) { /* 不可选中 */ }
-    } else if (kind === 'day' || kind === 'rev') {
-      const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n); setPath(rec, path, r.value);
+    } else if (kind === 'day' || kind === 'rev' || kind === 'lib') {
+      setPath(recOf(), path, r.value);
     }
     S.save();
   }
@@ -203,6 +206,158 @@
   const voiceHint = () => `<p class="hint">🎤 点输入框右下角的麦克风说话，再点一次结束：本机识别成文字（录音不上传）${AI.ready() && AI.settings().polish !== false ? '，再由 DeepSeek 按本课内容校对错字' : ''}。也可以用手机键盘自带的听写键。</p>`;
   const aiHint = () => (AI.ready() ? '' : '<p class="hint">🤖 想请 AI 老师讲解、点评：在「我的 → AI 老师」填上自己的 DeepSeek API Key（可选）。</p>');
 
+  /* ---------- 书库（data/lib）：按需加载每本书的原文与讲解 ---------- */
+  const LIB = LIT.lib || { eras: [], books: [], units: {} };
+  const libBook = id => LIB.books.find(b => b.id === id);
+  const libReady = {}, libLoading = {};
+  function loadBook(b) {
+    if (libReady[b]) return Promise.resolve();
+    if (libLoading[b]) return libLoading[b];
+    const add = src => new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = () => rej(new Error('没能打开这本书（' + src + '）。断网时请先联网打开一次，或在「我的 → 书库」下载全部书库。')); document.head.appendChild(el); });
+    libLoading[b] = Promise.all([add(`data/lib/text/${b}.js`), add(`data/lib/note/${b}.js`)]).then(() => { libReady[b] = true; delete libLoading[b]; }, e => { delete libLoading[b]; throw e; });
+    return libLoading[b];
+  }
+  /** 渲染前确保这些书已加载；没加载就先显示"正在打开"，加载完自动再渲染 */
+  function needBooks(books) {
+    const miss = [...new Set(books)].filter(b => b && !libReady[b]);
+    if (!miss.length) return null;
+    const at = location.hash;
+    Promise.all(miss.map(loadBook)).then(() => { if (location.hash === at) render(); })
+      .catch(e => { if (location.hash === at) { const v = $('#view'); if (v) v.innerHTML = `<section class="card"><p class="warn">${esc(e.message)}</p><a class="btn ghost" href="#/lib">回到书库</a></section>`; } });
+    return '<p class="loading">📖 正在打开书……</p>';
+  }
+  const libDone = id => !!(st().lib[id] && st().lib[id].done);
+  const bookStyle = b => `--c:${b ? b.color : 'var(--accent)'}`;
+  const hnum = s => { let h = 7; for (const c of String(s)) h = (h * 31 + c.codePointAt(0)) % 2147483647; return h; };
+
+  function routeInfo() {
+    const r = st().route; if (!r) return null;
+    const b = libBook(r.book); if (!b || !b.units.length) return null;
+    const dates = Plan.schedule({ total: b.units.length, start: r.start, weekdays: st().settings.weekdays, rebase: r.rebase });
+    return { b, dates, sum: Plan.status(dates, k => libDone(b.units[k - 1]), today()) };
+  }
+  function routeCard(ri) {
+    const { b, dates, sum } = ri;
+    if (sum.next === null) return `<section class="card route" style="${bookStyle(b)}"><h3>🎉 路线「${esc(b.route)}」读完了</h3><p>可以在 <a href="#/lib">书库</a> 换一条路线。</p></section>`;
+    const id = b.units[sum.next - 1], u = LIB.units[id], lag = sum.behind.length;
+    return `<section class="card route" style="${bookStyle(b)}"><div class="kicker">📚 我的路线 · ${esc(b.route)} · 第 ${sum.next}/${b.units.length} 篇 · 计划 ${dates[sum.next - 1]}</div>
+      <h3>${esc(u.t)} <span class="muted">${esc(u.a)}</span></h3>
+      <div class="bar"><i style="width:${(sum.doneCount / b.units.length) * 100}%;background:var(--c)"></i></div>
+      <p class="hint">${lag ? `<span class="warn">落后 ${lag} 篇</span>` : '正好在计划上'} · 已读 ${sum.doneCount} 篇</p>
+      <div class="row"><a class="btn" href="#/u/${id}">${st().lib[id] ? '继续' : '开始'} →</a><a class="btn ghost" href="#/lib/${b.id}">看全书</a></div></section>`;
+  }
+  const libTeaser = () => (Object.keys(LIB.units).length ? `<section class="card route"><h3>📚 书库：${Object.keys(LIB.units).length} 篇精读</h3><p class="muted">诗经、楚辞、世说、诸燕史料、唐诗宋词、元曲、红楼、聊斋……主线之外，选一条专题路线接着读。</p><a class="btn ghost" href="#/lib">去书库挑一条路线</a></section>` : '');
+
+  let libQ = '';
+  function viewLib(arg) {
+    if (arg) return viewBook(arg);
+    const ids = Object.keys(LIB.units);
+    const doneN = ids.filter(libDone).length;
+    let hits = '';
+    const q = libQ.trim();
+    if (q) {
+      const found = ids.filter(id => { const u = LIB.units[id]; return u.t.includes(q) || (u.a || '').includes(q) || (u.g || []).some(g => g.includes(q)); }).slice(0, 80);
+      hits = `<section class="card hits">${found.length ? found.map(id => { const u = LIB.units[id], b = libBook(u.b); return `<a href="#/u/${id}" style="${bookStyle(b)}"><span class="ctext">${esc(u.t)}</span> <small>${esc(u.a)} · ${esc(b.name)}</small>${libDone(id) ? ' ✓' : ''}</a>`; }).join('') : '<p class="muted">没有找到。</p>'}</section>`;
+    }
+    const ri = routeInfo();
+    const rc = ri ? routeCard(ri) : '<section class="card route"><h3>📚 专题路线</h3><p>打开任意一本书，点「设为我的路线」，就会按你的每周学习日从头排到尾；「今日」会同时显示主线和路线。</p></section>';
+    const shelves = LIB.eras.map(e => {
+      const bs = LIB.books.filter(b => b.era === e.id && b.units.length);
+      if (!bs.length) return '';
+      return `<h2 class="era" style="--c:${e.color}">${esc(e.name)}</h2><div class="shelf">${bs.map(b => { const d = b.units.filter(libDone).length; const r = st().route; return `<a class="book" href="#/lib/${b.id}" style="${bookStyle(b)}">${r && r.book === b.id ? '<span class="rt">我的路线</span>' : ''}<span class="em">${b.emoji}</span><b>${esc(b.name)}</b><small>${b.units.length} 篇 · 已学 ${d}</small><div class="bar"><i style="width:${(d / b.units.length) * 100}%"></i></div></a>`; }).join('')}</div>`;
+    }).join('');
+    return `<h1 class="page">书库 <span class="muted">${ids.length} 篇精读 · 已学 ${doneN}</span></h1>
+      <input type="search" id="lib-q" class="libsearch" placeholder="搜篇名、作者或主题：李白、聂小倩、慕容垂、悼亡……" value="${esc(libQ)}">
+      ${hits}${rc}${shelves || '<p class="muted">书库还没有内容。</p>'}`;
+  }
+
+  function viewBook(bid) {
+    const b = libBook(bid); if (!b) return '<p>没有这本书。</p><a href="#/lib">← 书库</a>';
+    const done = b.units.filter(libDone).length, r = st().route, mine = !!(r && r.book === bid);
+    const ri = mine ? routeInfo() : null;
+    const nextId = ri && ri.sum.next ? b.units[ri.sum.next - 1] : b.units.find(id => !libDone(id));
+    const eds = (b.eds || []).map(k => LIT.meta.books[k] && Object.assign({ key: k }, LIT.meta.books[k])).filter(Boolean);
+    return `<div class="bookhead" style="${bookStyle(b)}"><a class="back" href="#/lib">← 书库</a><div style="font-size:2em;line-height:1.2">${b.emoji}</div><h1>${esc(b.name)}</h1><p>${esc(b.desc)}</p><p><b>${b.units.length}</b> 篇 · 已学 <b>${done}</b>${mine ? ' · 这是我的路线' : ''}</p>
+        <div class="row">${nextId ? `<a class="btn" href="#/u/${nextId}">${done ? '接着读' : '从第一篇读'} →</a>` : ''}${mine ? '<button class="btn ghost" data-act="routeoff">取消路线</button>' : `<button class="btn ghost" data-act="routeset" data-book="${bid}">设为我的路线</button>`}</div></div>
+      ${eds.length ? `<section class="card" style="${bookStyle(b)}"><h3>📖 本机注本导读</h3>${eds.map(e => `<p><b>《${esc(e.name)}》</b><span class="muted">${esc(e.by || '')}</span><br>${esc(e.guide || '')}</p>`).join('')}<p class="hint">注本有版权，程序只给页码：每篇里写着对应页，电脑上打开 PDF，或导入注本图包后在手机上看。</p></section>` : ''}
+      <section class="card" style="${bookStyle(b)}"><h3>目录</h3><ol class="units">${b.units.map(id => { const u = LIB.units[id]; return `<li><a href="#/u/${id}" class="${libDone(id) ? 'done' : ''}${id === nextId ? ' next' : ''}"><span><span class="ut">${esc(u.t)}</span><br><span class="ua">${esc(u.a)}</span></span><span class="ua">${u.c} 字</span></a></li>`; }).join('')}</ol></section>`;
+  }
+
+  /** 诗词：行短（平均少于 34 字）时去掉行间空行，免得一句一空行地拉长 */
+  function verseOf(text) {
+    const ls = String(text).split('\n').map(x => x.trim()).filter(Boolean);
+    const avg = ls.reduce((a, x) => a + x.length, 0) / (ls.length || 1);
+    return ls.length >= 4 && avg < 34 ? ls.join('\n') : String(text);
+  }
+  function viewUnit(id) {
+    const u = LIB.units[id]; if (!u) return '<p>没有这一篇。</p><a href="#/lib">← 书库</a>';
+    const b = libBook(u.b);
+    const wait = needBooks([u.b]); if (wait) return wait;
+    const n = LIT.libNotes[id] || {}, texts = LIT.unitTexts(id), r = st().lib[id] || {};
+    const i = b.units.indexOf(id), prev = b.units[i - 1], next = b.units[i + 1];
+    const trad = st().settings.script === 'trad';
+    const passages = texts.map((t, k) => {
+      const sub = t.t.includes('·') && texts.length > 1 ? t.t.slice(t.t.indexOf('·') + 1) : (texts.length > 1 ? `第 ${k + 1} 段` : '原文');
+      return `<section class="card text"><div class="row between"><h3>${esc(sub)}</h3><div class="row"><button class="mini" data-act="speaku" data-id="${id}" data-k="${k}">🔊 朗读</button><button class="mini" data-act="hush">⏹</button>${t.trad ? `<button class="mini" data-act="script">${trad ? '简' : '繁'}</button>` : ''}</div></div>
+        <div class="poem">${esc(verseOf(trad && t.trad ? t.trad : t.simp))}</div><div class="src">来源：${esc(t.src.file)}${t.src.loc ? ' · ' + esc(t.src.loc) : ''}${t.src.line ? ' · 第 ' + t.src.line + ' 行' : ''}</div></section>`;
+    }).join('');
+    const quiz = (n.quiz || []).map((q, qi) => {
+      const chosen = r.quiz ? r.quiz[qi] : undefined;
+      const opts = order(hnum(id), qi, q[1].length).map(o => {
+        const cls = chosen === undefined ? '' : o === 0 ? 'right' : o === chosen ? 'wrong' : '';
+        return `<button class="opt ${cls}" data-act="lquiz" data-id="${id}" data-q="${qi}" data-o="${o}" ${chosen !== undefined ? 'disabled' : ''}>${esc(q[1][o])}</button>`;
+      }).join('');
+      return `<div class="q"><p>${qi + 1}. ${esc(q[0])}</p><div class="opts">${opts}</div>${chosen !== undefined ? `<p class="why ${chosen === 0 ? 'ok' : 'warn'}">${chosen === 0 ? '✓ 对' : '✗ 不对'}：${esc(q[2])}</p>` : ''}</div>`;
+    }).join('');
+    const pages = (LIB.pages && LIB.pages[id]) || [];
+    const ai = AI.ready() ? `<section class="card ai"><button class="mini" data-act="aiexplainu" data-id="${id}">🤖 请 AI 讲解这篇</button>${aiBox('x:' + id)}
+        <div class="askrow">${area(`ask:${id}`, (aiView['q:' + id] || {}).q || '', '对这篇有什么疑问？打字或点 🎤 说', 2)}<button class="btn small" data-act="aiasku" data-id="${id}">问 AI</button></div>${aiBox('q:' + id)}</section>` : '';
+    return `<div class="unithead" style="${bookStyle(b)}"><a class="back" href="#/lib/${b.id}">← ${esc(b.name)}</a>
+        <div class="kicker">${b.emoji} 第 ${i + 1}/${b.units.length} 篇${r.done ? ' · ✅ 学完于 ' + r.done : ''}</div><h1>${esc(u.t)}</h1>
+        <div class="row"><span class="chip">${esc(u.a)}</span>${(n.tags || []).map(g => `<span class="tag">${esc(g)}</span>`).join('')}</div></div>
+      <div class="stepbody" style="${bookStyle(b)}">
+        <section class="card"><h3>导读</h3><p class="prose">${esc(n.intro || '')}</p></section>
+        ${passages}
+        <section class="card"><h3>重点分析</h3><ol class="keys">${(n.focus || []).map(x => `<li>${esc(x)}</li>`).join('')}</ol></section>
+        <section class="card"><h3>字词</h3><table class="gloss">${(n.notes || []).map(([w, g]) => `<tr><th>${esc(w)}</th><td>${esc(g)}</td></tr>`).join('')}</table></section>
+        ${n.line ? `<section class="card lineCard"><h3>📌 名句</h3><p class="line">${esc(n.line[0])}</p><p class="muted">怎么用：${esc(n.line[1])}</p>${area(`lib:${id}:line`, r.line, '用这句话写一句你自己的', 2)}</section>` : ''}
+        ${n.think ? `<section class="card"><h3>思考</h3><p class="prose">${esc(n.think[0])}</p>${area(`lib:${id}:think`, r.think, '写下你的判断：观点＋依据', 3)}<details class="hint"><summary>参考思路</summary>${esc(n.think[1])}</details></section>` : ''}
+        ${quiz ? `<section class="card"><h3>小测</h3>${quiz}</section>` : ''}
+        ${pages.length ? `<section class="card"><h3>本机注本</h3><ul class="plain">${pages.map(bookRef).join('')}</ul>${PG ? '' : '<p class="hint">📱 导入注本图包后，这里会出现"📷 看图"。</p>'}</section>` : ''}
+        ${ai}
+      </div>
+      ${r.done ? `<section class="card done"><h3>✅ 已学完（${r.done}）</h3><p>本篇卡片已进入复习盒。</p></section>` : `<button class="btn big" data-act="unitdone" data-id="${id}">学完这一篇</button>`}
+      <div class="pager">${prev ? `<a class="btn ghost" href="#/u/${prev}">← 上一篇</a>` : `<a class="btn ghost" href="#/lib/${b.id}">← 目录</a>`}${next ? `<a class="btn" href="#/u/${next}">下一篇 →</a>` : `<a class="btn" href="#/lib/${b.id}">回到目录</a>`}</div>`;
+  }
+
+  /** 主线「精读」末尾：书库里相关的 4 篇（同作者优先） */
+  const LIB_MAP = { shijing: ['shijingf', 'shijingy', 'chuci'], weijin: ['shishuo'], yan: ['zhuyan'], tang: ['tangjin', 'tanggu'], wudai: ['huajian'], song: ['songbei', 'songnan'], yuan: ['yuanqu'], mingqing: ['honglou', 'liaozhai', 'rulin', 'xinxue', 'nalan', 'mingzhu'], gongan: ['gongan'], yanw: ['zhuyan'] };
+  function libMore(d) {
+    const books = (LIB_MAP[d.mod] || []).map(libBook).filter(b => b && b.units.length);
+    if (!books.length) return '';
+    const authors = (d.texts || []).map(id => LIT.texts[id] && LIT.texts[id].a).filter(Boolean);
+    const cand = [];
+    books.forEach(b => b.units.forEach(id => { if (libDone(id)) return; const u = LIB.units[id]; cand.push({ id, u, b, s: authors.some(a => u.a && (u.a.includes(a) || a.includes(u.a))) ? 1 : 0 }); }));
+    const pick = cand.filter(c => c.s).concat(cand.filter(c => !c.s)).slice(0, 4);
+    if (!pick.length) return '';
+    return `<section class="card"><h3>📚 书库延伸 <span class="muted">读完今天还想多读</span></h3><div class="libmore">${pick.map(p => `<a href="#/u/${p.id}" style="${bookStyle(p.b)}"><span>${esc(p.u.t)} <small>${esc(p.u.a)}</small></span><small>${esc(p.b.name)}</small></a>`).join('')}</div></section>`;
+  }
+
+  /** 「我的 → 书库」：下载全部书库供离线 */
+  const LIB_CACHE = 'lit-island-lib';
+  const libFiles = () => LIB.books.filter(b => b.units.length).reduce((a, b) => a.concat([`data/lib/text/${b.id}.js`, `data/lib/note/${b.id}.js`]), []);
+  async function libCached() {
+    if (!window.caches) return 0;
+    try { const c = await caches.open(LIB_CACHE); let k = 0; for (const f of libFiles()) if (await c.match(new URL(f, location.href).href)) k++; return k; } catch (e) { return 0; }
+  }
+  async function libCard() {
+    const el = $('#lib-status'); if (!el) return;
+    if (!/^https?:$/.test(location.protocol)) { el.textContent = '直接打开的本地文件不需要下载，随时可读。'; return; }
+    const k = await libCached(), n = libFiles().length;
+    if (!$('#lib-status')) return;
+    el.textContent = k >= n ? `✅ 全部 ${LIB.books.filter(b => b.units.length).length} 本书已存在本机，断网也能读。` : `已存本机 ${Math.floor(k / 2)} 本（打开过的书会自动存下）。`;
+  }
+
   /* ---------- 注本页图（手机上看注本） ---------- */
   let PG = null;
   if (window.Pages) Pages.getManifest().then(m => { if (m) { PG = m; render(); } }).catch(() => {});
@@ -232,7 +387,7 @@
   }
 
   function nav(active) {
-    const items = [['today', '🏝️', '今日'], ['map', '🗺️', '地图'], ['cards', '🃏', '卡片'], ['notes', '📝', '笔记'], ['me', '📊', '我的'], ['guide', '📖', '方法']];
+    const items = [['today', '🏝️', '今日'], ['lib', '📚', '书库'], ['cards', '🃏', '卡片'], ['map', '🗺️', '地图'], ['notes', '📝', '笔记'], ['me', '📊', '我的'], ['guide', '📖', '方法']];
     const due = SRS.dueList(st().cards, today()).length;
     return items.map(([k, ic, name]) => `<a href="#/${k}" class="${active === k ? 'on' : ''}"><span>${ic}</span>${name}${k === 'cards' && due ? `<i class="badge">${due}</i>` : ''}</a>`).join('');
   }
@@ -279,7 +434,7 @@
     } else {
       const d = LIT.day(sum.next);
       const mode = (st().days[sum.next] && st().days[sum.next].mode) || s.mode;
-      main = `<section class="card hero">
+      main = `<section class="card hero" style="--c:${modOf(d).color}">
         <div class="kicker">下一课 · 第 ${d.d} 天 · 计划 ${dates[d.d - 1]}</div>
         <h2>${esc(d.title)}</h2>
         <div class="row">${chip(d)}${d.type === 'learn' ? `<span class="muted">${(d.texts || []).map(id => '《' + esc(LIT.texts[id] ? LIT.texts[id].t : id) + '》').join(' ')}</span>` : ''}</div>
@@ -288,7 +443,8 @@
       </section>`;
     }
     const lag = sum.behind.length;
-    main = whatsNew() + main;
+    const ri = routeInfo();
+    main = whatsNew() + main + (ri ? routeCard(ri) : libTeaser());
     const lagTxt = lag ? `<span class="warn">落后 ${lag} 个单元</span>` : sum.ahead ? `<span class="ok">超前 ${sum.ahead} 个单元</span>` : '<span class="ok">正好在计划上</span>';
     const upcoming = [];
     for (let n = sum.next || LIT.total() + 1; n <= LIT.total() && upcoming.length < 5; n++) if (!isDone(n)) upcoming.push(n);
@@ -403,7 +559,7 @@
     const more = d.more ? `<section class="card"><h3>延伸阅读（本机全本）</h3><p class="prose">📂 ${esc(d.more)}</p><p class="hint">在电脑上打开「书籍/文学」文件夹即可找到；读完可以回到"对照"题写一句。</p></section>` : '';
     return `<section class="card"><h3>字词</h3><table class="gloss">${notes}</table></section>
       <section class="card"><h3>精读要点</h3><ol class="keys">${(d.keys || []).map(x => `<li>${esc(x)}</li>`).join('')}</ol></section>
-      ${classic}${books}${more}
+      ${classic}${books}${more}${libMore(d)}
       ${mode === 'light' ? '' : `<section class="card"><h3>小测</h3>${quiz}</section>`}`;
   }
 
@@ -481,8 +637,10 @@
     const id = due[0];
     const c = Store.cardContent(st(), id, LIT);
     if (!c) { delete cards[id]; S.save(); return viewCards(); }
+    if (c.pending) return `<h1 class="page">卡片</h1>` + (needBooks([c.pending]) || '');
+    const lu = c.kind === 'lib' ? LIB.units[c.unit] : null, lb = lu ? libBook(lu.b) : null;
     return `<h1 class="page">卡片 <span class="muted">还剩 ${due.length} 张</span></h1>
-      <section class="card flash ${c.kind}"><div class="kicker">${c.kind === 'judge' ? '我的判断卡 · ' : ''}来自第 ${c.d} 天 · ${esc(LIT.learn[c.d].title)}</div>
+      <section class="card flash ${c.kind}" style="--c:${lb ? lb.color : (LIT.learn[c.d] ? LIT.meta.modules[LIT.learn[c.d].mod].color : 'var(--accent)')}"><div class="kicker">${c.kind === 'judge' ? '我的判断卡 · ' : ''}${lu ? `来自书库 · ${esc(lb.name)} ·《${esc(lu.t)}》` : `来自第 ${c.d} 天 · ${esc(LIT.learn[c.d].title)}`}</div>
         <div class="front">${esc(c.front)}</div>
         ${cardFlip ? `<div class="back">${c.kind === 'judge' ? '你当时写道：' : ''}${esc(c.back)}</div>${c.kind === 'judge' ? '<p class="hint">现在还同意吗？想修正就去那一天改，或在复习日写进"判断回看"。</p>' : ''}
           <div class="grades"><button data-act="grade" data-id="${id}" data-g="0">不会</button><button data-act="grade" data-id="${id}" data-g="1">模糊</button><button data-act="grade" data-id="${id}" data-g="2">记得</button><button data-act="grade" data-id="${id}" data-g="3">很熟</button></div>`
@@ -532,6 +690,10 @@
         <p class="hint">本次主要修改：</p><ul class="dots">${APP.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
         ${/^https?:$/.test(location.protocol) ? '<div class="row wrap"><button class="btn ghost" data-act="checkupdate">检查更新</button><span id="upd-msg" class="muted"></span></div><p class="hint">程序每次打开或切回时会自动检查新版本，下载好后自动刷新。</p>' : '<p class="hint">直接打开的本地文件，总是最新，不需要更新。</p>'}
         <details><summary>全部更新记录</summary>${logList(LIT.changelog.slice(1))}</details></section>
+      ${Object.keys(LIB.units).length ? (() => { const ls = Store.libStats(st(), LIT); const all = Object.values(ls).reduce((a, x) => ({ t: a.t + x.total, d: a.d + x.done }), { t: 0, d: 0 }); return `<section class="card" id="lib-card"><h3>📚 书库 <span class="muted">已学 ${all.d} / ${all.t} 篇</span></h3>
+        <table class="gloss">${LIB.eras.map(e => { const bs = LIB.books.filter(b => b.era === e.id && b.units.length); if (!bs.length) return ''; const t = bs.reduce((a, b) => a + ls[b.id].total, 0), d = bs.reduce((a, b) => a + ls[b.id].done, 0); return `<tr><th style="--c:${e.color}" class="ctext">${esc(e.name)}</th><td>${d}/${t}</td><td><div class="bar small"><i style="width:${t ? (d / t) * 100 : 0}%;background:${e.color}"></i></div></td></tr>`; }).join('')}</table>
+        <p id="lib-status" class="muted">正在检查……</p>
+        <div class="row wrap"><a class="btn" href="#/lib">打开书库</a>${/^https?:$/.test(location.protocol) ? '<button class="btn ghost" data-act="libdl">下载全部书库（断网可读）</button>' : ''}</div></section>`; })() : ''}
       <section class="card"><h3>各模块讲清度</h3><table class="gloss"><tr><th>模块</th><td>完成</td><td>平均自评</td><td>小测</td></tr>${rows}</table>
         <p class="hint">评估看"能不能讲清、能不能下有据的判断"（L0–L3），不看读了多少。</p></section>
       <section class="card"><h3>学习记录 <span class="muted">累计约 ${total} 分钟</span></h3><div class="heat">${cells.join('')}</div></section>
@@ -598,15 +760,15 @@
     const s = st().settings;
     document.documentElement.style.setProperty('--fs', s.font || 1);
     if (s.theme === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', s.theme);
-    const views = { today: viewToday, map: viewMap, day: () => viewDay(+r.arg), cards: viewCards, notes: viewNotes, me: viewMe, guide: viewGuide };
+    const views = { today: viewToday, map: viewMap, day: () => viewDay(+r.arg), cards: viewCards, notes: viewNotes, me: viewMe, guide: viewGuide, lib: () => viewLib(r.arg), u: () => viewUnit(r.arg) };
     const v = views[r.name] || viewToday;
     $('#view').innerHTML = v();
-    const active = r.name === 'day' ? 'today' : r.name;
+    const active = r.name === 'day' ? 'today' : r.name === 'u' ? 'lib' : r.name;
     $('#nav').innerHTML = nav(active);
     $('#bottom').innerHTML = nav(active);
     document.body.dataset.route = r.name;
     const ve = $('#ver'); if (ve) ve.textContent = 'v' + APP.v;
-    if (r.name === 'me') asrCard();
+    if (r.name === 'me') { asrCard(); libCard(); }
   }
 
   /** 「我的 → 语音输入」：模型下载状态与按钮 */
@@ -633,11 +795,12 @@
       const c = document.querySelector(`[data-count="${el.dataset.bind}"]`); if (c) c.textContent = len(el.value) + ' 字';
     } else if (el.dataset.bind) {
       const [kind, n, path] = el.dataset.bind.split(':');
-      const rec = kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n);
+      const rec = kind === 'lib' ? Store.libRec(st(), n) : kind === 'day' ? Store.dayRec(st(), +n) : Store.revRec(st(), +n);
       setPath(rec, path, el.value);
       const c = document.querySelector(`[data-count="${el.dataset.bind}"]`); if (c) c.textContent = len(el.value) + ' 字';
       saveSoon();
-    } else if (el.id === 'note-q') { noteQ = el.value; const pos = el.selectionStart; render(); const q = $('#note-q'); if (q) { q.focus(); q.setSelectionRange(pos, pos); } }
+    } else if (el.id === 'lib-q') { libQ = el.value; const pos = el.selectionStart; render(); const q = $('#lib-q'); if (q) { q.focus(); q.setSelectionRange(pos, pos); } }
+    else if (el.id === 'note-q') { noteQ = el.value; const pos = el.selectionStart; render(); const q = $('#note-q'); if (q) { q.focus(); q.setSelectionRange(pos, pos); } }
   });
   document.addEventListener('change', e => {
     const el = e.target;
@@ -723,6 +886,30 @@
     exportjson() { download(`文学能力岛备份_${today()}.json`, S.exportJSON(), 'application/json'); },
     importjson() { $('#import-file').click(); },
     mic(el) { micTap(el.dataset.target); },
+    routeset(el) { st().route = { book: el.dataset.book, start: today(), rebase: null }; S.save(); toast('已设为我的路线：从今天起按每周学习日排'); render(); },
+    routeoff() { if (confirm('取消这条专题路线？（已读的篇目和笔记都保留）')) { st().route = null; S.save(); render(); } },
+    unitdone(el) { const id = el.dataset.id; Store.completeUnit(st(), id, today(), LIT); S.save(); toast('学完 ✓ 本篇卡片已进入复习盒'); render(); },
+    lquiz(el) { const r = Store.libRec(st(), el.dataset.id); r.quiz = r.quiz || {}; const q = +el.dataset.q; if (r.quiz[q] === undefined) { r.quiz[q] = +el.dataset.o; S.save(); render(); } },
+    speaku(el) { const t = LIT.unitTexts(el.dataset.id)[+el.dataset.k]; if (t) speak(st().settings.script === 'trad' && t.trad ? t.trad : t.simp); },
+    aiexplainu(el) { const id = el.dataset.id, u = LIB.units[id], b = libBook(u.b); aiRun('x:' + id, () => AI.explain({ id, title: b.name, t: u.t, a: u.a, text: LIT.unitTexts(id).map(x => x.simp).join('\n') }, !!el.dataset.force), 'aiexplainu', `data-id="${id}"`); },
+    aiasku(el) {
+      const id = el.dataset.id, u = LIB.units[id], b = libBook(u.b), ta = vTarget('ask:' + id), q = ta ? ta.value.trim() : '';
+      if (q.length < 2) { toast('先写下（或说出）你的问题'); return; }
+      aiRun('q:' + id, () => AI.ask(q, { title: b.name, t: u.t, a: u.a, text: LIT.unitTexts(id).map(x => x.simp).join('\n') }));
+      (aiView['q:' + id] = aiView['q:' + id] || {}).q = q;
+    },
+    async libdl() {
+      const files = libFiles(), el = $('#lib-status');
+      try {
+        for (let i = 0; i < files.length; i++) {
+          if (el) el.textContent = `正在下载 ${i + 1}/${files.length}……`;
+          const res = await fetch(files[i], { cache: 'no-store' });
+          if (!res.ok) throw new Error(files[i] + ' ' + res.status);
+          if (window.caches) await (await caches.open(LIB_CACHE)).put(new URL(files[i], location.href).href, res);
+        }
+        toast('书库已全部存到本机'); libCard();
+      } catch (e) { alert('下载没有完成：' + e.message); libCard(); }
+    },
     seenver() { st().settings.seenVersion = APP.v; S.save(); render(); },
     doupdate() { applyUpdate(); },
     async checkupdate() {

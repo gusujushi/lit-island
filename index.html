@@ -40,6 +40,8 @@
   <script src="data/classics2.js"></script>
   <script src="data/guide.js"></script>
   <script src="data/changelog.js"></script>
+  <!-- 书库目录（每本书的原文与讲解在打开时才加载：data/lib/text、data/lib/note） -->
+  <script src="data/lib/index.js"></script>
   <!-- 本机书籍路径（不入库，可缺省；由 tools/make_local_books.py 生成）。只在本地打开时加载，线上不请求。 -->
   <script>
     if (location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) document.write('<script src="data/books-local.js"><\/script>');

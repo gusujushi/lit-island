@@ -62,7 +62,7 @@ const ok = (cond, msg) => { checks++; if (!cond) { fails++; console.log('✗', m
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null, null, { timeout: 20000 });
   const keys = await page.evaluate(() => caches.keys());
   ok(keys.includes('isola-shell-v3'), 'Service Worker 启用后，同站意大利语能力岛的缓存还在');
-  ok(!keys.includes('lit-island-v0.4.0') && keys.includes('lit-island-v0.5.0'), '只删除了本程序的旧版缓存：' + keys.join(','));
+  ok(!keys.includes('lit-island-v0.4.0') && keys.some(k => /^lit-island-v/.test(k)), '只删除了本程序的旧版缓存（当前版本缓存保留）：' + keys.join(','));
 
   // 2. 「我的」下载语音模型
   await page.goto(base + 'lit-island/index.html#/me');

@@ -16,13 +16,16 @@
     reviews: {},
     cards: {},
     log: {},
+    lib: {},      // 书库：单元 id → { done, think, line, quiz: {题号: 所选} }（v1.0 新增，旧备份没有此项也能导入）
+    route: null,  // 专题路线：{ book, start, rebase }
   });
 
   function merge(base, x) {
     if (!x || typeof x !== 'object') return base;
     const out = Object.assign(base, x);
     out.settings = Object.assign(blank().settings, x.settings || {});
-    ['days', 'reviews', 'cards', 'log'].forEach(k => { if (!out[k] || typeof out[k] !== 'object') out[k] = {}; });
+    ['days', 'reviews', 'cards', 'log', 'lib'].forEach(k => { if (!out[k] || typeof out[k] !== 'object') out[k] = {}; });
+    if (out.route && (typeof out.route !== 'object' || !out.route.book)) out.route = null;
     return out;
   }
 
@@ -46,6 +49,21 @@
   const dayRec = (state, n) => (state.days[n] = state.days[n] || { notes: {}, quiz: {}, read: {} });
   const revRec = (state, n) => (state.reviews[n] = state.reviews[n] || { recall: {}, rate: {}, revise: {}, month: {} });
   const isDone = (state, n) => !!((state.days[n] && state.days[n].done) || (state.reviews[n] && state.reviews[n].done));
+  const libRec = (state, id) => (state.lib[id] = state.lib[id] || { quiz: {} });
+
+  /** 书库单元学完：写完成日期、记 15 分钟、把本单元卡片和名句卡放进复习盒 */
+  function completeUnit(state, id, today, LIT) {
+    const r = libRec(state, id);
+    const first = !r.done;
+    r.done = r.done || today;
+    if (first) state.log[today] = (state.log[today] || 0) + 15;
+    const n = LIT.libNotes[id];
+    if (n) {
+      (n.cards || []).forEach((c, i) => { const k = `L:${id}:${i}`; if (!state.cards[k]) state.cards[k] = SRS.newCard(today); });
+      if (n.line && n.line[0] && !state.cards[`L:${id}:k`]) state.cards[`L:${id}:k`] = SRS.newCard(today);
+    }
+    return r;
+  }
 
   /** 学习日完成：写完成日期、记学习时长、把本日卡片和"我的判断卡"放进复习盒 */
   function completeDay(state, n, today, LIT) {
@@ -66,8 +84,18 @@
     return r;
   }
 
-  /** 卡片内容：学习卡来自课程数据；判断卡来自学习者自己的回答 */
+  /** 卡片内容：学习卡来自课程数据；判断卡来自学习者自己的回答；书库卡来自书库讲解（未加载时返回 pending） */
   function cardContent(state, id, LIT) {
+    const L = /^L:([a-z0-9_]+):(\d+|k)$/.exec(id);
+    if (L) {
+      const u = LIT.lib && LIT.lib.units[L[1]];
+      if (!u) return null;
+      const n = LIT.libNotes[L[1]];
+      if (!n) return { kind: 'lib', pending: u.b, unit: L[1] };
+      if (L[2] === 'k') return n.line && n.line[0] ? { kind: 'lib', unit: L[1], front: `名句：${n.line[0]}\n出自哪里？今天你会怎么用？`, back: `《${u.t}》（${u.a}）\n\n例：${n.line[1]}` } : null;
+      const c = (n.cards || [])[+L[2]];
+      return c ? { kind: 'lib', unit: L[1], front: c[0], back: c[1] } : null;
+    }
     let m = /^d(\d+)c(\d+)$/.exec(id);
     if (m) { const d = LIT.learn[+m[1]]; const c = d && d.cards && d.cards[+m[2]]; return c ? { kind: 'card', d: +m[1], front: c[0], back: c[1] } : null; }
     m = /^d(\d+)k$/.exec(id);
@@ -132,8 +160,30 @@
         lines.push(`## 第 ${n} 天 · ${d.title}`, '', ...parts, '');
       }
     }
+    // 书库：学过或写过的单元
+    const libIds = Object.keys(state.lib || {}).filter(id => { const r = state.lib[id]; return r && (r.done || md(r.think) || md(r.line)); });
+    if (libIds.length && LIT.lib) {
+      lines.push('# 书库', '');
+      const order = (LIT.lib.books || []).reduce((a, b) => a.concat(b.units), []);
+      libIds.sort((a, b) => order.indexOf(a) - order.indexOf(b)).forEach(id => {
+        const u = LIT.lib.units[id]; if (!u) return;
+        const r = state.lib[id], bk = (LIT.lib.books || []).find(b => b.id === u.b);
+        lines.push(`## ${bk ? bk.name : u.b} · ${u.t}（${u.a}）`, '');
+        if (r.done) lines.push(`学完：${r.done}`, '');
+        const n = LIT.libNotes[id];
+        if (md(r.think)) lines.push(`**思考**${n ? `　_${n.think[0]}_` : ''}`, '', md(r.think), '');
+        if (md(r.line)) lines.push(`**用名句造句**${n ? `　_「${n.line[0]}」_` : ''}`, '', md(r.line), '');
+      });
+    }
     return lines.join('\n');
   }
 
-  return { KEY, MODE_MIN, blank, create, dayRec, revRec, isDone, completeDay, completeReview, cardContent, stats, markdown };
+  /** 书库各书进度：{书号: {total, done}} */
+  function libStats(state, LIT) {
+    const out = {};
+    (LIT.lib.books || []).forEach(b => { out[b.id] = { total: b.units.length, done: b.units.filter(id => state.lib[id] && state.lib[id].done).length }; });
+    return out;
+  }
+
+  return { KEY, MODE_MIN, blank, create, dayRec, revRec, isDone, libRec, completeDay, completeUnit, completeReview, cardContent, stats, libStats, markdown };
 });

@@ -1,0 +1,786 @@
+{
+ "book": "shijingy",
+ "units": [
+  {
+   "id": "shijingy_changdi",
+   "t": "棠棣",
+   "a": "《诗经·小雅》",
+   "why": "以棠棣花萼相依喻兄弟，“兄弟阋于墙，外御其务”是家内争执与对外一致的经典表达",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "棠棣"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_famu",
+   "t": "伐木",
+   "a": "《诗经·小雅》",
+   "why": "以鸟求友声起兴，写宴请亲友的诗，“求友”主题的源头之一",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "伐木"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_tianbao",
+   "t": "天保",
+   "a": "《诗经·小雅》",
+   "why": "臣下祝颂君王的诗，连用九个“如”的祝辞，是“九如”一语的出处",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "天保"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_chuche",
+   "t": "出车",
+   "a": "《诗经·小雅》",
+   "why": "征役组：以南仲伐玁狁、城朔方为背景，写出征与凯旋，“昔我往矣”一段与《采薇》形成对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "出车"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_didu",
+   "t": "杕杜",
+   "a": "《诗经·小雅》",
+   "why": "征役组：从留守者一方写盼征夫归，每章以“征夫”收束，与《采薇》“戍者视角”互补",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "杕杜",
+     "meta": "小雅"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_zhanlu",
+   "t": "湛露",
+   "a": "《诗经·小雅》",
+   "why": "宴饮组：夜饮诗，“不醉无归”的出处，以露与阳光起兴写君臣宴乐",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "湛露"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_liuyue",
+   "t": "六月",
+   "a": "《诗经·小雅》",
+   "why": "征役与纪功：写尹吉甫北伐玁狁的军容与凯旋宴，叙事完整、器物具体",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "六月"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_caiqi",
+   "t": "采芑",
+   "a": "《诗经·小雅》",
+   "why": "写方叔南征荆蛮的军阵，“如霆如雷”的声势与整饬的车马器物并重",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "采芑"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_hongyan",
+   "t": "鸿雁",
+   "a": "《诗经·小雅》",
+   "why": "以鸿雁飞鸣起兴，写服役筑墙的流民，“哀此鳏寡”与“谓我宣骄”表现劳者的处境",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鸿雁"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_heming",
+   "t": "鹤鸣",
+   "a": "《诗经·小雅》",
+   "why": "“他山之石，可以攻玉”的出处；全诗几乎不说理，只排列意象，是《诗经》比兴含蓄的好例",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "鹤鸣"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_qifu",
+   "t": "祈父",
+   "a": "《诗经·小雅》",
+   "why": "征役组：士兵向主管兵事的官员的质问，怨而直，是《诗经》里少见的“对官发问”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "祈父"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_baiju",
+   "t": "白驹",
+   "a": "《诗经·小雅》",
+   "why": "挽留贤者的诗，以拴住白驹象征留人，“慎尔优游，勉尔遁思”言辞婉而情切",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "白驹"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_sigan",
+   "t": "斯干",
+   "a": "《诗经·小雅》",
+   "why": "宫室落成的颂歌，“如跂斯翼”等四个比喻写屋宇，并有男女之异的生育祝愿，是读周代宫室与家庭观念的好材料",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "斯干"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_wuyang",
+   "t": "无羊",
+   "a": "《诗经·小雅》",
+   "why": "畜牧诗：写牛羊成群与牧人劳作，描摹细致，并带梦占一节，是《小雅》里少见的明朗之作",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "无羊"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_jienanshan",
+   "t": "节南山",
+   "a": "《诗经·小雅》",
+   "why": "讽刺组：直接责问执政大臣师尹，自述作者“家父”，是《小雅》政治讽刺诗的代表",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "节南山"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_shiyue",
+   "t": "十月之交",
+   "a": "《诗经·小雅》",
+   "why": "讽刺组：以日食与地震起兴，点名批评皇父等权臣，兼有天象、地变、人祸三层写法；日食年代学界有分歧",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "十月之交"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_xiaomin",
+   "t": "小旻",
+   "a": "《诗经·小雅》",
+   "why": "讽刺组：批评朝廷谋议失当，“如彼筑室于道谋”与“如履薄冰”两个比喻流传最广",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "小旻"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_xiangbo",
+   "t": "巷伯",
+   "a": "《诗经·小雅》",
+   "why": "讽刺组：被谗受害的寺人自述作诗，“投畀豺虎”的诅咒与篇末自署作者，极有个性",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "巷伯"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_liao_e",
+   "t": "蓼莪",
+   "a": "《诗经·小雅》",
+   "why": "写失去父母之痛的诗，“哀哀父母，生我劬劳”是汉语里最常被引的孝思之句",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "蓼莪"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_dadong",
+   "t": "大东",
+   "a": "《诗经·小雅》",
+   "why": "讽刺组：东方诸侯国的人诉说赋役不均，后半以织女、牵牛、箕、斗入诗，是星象入诗的早期例子",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "大东"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_beishan",
+   "t": "北山",
+   "a": "《诗经·小雅》",
+   "why": "征役组：对比“或……或……”的十二个排比，写劳逸不均，一篇之内把政治不公写成句式",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "北山"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_chuci",
+   "t": "楚茨",
+   "a": "《诗经·小雅》",
+   "why": "祭祀组：完整写周代祭祀的备办、行礼、神醉与燕私，是理解祭祀仪程的细致文本",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "楚茨"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_datian",
+   "t": "大田",
+   "a": "《诗经·小雅》",
+   "why": "农事诗：从播种除虫到祈雨、祭祀，并有“彼有遗秉，此有滞穗，伊寡妇之利”的恤贫之语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "大田"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_binzhichuyan",
+   "t": "宾之初筵",
+   "a": "《诗经·小雅》",
+   "why": "宴饮组：写饮酒从有礼到失仪，用“未醉”“既醉”对照，是中国最早的劝酒德之作",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "宾之初筵"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_shumiao",
+   "t": "黍苗",
+   "a": "《诗经·小雅》",
+   "why": "写召伯营建谢邑，以黍苗得雨滋润起兴，写出劳役中的人对主事者的感念",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "黍苗"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_hecaobuhuang",
+   "t": "何草不黄",
+   "a": "《诗经·小雅》",
+   "why": "征役组：全书最苍凉的征夫诗之一，“匪兕匪虎，率彼旷野”以兽自比，对读《采薇》",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "何草不黄"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_wenwang",
+   "t": "文王",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：周人自述得天命，“周虽旧邦，其命维新”“天命靡常”“殷鉴”是周初政治思想的纲领",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "文王"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_daming",
+   "t": "大明",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：从王季、太任写到文王娶大姒，再到牧野之战，婚姻与战争并列，把天命落到具体的人事",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "大明"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_mian",
+   "t": "绵",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：古公亶父迁岐筑城的创业记，“绵绵瓜瓞”起笔，营建场面写得有声有色",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "绵"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_huangyi",
+   "t": "皇矣",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：从上帝眷顾岐周写到文王伐密、伐崇，“帝谓文王”三次插入，是《大雅》里神意与战事结合最紧的一篇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "皇矣"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_lingtai",
+   "t": "灵台",
+   "a": "《诗经·大雅》",
+   "why": "写文王造灵台、观灵囿灵沼的诗，“庶民子来”写出劳役如何变成乐事，是君民关系的理想画面",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "灵台"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_shengmin",
+   "t": "生民",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：后稷出生、被弃、成长、种植与始祭，是周人始祖的神话与农业史合一的篇章",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "生民"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_gongliu",
+   "t": "公刘",
+   "a": "《诗经·大雅》",
+   "why": "史诗组：公刘率族迁豳，写出发、勘察、定居、立君的全过程，创业叙事细密",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "公刘"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_minlao",
+   "t": "民劳",
+   "a": "《诗经·大雅》",
+   "why": "讽刺与劝谏：每章前后句式几乎重复，“汔可小康”一语的出处，劝王安民、遏制奸佞",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "民劳"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_ban",
+   "t": "板",
+   "a": "《诗经·大雅》",
+   "why": "讽刺组：老臣诫导同僚、劝王的诗，“先民有言，询于刍荛”与“多将熇熇，不可救药”俱为名句",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "板"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_dang",
+   "t": "荡",
+   "a": "《诗经·大雅》",
+   "why": "讽刺组：全篇借文王口吻斥责殷商，以古喻今，末句“殷鉴不远，在夏后之世”成为史鉴典故",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "荡"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_yi",
+   "t": "抑",
+   "a": "《诗经·大雅》",
+   "why": "讽刺与箴铭：以“白圭之玷”“投我以桃，报之以李”等名言著称，通篇是长者对晚辈的告诫",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "抑"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_sangrou",
+   "t": "桑柔",
+   "a": "《诗经·大雅》",
+   "why": "讽刺组：以桑叶凋落起兴，写乱世人民的困顿与朝政败坏，篇末直言“既作尔歌”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "桑柔"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_yunhan",
+   "t": "云汉",
+   "a": "《诗经·大雅》",
+   "why": "旱灾祷告诗：连用“旱既大甚”叠章，写君王在灾年遍祭群神而无所应的焦灼",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "云汉"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_zhengmin",
+   "t": "烝民",
+   "a": "《诗经·大雅》",
+   "why": "颂贤臣：“柔亦不茹，刚亦不吐”写仲山甫，“吉甫作诵”点明送行诗的作者",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "烝民"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_jianghan",
+   "t": "江汉",
+   "a": "《诗经·大雅》",
+   "why": "纪功诗：写召虎受命平定淮夷，并记受赐、拜谢，具有册命文字的格式",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "江汉"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_changwu",
+   "t": "常武",
+   "a": "《诗经·大雅》",
+   "why": "纪功诗：写天子亲征徐国，“如雷如霆”“如飞如翰”的比喻连用，兵威写得极具气势",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "常武"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_weitianzhiming",
+   "t": "维天之命",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：以天命不已与文王之德起笔，是周人自述承天命的短颂",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "维天之命"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_wojiang",
+   "t": "我将",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：祭天与文王配享，“仪式刑文王之典”是后世“典型”“刑法”一类词的早期用语",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "我将"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_shimai",
+   "t": "时迈",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：写巡守并怀柔山川百神，“载戢干戈，载橐弓矢”是止戈为武的名句",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "时迈"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_xixi",
+   "t": "噫嘻",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：成王或其官员督农的颂辞，只有短短数句，是朝廷农事礼仪的缩影",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "噫嘻"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_fengnian",
+   "t": "丰年",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：秋收祭祖的短诗，七句写丰收、酿酒、祭祀，是《诗经》里最简练的农业颂",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "丰年"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_qian",
+   "t": "潜",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：献鱼祭祀的短颂，只列鱼名与功用，体现祭品与礼仪的关系",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "潜"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_youke",
+   "t": "有客",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：写一位客人来周，“亦白其马”，宴饮与挽留并写，被后人系于微子来朝，此说存疑",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "有客"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_minyuxiaozi",
+   "t": "闵予小子",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：新王在宗庙自述，从悲叹“遭家不造”到立志继承，是君王自白的雏形",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "闵予小子"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_xiaobi",
+   "t": "小毖",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：新王自警，“予其惩，而毖后患”以桃虫成鸟作比，成语“惩前毖后”出此",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "小毖"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_zaishan",
+   "t": "载芟",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：春耕到秋收的完整过程，“千耦其耘”写出集体劳动的规模",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "载芟"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_liangsi",
+   "t": "良耜",
+   "a": "《诗经·周颂》",
+   "why": "周颂组：与《载芟》姊妹篇，重点写锄草、收获、粮仓与秋报，句式更整齐",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "良耜"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_jiong",
+   "t": "駉",
+   "a": "《诗经·鲁颂》",
+   "why": "鲁颂：赞颂牧马之盛，四章各列马色，末句“思无邪”是孔子论《诗》之语的原始语境，论者对其含义有不同理解",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "駉"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_panshui",
+   "t": "泮水",
+   "a": "《诗经·鲁颂》",
+   "why": "鲁颂：写鲁侯到泮宫饮酒、献功，兼有颂人与纪战，反映诸侯礼制与战功颂扬",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "泮水"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_bigong",
+   "t": "閟宫",
+   "a": "《诗经·鲁颂》",
+   "why": "鲁颂：全书最长的颂，以后稷、大王、文武追溯周室，再写鲁国受封与战功，是周礼与鲁史的综合",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "閟宫"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_na",
+   "t": "那",
+   "a": "《诗经·商颂》",
+   "why": "商颂：祭祀汤的乐歌，以鼓、管、磬的声音为主，写祭祀音乐的细节",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "那"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_xuanniao",
+   "t": "玄鸟",
+   "a": "《诗经·商颂》",
+   "why": "商颂：“天命玄鸟，降而生商”是商人始祖神话的最著名语句，可与《生民》对读",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "玄鸟"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_changfa",
+   "t": "长发",
+   "a": "《诗经·商颂》",
+   "why": "商颂：从商之始祖契到汤、伊尹，叙述商人兴起的历史，是商颂里最完整的史诗性篇章",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "长发"
+    }
+   ]
+  },
+  {
+   "id": "shijingy_yinwu",
+   "t": "殷武",
+   "a": "《诗经·商颂》",
+   "why": "商颂：写商王伐荆楚，末尾转入宗庙建造，将军事功业与宗庙落成并列",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "诗经.txt",
+     "title": "殷武"
+    }
+   ]
+  }
+ ]
+}

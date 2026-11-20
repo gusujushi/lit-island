@@ -19,7 +19,18 @@
     classics: {},
     setLocalBooks(x) { L.local = x; },
     addClassics(o) { Object.assign(L.classics, o); },
+    // 书库（data/lib/）：index 随外壳加载；每本书的原文与讲解按需加载
+    lib: { eras: [], books: [], units: {} },
+    libText: {},
+    libNotes: {},
+    setLib(x) { L.lib = x; },
+    addLibText(o) { Object.assign(L.libText, o); },
+    addLibNotes(o) { Object.assign(L.libNotes, o); },
   };
+
+  /** 书库单元的原文段（已加载的才有） */
+  L.unitTexts = id => { const u = L.lib.units[id]; if (!u) return []; const out = []; for (let i = 1; i <= u.n; i++) { const t = L.libText[id + '#' + i]; if (t) out.push(t); } return out; };
+  L.bookOf = id => { const u = L.lib.units[id]; return u ? L.lib.books.find(b => b.id === u.b) : null; };
 
   L.total = () => (L.meta && L.meta.total) || 90;
   L.isReview = n => n % ROUND === 0;

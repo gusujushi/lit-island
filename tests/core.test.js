@@ -213,3 +213,46 @@ test('AI 提示词：校对带本课背景、点评带量规且跳过空题、�
   assert.equal(AI.validBase('https://api.deepseek.com'), true);
   assert.equal(AI.validBase('http://127.0.0.1:8080'), true);
 });
+
+test('书库：学完一篇进复习盒，重复学完不重复计时，卡片与导出', () => {
+  const id = 'honglou_zanghua';   // 样板单元（红楼梦·黛玉葬花）；需先运行 node tools/build_lib.js
+  assert.ok(LIT.libNotes[id], '缺书库讲解：先运行 node tools/build_lib.js');
+  const S = Store.create(memStorage());
+  Store.completeUnit(S.state, id, '2026-11-20', LIT);
+  assert.equal(S.state.lib[id].done, '2026-11-20');
+  assert.equal(S.state.log['2026-11-20'], 15, '学完一篇记 15 分钟');
+  const n = LIT.libNotes[id];
+  n.cards.forEach((c, i) => assert.ok(S.state.cards[`L:${id}:${i}`], `卡片 ${i} 入盒`));
+  assert.ok(S.state.cards[`L:${id}:k`], '名句卡入盒');
+  const c0 = Store.cardContent(S.state, `L:${id}:0`, LIT);
+  assert.equal(c0.kind, 'lib');
+  assert.equal(c0.front, n.cards[0][0]);
+  assert.equal(c0.back, n.cards[0][1]);
+  const ck = Store.cardContent(S.state, `L:${id}:k`, LIT);
+  assert.match(ck.front, /^名句：/);
+  Store.completeUnit(S.state, id, '2026-11-21', LIT);
+  assert.equal(S.state.lib[id].done, '2026-11-20', '完成日期不被覆盖');
+  assert.equal(S.state.log['2026-11-21'], undefined, '重复学完不重复计时');
+  Store.libRec(S.state, id).think = '葬花是自悼，也是对所有美好事物终将散尽的体认。';
+  const md = Store.markdown(S.state, LIT, '2026-11-21');
+  assert.match(md, /^# 书库$/m);
+  assert.match(md, /黛玉葬花/);
+  assert.match(md, /葬花是自悼/);
+  const st = Store.libStats(S.state, LIT);
+  const bk = LIT.lib.books.find(b => b.id === 'honglou');
+  assert.equal(st.honglou.total, bk.units.length);
+  assert.equal(st.honglou.done, 1);
+});
+
+test('书库：未加载讲解时卡片返回待加载标记；旧备份（无 lib、route 字段）照常导入', () => {
+  const S = Store.create(memStorage());
+  const fake = Object.assign({}, LIT, { libNotes: {}, lib: { units: { x_y: { b: 'honglou', t: '甲', a: '乙' } } } });
+  const c = Store.cardContent(S.state, 'L:x_y:0', fake);
+  assert.equal(c.kind, 'lib');
+  assert.equal(c.pending, 'honglou', '讲解没加载时返回所属书号，界面据此去加载');
+  S.importJSON(JSON.stringify({ v: 1, settings: {}, days: {}, reviews: {}, cards: {}, log: {} }));
+  assert.deepEqual(S.state.lib, {});
+  assert.equal(S.state.route, null);
+  S.importJSON(JSON.stringify({ v: 1, settings: {}, days: {}, reviews: {}, cards: {}, log: {}, route: { nothing: 1 } }));
+  assert.equal(S.state.route, null, '不完整的路线记录被忽略');
+});

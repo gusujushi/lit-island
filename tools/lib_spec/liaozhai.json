@@ -1,0 +1,1280 @@
+{
+ "book": "liaozhai",
+ "units": [
+  {
+   "id": "liaozhai_kaochenghuang",
+   "t": "考城隍",
+   "a": "《聊斋志异》",
+   "why": "开卷第一篇，“有心为善，虽善不赏”一联把善恶论心不论迹，也带着蒲松龄对科场的寄托",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "考城隍"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_huabi",
+   "t": "画壁",
+   "a": "《聊斋志异》",
+   "why": "幻由心生的典型：入壁、被追、坠回，老僧一句话收住全篇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "畫壁"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_wangliulang",
+   "t": "王六郎",
+   "a": "《聊斋志异》",
+   "why": "人鬼之谊与一念之仁，“置身青云，无忘贫贱”的立意",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "王六郎"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_toutao",
+   "t": "偷桃",
+   "a": "《聊斋志异》",
+   "why": "叙事层次最清楚的幻术篇，“童时赴郡试”的亲历口吻",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "偷桃"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_zhongli",
+   "t": "种梨",
+   "a": "《聊斋志异》",
+   "why": "幻术加讽刺，异史氏骂的是吝啬而不是道士",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "種梨"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_laoshandaoshi",
+   "t": "劳山道士",
+   "a": "《聊斋志异》",
+   "why": "穿墙术的笑话，异史氏把它扩成对投机者的警告",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "勞山道士"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_changqingseng",
+   "t": "长清僧",
+   "a": "《聊斋志异》",
+   "why": "魂入贵家而守戒，“性定”二字是全篇之眼",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "長清僧"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_sheren",
+   "t": "蛇人",
+   "a": "《聊斋志异》",
+   "why": "人与蛇的情义，对照“下井复投石”的人",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "蛇人"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_hujianv",
+   "t": "狐嫁女",
+   "a": "《聊斋志异》",
+   "why": "明快的小品：书生夜宿凶宅，一只金爵串起前后",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "狐嫁女"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_jiaona",
+   "t": "娇娜",
+   "a": "《聊斋志异》",
+   "why": "狐友情重于艳情，割瘤与雷劫两场是全篇骨架",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "俄僮入白：「娜姑至",
+     "end": "趨步出。",
+     "t": "割瘤"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，公子有憂色",
+     "end": "移時，醒然而蘇。",
+     "t": "雷劫"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_sansheng",
+   "t": "三生",
+   "a": "《聊斋志异》",
+   "why": "人而马、犬、蛇的轮回，异史氏把话说到王公大人身上",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "三生",
+     "has": "劉孝廉"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_yesheng",
+   "t": "叶生",
+   "a": "《聊斋志异》",
+   "why": "科场失意者的自画像，魂随知己而去",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "葉生"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_wangcheng",
+   "t": "王成",
+   "a": "《聊斋志异》",
+   "why": "懒汉靠狐仙祖母与一只鹌鹑翻身，“富皆得于勤，此独得于惰”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "王成，平原故家子",
+     "end": "嫗從之。",
+     "t": "拾钗"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "先是有某王者，好鶉",
+     "end": "居然世家。",
+     "t": "斗鹑"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_qingfeng",
+   "t": "青凤",
+   "a": "《聊斋志异》",
+   "why": "狂生与狐女的情，前半恶作剧，后半报恩",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "積二年餘，生方夜讀",
+     "end": "叟赧然謝別而去。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_jiaer",
+   "t": "贾儿",
+   "a": "《聊斋志异》",
+   "why": "少年智斗狐魅的长篇小品，细节密、节奏快",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "賈兒"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_lupan",
+   "t": "陆判",
+   "a": "《聊斋志异》",
+   "why": "换心换头的奇想，写朱尔旦与判官的“友”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夜，朱輒醉先寢",
+     "end": "秋闈果中經元。",
+     "t": "换心"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "後瑋二十五舉進士",
+     "end": "渾任為總憲，有政聲。",
+     "t": "佩刀"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_yingning",
+   "t": "婴宁",
+   "a": "《聊斋志异》",
+   "why": "笑的人物，由笑转哭的收束",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "次日，至舍後，果有園半畝",
+     "end": "何諱之？",
+     "t": "园中"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夕，對生零涕",
+     "end": "若解語花，正嫌其作態耳。",
+     "t": "结局"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_niexiaoqian",
+   "t": "聂小倩",
+   "a": "《聊斋志异》",
+   "why": "女鬼与书生的守信，兼有燕赤霞的剑侠线，是《聊斋》最受欢迎的篇章之一",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "宵分，女子復至",
+     "end": "有烏巢者是也。」",
+     "t": "夜告"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，俛頸窗前，怊悵若失",
+     "end": "清水數斗而已。",
+     "t": "囊战"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_shuimangcao",
+   "t": "水莽草",
+   "a": "《聊斋志异》",
+   "why": "因怨成鬼、因情化解的短篇，鬼不害人反为神",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "水莽草"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xianv",
+   "t": "侠女",
+   "a": "《聊斋志异》",
+   "why": "报恩与复仇并写，“事可一而不可再”的女侠形象",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夕方獨坐，女忽至",
+     "end": "收刃入囊。",
+     "t": "驱孌童"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "更數夕，夜將半",
+     "end": "遂不復見。",
+     "t": "诀别"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_lianxiang",
+   "t": "莲香",
+   "a": "《聊斋志异》",
+   "why": "狐与鬼双美对照，莲香救治桑生与李女还魂一线",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，方凝想間，忽有搴簾入者",
+     "end": "李聽雞鳴，徬徨別去。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_abao",
+   "t": "阿宝",
+   "a": "《聊斋志异》",
+   "why": "痴人以魂化鹦鹉求爱，“性痴则其志凝”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "初，生見女去",
+     "end": "歷言不爽。",
+     "t": "魂随"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "家舊養一鸚鵡",
+     "end": "矢不他，翁媼乃從之。",
+     "t": "鹦鹉"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_kouji",
+   "t": "口技",
+   "a": "《聊斋志异》",
+   "why": "蒲松龄写的口技，一人模拟全场对话，且点破其用意",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "口技"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_hongyu",
+   "t": "红玉",
+   "a": "《聊斋志异》",
+   "why": "狐女报恩，官府“刀入木”与家道再造",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "至夜，宋家一門俱寢",
+     "end": "竟釋生。",
+     "t": "刀入木"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "忽有款門者",
+     "end": "生益神之。",
+     "t": "再造"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_linsiniang",
+   "t": "林四娘",
+   "a": "《聊斋志异》",
+   "why": "亡国宫人的鬼魂与诗，哀婉的历史感",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "林四娘"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_liboyan",
+   "t": "李伯言",
+   "a": "《聊斋志异》",
+   "why": "阴司断案与“一念之私不可容”的警句",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "李伯言"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_laotao",
+   "t": "老饕",
+   "a": "《聊斋志异》",
+   "why": "绿林好手遇高人，“孟浪”二字写尽了被碾压的体面",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "老饕"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_liancheng",
+   "t": "连城",
+   "a": "《聊斋志异》",
+   "why": "知己之感与生死相随，写情而不失骨",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "女聞之，意良不忍",
+     "end": "生往臨弔，一痛而絕。",
+     "t": "知己"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "生自知已死，亦無所戚",
+     "end": "賓娘乃喜，從生出。",
+     "t": "冥中"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_shangsanguan",
+   "t": "商三官",
+   "a": "《聊斋志异》",
+   "why": "女子复仇的短篇，写得冷而快",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "商三官"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_leicao",
+   "t": "雷曹",
+   "a": "《聊斋志异》",
+   "why": "一饭之恩与朋友之义，雷曹降雨的奇想",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "雷曹"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_pianpian",
+   "t": "翩翩",
+   "a": "《聊斋志异》",
+   "why": "仙洞里的衣食，被读作人世的另一种过日子",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "翩翩"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_luochahaishi",
+   "t": "罗刹海市",
+   "a": "《聊斋志异》",
+   "why": "以丑为美的国度，是写世情最辛辣的一篇",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "馬驥，字龍媒",
+     "end": "率猙獰怪異；然位漸卑，醜亦漸殺。",
+     "t": "罗刹国"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "居久之，與主人飲而醉，把劍起舞",
+     "end": "拜下大夫。",
+     "t": "变脸"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_tianqilang",
+   "t": "田七郎",
+   "a": "《聊斋志异》",
+   "why": "受恩不轻受、报恩不惜命的猎户，母亲的一席话是全篇的纲",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "先是，七郎持金白母",
+     "end": "殊盡情禮。",
+     "t": "母训"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，某弟方在內廨",
+     "end": "已而復踣。",
+     "t": "刺仇"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_gongsunjiuniang",
+   "t": "公孙九娘",
+   "a": "《聊斋志异》",
+   "why": "于七案牵连的亡魂，冥婚的温情与人鬼殊途的凄凉",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "後五日，果見朱來",
+     "end": "極盡歡昵。",
+     "t": "冥婚"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "初，九娘母子，原解赴都",
+     "end": "湮然滅矣。",
+     "t": "永诀"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_huxie",
+   "t": "狐谐",
+   "a": "《聊斋志异》",
+   "why": "谐谑的狐娘子，以“狐典”连连取胜，是《聊斋》喜剧的代表",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "狐諧"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_yuqian",
+   "t": "雨钱",
+   "a": "《聊斋志异》",
+   "why": "一篇寓言式的小品：想靠仙术暴富，终究“满室阿堵物，皆为乌有”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "雨錢"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_qieji",
+   "t": "妾击贼",
+   "a": "《聊斋志异》",
+   "why": "小妾击退盗贼，写“人不可貌相”，也写“分”的克制",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "妾擊賊"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xuhuangliang",
+   "t": "续黄粱",
+   "a": "《聊斋志异》",
+   "why": "梦中二十年宰相与一夕地狱，黄粱梦的晚清版本；批判对象是“权势”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，念微時嘗得邑紳王子良",
+     "end": "立斃杖下。",
+     "t": "得势"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "王命會計生平賣爵鬻名",
+     "end": "半日方盡。",
+     "t": "地狱"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "正悲號間，聞遊者呼曰",
+     "end": "當以附之邯鄲之後。",
+     "t": "梦醒"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_zhaochenghu",
+   "t": "赵城虎",
+   "a": "《聊斋志异》",
+   "why": "义虎替死去之子奉养老妇，官府“人兽之判”的奇文",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "趙城虎"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_wuji",
+   "t": "武技",
+   "a": "《聊斋志异》",
+   "why": "少林弟子连遇高手，“孟浪迕客”的反讽",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "武技"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_jiuchong",
+   "t": "酒虫",
+   "a": "《聊斋志异》",
+   "why": "酒虫去而人亦衰，一篇点到为止的奇闻",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "酒蟲"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_nongren",
+   "t": "农人",
+   "a": "《聊斋志异》",
+   "why": "农人以斗笠与曲项锄吓走狐，是一个小而聪明的故事",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "農人"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_huaguzi",
+   "t": "花姑子",
+   "a": "《聊斋志异》",
+   "why": "报恩的獐女与冒充她的蛇精，“憨者慧之极”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夜，守者困怠並寐",
+     "end": "遂盡三枚。",
+     "t": "治病"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "安不歸，家中逐者窮人蹟",
+     "end": "歲後當相寄耳。",
+     "t": "报恩"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_lvyinv",
+   "t": "绿衣女",
+   "a": "《聊斋志异》",
+   "why": "绿蜂化女，一首歌与一个“谢”字，极短的爱情哀歌",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "綠衣女"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_maya",
+   "t": "骂鸭",
+   "a": "《聊斋志异》",
+   "why": "一桩小事，写“罚”之奇与“宽”之德",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "罵鴨"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_yuncuixian",
+   "t": "云翠仙",
+   "a": "《聊斋志异》",
+   "why": "负心人的下场，“以善规人，如赠橄榄；以恶诱人，如馈漏脯”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夕，女沽酒與飲",
+     "end": "乃率衆下樓去。",
+     "t": "出卖"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "才坐聽移時，語聲俱寂",
+     "end": "尋瘐死。",
+     "t": "结局"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_tiaoshen",
+   "t": "跳神",
+   "a": "《聊斋志异》",
+   "why": "一篇民俗速写：济南“跳神”的场面和满洲妇女的“跳虎神”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "跳神"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_dalijiangjun",
+   "t": "大力将军",
+   "a": "《聊斋志异》",
+   "why": "施恩不问名，报恩倾其所有，一对“千古所仅见”的朋友",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "大力將軍"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xihou",
+   "t": "细侯",
+   "a": "《聊斋志异》",
+   "why": "青楼女子的“守志”，与最后一句“忍人”的冷评",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "細侯"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_langsanze",
+   "t": "狼",
+   "a": "《聊斋志异》",
+   "why": "三则短文各有一狼，三屠夫各有一智",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "狼三則"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_kaobisi",
+   "t": "考弊司",
+   "a": "《聊斋志异》",
+   "why": "阴间“考弊司”按例割新鬼之肉，是写阴间也是写人间的讽刺篇",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "考弊司"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xianggao",
+   "t": "向杲",
+   "a": "《聊斋志异》",
+   "why": "兄死复仇化虎的短篇，异史氏的“恨不令暂作虎”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "向杲"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_geyi",
+   "t": "鸽异",
+   "a": "《聊斋志异》",
+   "why": "爱鸽成癖的张公子与白衣少年，兼附两则可笑的小事",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "鴿異"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_lengsheng",
+   "t": "冷生",
+   "a": "《聊斋志异》",
+   "why": "狂笑成文的书生，附学师与骑驴的两则笑话",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "冷生"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_shanshi",
+   "t": "山市",
+   "a": "《聊斋志异》",
+   "why": "奂山山市的幻景，一篇纯粹写景的小品",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "山市"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_jiangcheng",
+   "t": "江城",
+   "a": "《聊斋志异》",
+   "why": "悍妇与怕妻者的因果，一场“清水一灑”的转变",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，生不堪撻楚",
+     "end": "高悉置不知。",
+     "t": "悍妇"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "母以憶子故",
+     "end": "喚廝僕為除舊舍。",
+     "t": "转变"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_meinv",
+   "t": "梅女",
+   "a": "《聊斋志异》",
+   "why": "冤死之鬼借人之手惩恶官，“痛快！恶气出矣”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "典史某，亦浙之世族",
+     "end": "纔啟囊，女跳身已入。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_qinge",
+   "t": "青娥",
+   "a": "《聊斋志异》",
+   "why": "少年以镵穿墙探美人的荒唐与痴，笔调轻快",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "同里有武評事者",
+     "end": "仍自竇中出。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xianrendao",
+   "t": "仙人岛",
+   "a": "《聊斋志异》",
+   "why": "才子入仙岛被才女“屡受诮辱”，一幕才学与自负的喜剧",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "王初以才名自詡",
+     "end": "強自解免。",
+     "t": "诮辱"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夕對酌，王以為寂",
+     "end": "笑已而瘳。",
+     "t": "良言"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_husiniang",
+   "t": "胡四娘",
+   "a": "《聊斋志异》",
+   "why": "势利的亲戚与沉静的庶女，一篇写“人情冷暖”的现实小说",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "胡四娘"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_huanniang",
+   "t": "宦娘",
+   "a": "《聊斋志异》",
+   "why": "以琴为媒的鬼女，“代作蹇修”的成人之美",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "後歸秦，離家數十里",
+     "end": "出門遂沒。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xiaocui",
+   "t": "小翠",
+   "a": "《聊斋志异》",
+   "why": "狐女报恩，装痴捣乱，月缺重圆，是《聊斋》最富喜剧色彩的长篇之一",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，女浴於室",
+     "end": "如形影焉。",
+     "t": "治痴"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，謂公子曰：「昔在家時",
+     "end": "亦更深於流俗也！",
+     "t": "别去"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_jinheshang",
+   "t": "金和尚",
+   "a": "《聊斋志异》",
+   "why": "一个暴富的“和尚”，异史氏用“和样、和撞、和唱、和障”调侃",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "金和尚"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xiliu",
+   "t": "细柳",
+   "a": "《聊斋志异》",
+   "why": "继母细柳教子，一个严厉而不避谤的母亲",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "福年十歲，始學為文",
+     "end": "非其心之所得已也。",
+     "t": "教子"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "異史氏曰：「黑心符出",
+     "end": "錚錚者矣！」",
+     "t": "评语"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_juzha",
+   "t": "局诈",
+   "a": "《聊斋志异》",
+   "why": "一个武官的捐官骗局，“朝门亦可假”",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "副將軍某，負貲入都",
+     "end": "所謂「大盜不操矛弧」者也。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_menglang",
+   "t": "梦狼",
+   "a": "《聊斋志异》",
+   "why": "“官虎而吏狼”的梦中所见，是《聊斋》最直白的官场批判",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "夢狼"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_change",
+   "t": "嫦娥",
+   "a": "《聊斋志异》",
+   "why": "月宫仙子与狐女颠当，一妻一妾间的诙谐与克制",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "宗大哭失聲",
+     "end": "每辭不當夕。",
+     "t": "重聚"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一夜，漏三下",
+     "end": "競相狎戲。",
+     "t": "戏谑"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_siwenlang",
+   "t": "司文郎",
+   "a": "《聊斋志异》",
+   "why": "盲僧以鼻论文，嘲讽科场的“鼻盲”考官",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "偶與涉歷殿閣",
+     "end": "敢自污乎？"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_cuimeng",
+   "t": "崔猛",
+   "a": "《聊斋志异》",
+   "why": "勇而无谋的崔猛与智取土寇的李申，一篇写“勇”与“谋”的篇章",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "時土寇嘯聚",
+     "end": "一方賴之以安。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_chenxijiu",
+   "t": "陈锡九",
+   "a": "《聊斋志异》",
+   "why": "孝子得鬼助、岳父悔婚，一篇写“孝”与“势利”的对照",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "俄有車馬至",
+     "end": "錫九諾而行。",
+     "t": "梦遇"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "錫九歸，夫妻相見",
+     "end": "夫妻慰甚。",
+     "t": "夫妻"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_wangzian",
+   "t": "王子安",
+   "a": "《聊斋志异》",
+   "why": "秀才醉后误以为得中，异史氏的“七似”是科场心理的绝妙写照",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "王子安"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xifangping",
+   "t": "席方平",
+   "a": "《聊斋志异》",
+   "why": "孝子下冥府告状，受尽酷刑而不屈，判词是全篇的光",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "俄有皂衣人喚入",
+     "end": "反身遂去。",
+     "t": "受刑"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "判云：「勘得冥王者",
+     "end": "再賜陽壽三紀。",
+     "t": "判词"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_yanzhi",
+   "t": "胭脂",
+   "a": "《聊斋志异》",
+   "why": "吴公断案，借神灵使真凶自露，连骈文判词都是全篇的亮点",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "公乃討其招供，反覆凝思之",
+     "end": "遐邇傳誦焉。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_gejin",
+   "t": "葛巾",
+   "a": "《聊斋志异》",
+   "why": "爱花成痴的洛阳书生与牡丹仙子，一杯“鸩汤”的相思",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "一日，凌晨趨花所",
+     "end": "虔拜而默禱之。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_huangying",
+   "t": "黄英",
+   "a": "《聊斋志异》",
+   "why": "菊精姊弟的卖花致富与“醉陶”的结局，写名士与商的碰撞",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "未幾菊開",
+     "end": "捆載數車而去。",
+     "t": "卖菊"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "陶飲素豪",
+     "end": "不可不物色之也。",
+     "t": "醉陶"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_shuchi",
+   "t": "书痴",
+   "a": "《聊斋志异》",
+   "why": "“书中自有颜如玉”的字面实现，异史氏批评的是祖龙之虐",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "書癡"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_wanxia",
+   "t": "晚霞",
+   "a": "《聊斋志异》",
+   "why": "龙宫乐舞中阿端与晚霞的一见钟情",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "明日，龍窩君按部",
+     "end": "由此兩人日一會於蓮畝。"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_zhuqing",
+   "t": "竹青",
+   "a": "《聊斋志异》",
+   "why": "落第书生化乌，与汉水神女的情缘",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "竹青"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_xiangyu",
+   "t": "香玉",
+   "a": "《聊斋志异》",
+   "why": "爱花成痴的黄生与香玉、绛雪，生死相依的花妖故事",
+   "passages": [
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "又數夕，生方獨居悽惻",
+     "end": "自此遂以為常。",
+     "t": "复降"
+    },
+    {
+     "kind": "span",
+     "file": "古籍下载2/聊斋志异.txt",
+     "start": "後生妻卒，遂入山",
+     "end": "信矣哉！",
+     "t": "寄魂"
+    }
+   ]
+  },
+  {
+   "id": "liaozhai_shiqingxu",
+   "t": "石清虚",
+   "a": "《聊斋志异》",
+   "why": "爱石成癖，以身殉石，“石与人相终始”",
+   "passages": [
+    {
+     "kind": "bracket",
+     "file": "古籍下载2/聊斋志异.txt",
+     "title": "石清虛"
+    }
+   ]
+  }
+ ]
+}
